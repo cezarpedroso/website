@@ -163,7 +163,6 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="container-wide hero-content">
-        <p className="eyebrow hero-kicker">SYSTEM ENGINEERED.</p>
         <h1 id="hero-title" className="display-serif hero-title">
           <span className="headline-line">Software and technology</span>{' '}
           <span className="headline-line">for the systems your</span>{' '}

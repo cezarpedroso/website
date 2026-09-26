@@ -266,7 +266,7 @@
 
 .hero {
   position: relative;
-  min-height: 760px;
+  min-height: 700px;
   color: #0b1726;
   isolation: isolate;
   background: #f4f4f4;
@@ -281,7 +281,7 @@
   width: 68%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   animation: hero-settle 1.2s ease-out both;
 }
 
@@ -308,31 +308,11 @@
 
 .hero-content {
   display: flex;
-  min-height: 760px;
+  min-height: 700px;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 180px;
-  padding-bottom: 65px;
-}
-
-.hero-kicker {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  color: #46515b;
-  font-family: var(--app-font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-}
-
-.hero-kicker::before {
-  display: block;
-  width: 52px;
-  height: 2px;
-  flex: none;
-  background: #b89a67;
-  content: '';
+  padding-top: 145px;
+  padding-bottom: 50px;
 }
 
 .hero-title {
@@ -1052,7 +1032,12 @@
 
   .hero,
   .hero-content {
-    min-height: 720px;
+    min-height: 660px;
+  }
+
+  .hero-content {
+    padding-top: 145px;
+    padding-bottom: 48px;
   }
 
   .hero::before {
@@ -1130,7 +1115,7 @@
 
   .hero,
   .hero-content {
-    min-height: 700px;
+    min-height: 620px;
   }
 
   .hero-content {
@@ -1140,7 +1125,7 @@
 
   .hero-image {
     width: 100%;
-    object-position: 40% center;
+    object-position: 40% top;
   }
 
   .hero::before {
