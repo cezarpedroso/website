@@ -234,7 +234,8 @@
 
 .inner-page .ip-contact-form-section { padding: clamp(78px, 9vw, 140px) 0; background: #f5f3ee; }
 .inner-page .ip-contact-form-layout { display: grid; grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr); align-items: start; gap: clamp(48px, 8vw, 135px); }
-.inner-page .ip-contact-form-copy .ip-serif-heading { margin: 20px 0 25px; font-size: clamp(3rem, 4.5vw, 5.2rem); }
+.inner-page .ip-contact-form-copy .ip-contact-title { margin: 20px 0 25px; font-size: clamp(3rem, 4.5vw, 5.2rem); line-height: 1.02; }
+.inner-page .ip-contact-title em { color: var(--site-blue); }
 .inner-page .ip-contact-form-copy > p:not(.eyebrow) { max-width: 450px; margin: 0; color: #687078; font-size: .96rem; line-height: 1.8; }
 .inner-page .ip-contact-direct { margin-top: 47px; padding-top: 17px; border-top: 1px solid #cfd2d0; }
 .inner-page .ip-contact-direct span { display: block; margin-bottom: 12px; color: #7a8185; font-family: var(--app-font-mono); font-size: .6rem; letter-spacing: .13em; }
@@ -297,7 +298,7 @@
   .inner-page .ip-discipline-grid h3 { margin-top: 18px; }
   .inner-page .ip-contact-form-section { padding: 75px 0; }
   .inner-page .ip-contact-form-layout { grid-template-columns: 1fr; gap: 38px; }
-  .inner-page .ip-contact-form-copy .ip-serif-heading { font-size: clamp(2.8rem, 9vw, 4.4rem); }
+  .inner-page .ip-contact-form-copy .ip-contact-title { font-size: clamp(2.8rem, 9vw, 4.4rem); }
   .inner-page .ip-contact-form { padding: 25px 18px; }
   .inner-page .ip-contact-fields { grid-template-columns: 1fr; gap: 19px; }
   .inner-page .ip-contact-field-wide { grid-column: auto; }

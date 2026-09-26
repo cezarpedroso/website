@@ -299,7 +299,7 @@ export function ContactPage() {
         <div className="container-wide ip-contact-form-layout">
           <div className="ip-contact-form-copy">
             <p className="eyebrow intro-eyebrow">Start a conversation</p>
-            <h2 id="contact-form-title" className="ip-serif-heading">Tell us about <em>the work.</em></h2>
+            <h2 id="contact-form-title" className="display-heading ip-contact-title">Tell us about <em>the work.</em></h2>
             <p>Share the process, system, or operational challenge you would like to improve. A little context helps us understand where to start.</p>
             <div className="ip-contact-direct">
               <span>DIRECT EMAIL</span>
