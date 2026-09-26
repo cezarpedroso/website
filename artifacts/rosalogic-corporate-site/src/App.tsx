@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { Toaster } from '@/components/ui/toaster';
 import heroBackdrop from '@assets/heroback_1790416036994.jpg';
-import logoTopbar from '@assets/logotopbar_1790416074795.png';
+import logoTopbar from '@assets/topbarlogo_1790416420245.png';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -135,8 +135,8 @@ function Header({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (op
             className="header-logo-image"
             src={logoTopbar}
             alt="ROSALOGIC — Business Systems & Technology"
-            width="800"
-            height="140"
+            width="1000"
+            height="120"
           />
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">

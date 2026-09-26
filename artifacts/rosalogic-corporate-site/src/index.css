@@ -319,10 +319,10 @@
   max-width: 940px;
   margin: 24px 0 25px;
   font-family: var(--app-font-corporate);
-  font-size: clamp(3.2rem, 4.8vw, 5.1rem);
-  font-weight: 600;
+  font-size: clamp(3rem, 4.2vw, 4.7rem);
+  font-weight: 500;
   letter-spacing: -0.055em;
-  line-height: 1.04;
+  line-height: 1.08;
 }
 
 .hero-title .headline-line {
@@ -967,7 +967,7 @@
 
 .header-logo-image {
   display: block;
-  width: clamp(260px, 26vw, 360px);
+  width: clamp(280px, 29vw, 385px);
   height: auto;
 }
 
@@ -983,8 +983,8 @@
   position: relative;
   color: #46515b;
   font-family: var(--app-font-corporate);
-  font-size: 0.68rem;
-  font-weight: 700;
+  font-size: 0.66rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-decoration: none;
   text-transform: uppercase;
@@ -1018,7 +1018,8 @@
   border-color: rgba(11, 23, 38, 0.32);
   color: #0b1726;
   font-family: var(--app-font-corporate);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
+  font-weight: 600;
 }
 
 .header-cta:hover {
@@ -1169,7 +1170,7 @@
   }
 
   .header-logo-image {
-    width: min(245px, calc(100vw - 110px));
+    width: min(250px, calc(100vw - 110px));
   }
 
   .mobile-menu {
@@ -1201,7 +1202,7 @@
 
   .hero-title {
     margin-top: 18px;
-    font-size: clamp(2rem, 9vw, 3.5rem);
+    font-size: clamp(1.9rem, 8.3vw, 3.2rem);
     line-height: 1.07;
   }
 
