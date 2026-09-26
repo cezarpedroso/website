@@ -295,13 +295,6 @@ export function AboutPage() {
 export function ContactPage() {
   return (
     <div className="inner-page">
-      <PageHero
-        label="Contact"
-        title="Let’s talk about"
-        emphasis="the work."
-        description="Tell us a little about your operation and what you would like technology to make easier."
-        aside="A few details can help frame a useful conversation."
-      />
       <section className="ip-contact-form-section" aria-labelledby="contact-form-title">
         <div className="container-wide ip-contact-form-layout">
           <div className="ip-contact-form-copy">

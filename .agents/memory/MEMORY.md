@@ -1,1 +1,1 @@
-- [Contact-channel integrity](contact-channel-integrity.md) — do not promise direct outreach until a verified destination exists; update copy with delivery.
+- [Contact-channel integrity](contact-channel-integrity.md) — a displayed form may stay inactive; never imply delivery until sending is configured.
