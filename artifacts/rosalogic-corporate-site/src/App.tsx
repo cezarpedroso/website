@@ -175,8 +175,8 @@ function Hero() {
     <section id="home" className="hero" aria-labelledby="hero-title">
       <img
         className="hero-image"
-        src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=2400"
-        alt="Steel structure and industrial infrastructure inside a large modern facility"
+        src="https://images.pexels.com/photos/37602851/pexels-photo-37602851.jpeg?auto=compress&cs=tinysrgb&w=2400"
+        alt="Modern manufacturing facility interior with steel trusses, production infrastructure, and an engineered building"
         width="2400"
         height="1600"
         fetchPriority="high"
