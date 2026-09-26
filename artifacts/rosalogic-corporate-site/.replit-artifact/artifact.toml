@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "ROSALOGIC Corporate Website"
+description = "A corporate website for ROSALOGIC, a software engineering company that designs, builds, deploys, and maintains systems for organizations with complex operations."
+version = "1.0.0"
+id = "artifacts/rosalogic-corporate-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19886
+
+[services.development]
+run = "pnpm --filter @workspace/rosalogic-corporate-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/rosalogic-corporate-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/rosalogic-corporate-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19886"
+BASE_PATH = "/"
