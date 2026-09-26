@@ -82,6 +82,13 @@ const industries = [
   },
 ];
 
+const operatingPrinciples = [
+  { number: '01', title: 'EFFICIENCY', description: 'Reduce friction.' },
+  { number: '02', title: 'CONTROL', description: 'Connect information.' },
+  { number: '03', title: 'RELIABILITY', description: 'Build systems people trust.' },
+  { number: '04', title: 'LONGEVITY', description: 'Create systems that evolve.' },
+];
+
 function Header({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (open: boolean) => void }) {
   const closeMenu = () => setMenuOpen(false);
 
@@ -256,10 +263,19 @@ function AboutSection() {
           <div className="about-rule" />
           <div className="about-detail">
             <span>Business systems &amp; technology</span>
-            <span>Designed for the operation</span>
+            <span>Engineered for the operation</span>
           </div>
         </div>
       </div>
+      <ol className="container-wide about-principles" aria-label="ROSALOGIC operating principles">
+        {operatingPrinciples.map(({ number, title, description }) => (
+          <li className="about-principle" key={number}>
+            <span className="about-principle-number">{number}</span>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }
