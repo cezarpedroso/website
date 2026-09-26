@@ -10,6 +10,8 @@ import {
   X,
 } from 'lucide-react';
 import { Toaster } from '@/components/ui/toaster';
+import heroBackdrop from '@assets/heroback_1790416036994.jpg';
+import logoTopbar from '@assets/logotopbar_1790416074795.png';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -129,7 +131,13 @@ function Header({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (op
     <header className="site-header">
       <div className="container-wide header-inner">
         <a className="brand-link" href="#home" onClick={closeMenu} data-testid="link-home-logo">
-          <Logo />
+          <img
+            className="header-logo-image"
+            src={logoTopbar}
+            alt="ROSALOGIC — Business Systems & Technology"
+            width="800"
+            height="140"
+          />
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map((item) => (
@@ -175,10 +183,10 @@ function Hero() {
     <section id="home" className="hero" aria-labelledby="hero-title">
       <img
         className="hero-image"
-        src="https://images.pexels.com/photos/37602851/pexels-photo-37602851.jpeg?auto=compress&cs=tinysrgb&w=2400"
-        alt="Modern manufacturing facility interior with steel trusses, production infrastructure, and an engineered building"
-        width="2400"
-        height="1600"
+        src={heroBackdrop}
+        alt="Contemporary glass and steel office building viewed against the sky"
+        width="6000"
+        height="4000"
         fetchPriority="high"
       />
       <div className="container-wide hero-content">
