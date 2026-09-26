@@ -1,0 +1,1 @@
+- [Contact-channel integrity](contact-channel-integrity.md) — do not promise direct outreach until a verified destination exists; update copy with delivery.

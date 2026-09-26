@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -13,6 +13,7 @@ import {
   UsersRound,
   X,
 } from 'lucide-react';
+import { Link, Route, Router, Switch, useLocation } from 'wouter';
 import { Toaster } from '@/components/ui/toaster';
 import heroBackdrop from '@assets/heroback_1790416036994.jpg';
 import footerLogo from '@assets/footer_1790418113742.png';
@@ -22,14 +23,38 @@ import agriculturePhoto from './assets/industry-agriculture.jpg';
 import logisticsPhoto from './assets/industry-logistics.jpg';
 import constructionPhoto from './assets/industry-construction.jpg';
 import professionalServicesPhoto from './assets/industry-professional-services.jpg';
+import { AboutPage, ContactPage, IndustriesPage, SolutionsPage } from './pages/InnerPages';
 
 const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'Solutions', href: '#solutions' },
-  { label: 'Industries', href: '#industries' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Solutions', href: '/solutions' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
+
+const pageMetadata: Record<string, { title: string; description: string }> = {
+  '/': {
+    title: 'ROSALOGIC | Business Systems & Technology',
+    description: 'ROSALOGIC designs, builds, and operates software systems for organizations with complex operations.',
+  },
+  '/solutions': {
+    title: 'Software & Technology Solutions | ROSALOGIC',
+    description: 'Explore ROSALOGIC software systems, data integration, and technology services built around operational businesses.',
+  },
+  '/industries': {
+    title: 'Industries We Serve | ROSALOGIC',
+    description: 'ROSALOGIC works with manufacturing, agriculture, logistics, construction, and professional services organizations.',
+  },
+  '/about': {
+    title: 'About ROSALOGIC | Systems, Engineered',
+    description: 'Learn how ROSALOGIC approaches dependable business systems with efficiency, control, reliability, and longevity.',
+  },
+  '/contact': {
+    title: 'Contact Information | ROSALOGIC',
+    description: 'Explore how to prepare a conversation with ROSALOGIC and find verified contact information when it becomes available.',
+  },
+};
 
 const capabilities = [
   {
@@ -91,11 +116,12 @@ const operatingPrinciples = [
 
 function Header({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (open: boolean) => void }) {
   const closeMenu = () => setMenuOpen(false);
+  const [location] = useLocation();
 
   return (
     <header className="site-header">
       <div className="container-wide header-inner">
-        <a className="brand-link" href="#home" onClick={closeMenu} data-testid="link-home-logo">
+        <Link className="brand-link" href="/" onClick={closeMenu} data-testid="link-home-logo">
           <img
             className="header-logo-image"
             src={logoTopbar}
@@ -103,18 +129,14 @@ function Header({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (op
             width="1000"
             height="120"
           />
-        </a>
+        </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} data-testid={`link-nav-${item.label.toLowerCase()}`}>
+            <Link key={item.href} href={item.href} aria-current={location === item.href ? 'page' : undefined} data-testid={`link-nav-${item.label.toLowerCase()}`}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
-        <a className="button-line header-cta" href="#contact" data-testid="link-header-contact">
-          Get in touch
-          <ArrowUpRight size={14} aria-hidden="true" />
-        </a>
         <button
           type="button"
           className="mobile-menu-button"
@@ -130,13 +152,10 @@ function Header({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (op
       {menuOpen ? (
         <nav id="mobile-navigation" className="mobile-menu" aria-label="Mobile navigation">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} onClick={closeMenu} data-testid={`link-mobile-${item.label.toLowerCase()}`}>
+            <Link key={item.href} href={item.href} onClick={closeMenu} aria-current={location === item.href ? 'page' : undefined} data-testid={`link-mobile-${item.label.toLowerCase()}`}>
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a href="#contact" onClick={closeMenu} data-testid="link-mobile-contact-cta">
-            Start a conversation <ArrowUpRight size={14} aria-hidden="true" />
-          </a>
         </nav>
       ) : null}
     </header>
@@ -155,7 +174,7 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="container-wide hero-content">
-        <h1 id="hero-title" className="display-heading hero-title">
+        <h1 id="hero-title" className="display-heading hero-title" tabIndex={-1}>
           <span className="headline-line">Software and technology</span>{' '}
           <span className="headline-line">for the systems your</span>{' '}
           <em className="headline-line">business depends on.</em>
@@ -164,12 +183,12 @@ function Hero() {
           ROSALOGIC designs, builds, and operates software systems for organizations with complex operations.
         </p>
         <div className="hero-actions">
-          <a className="button-solid" href="#solutions" data-testid="link-hero-solutions">
+          <Link className="button-solid" href="/solutions" data-testid="link-hero-solutions">
             Explore solutions <ArrowRight size={15} aria-hidden="true" />
-          </a>
-          <a className="button-line" href="#contact" data-testid="link-hero-contact">
-            Get in touch <ArrowUpRight size={15} aria-hidden="true" />
-          </a>
+          </Link>
+          <Link className="button-line" href="/contact" data-testid="link-hero-contact">
+            Contact page <ArrowUpRight size={15} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>
@@ -196,9 +215,9 @@ function IntroSection() {
               <Icon size={30} strokeWidth={1.35} aria-hidden="true" />
               <h3>{title}</h3>
               <p>{copy}</p>
-              <a href="#about" aria-label={`Learn more about ${title}`}>
+              <Link href="/solutions" aria-label={`Learn more about ${title}`} data-testid={`link-capability-${title.toLowerCase().replace(/[^a-z]+/g, '-')}`}>
                 Learn more <ArrowRight size={13} aria-hidden="true" />
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -219,9 +238,9 @@ function IndustriesSection() {
           <p className="industries-copy">
             We work with organizations across industries that rely on complex operations and real-world systems.
           </p>
-          <a className="industry-link" href="#contact">
+          <Link className="industry-link" href="/industries" data-testid="link-industries-learn-more">
             Learn more <ArrowRight size={13} aria-hidden="true" />
-          </a>
+          </Link>
         </div>
         {industries.map(({ name, image, Icon, details }) => (
           <article className="industry-card" key={name}>
@@ -294,12 +313,12 @@ function ContactSection() {
         </div>
         <div>
           <p className="cta-copy">
-            Let&apos;s understand the operation, define the architecture, and build the right system.
+            The right system starts with understanding the operation, defining the architecture, and building around the work.
           </p>
           <div className="cta-button-wrap">
-            <a className="button-solid" href="#footer-contact" data-testid="link-start-conversation">
-              Start a conversation <ArrowUpRight size={15} aria-hidden="true" />
-            </a>
+            <Link className="button-solid" href="/contact" data-testid="link-contact-page-cta">
+              View contact page <ArrowUpRight size={15} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </div>
@@ -312,7 +331,7 @@ function Footer() {
     <footer id="footer-contact" className="site-footer">
       <div className="container-wide footer-main">
         <div className="footer-brand">
-          <a className="footer-logo-link" href="#home" data-testid="link-footer-logo">
+          <Link className="footer-logo-link" href="/" data-testid="link-footer-logo">
             <img
               className="footer-logo-image"
               src={footerLogo}
@@ -320,26 +339,23 @@ function Footer() {
               width="1000"
               height="120"
             />
-          </a>
+          </Link>
         </div>
         <nav className="footer-group" aria-label="Footer navigation">
           <h2>Navigate</h2>
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} data-testid={`link-footer-${item.label.toLowerCase()}`}>
+            <Link key={item.href} href={item.href} data-testid={`link-footer-${item.label.toLowerCase()}`}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="footer-group">
-          <h2>Connect</h2>
-          <a href="#contact" data-testid="link-footer-linkedin">LinkedIn <span aria-hidden="true">↗</span></a>
-          <a href="#contact" data-testid="link-footer-social">Social profile <span aria-hidden="true">↗</span></a>
+          <h2>Information</h2>
+          <Link href="/contact" data-testid="link-footer-contact">Contact page <span aria-hidden="true">↗</span></Link>
         </div>
         <div className="footer-group footer-contact">
           <h2>Contact details</h2>
-          <p className="footer-contact-placeholder">[Contact email placeholder]</p>
-          <p className="footer-contact-placeholder">[Phone number placeholder]</p>
-          <p className="footer-contact-placeholder">[Office location placeholder]</p>
+          <p className="footer-contact-placeholder">Verified contact details will be shared here soon.</p>
         </div>
       </div>
       <div className="container-wide footer-bottom">
@@ -350,8 +366,35 @@ function Footer() {
   );
 }
 
-function Home() {
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <IntroSection />
+      <IndustriesSection />
+      <AboutSection />
+      <ContactSection />
+    </>
+  );
+}
+
+function NotFound() {
+  return (
+    <section className="not-found-section container-wide" aria-labelledby="not-found-title">
+      <p className="eyebrow intro-eyebrow">Page not found</p>
+      <h1 id="not-found-title" className="display-heading" tabIndex={-1}>This page doesn&apos;t exist.</h1>
+      <p>The page may have moved. Return to the homepage to explore ROSALOGIC.</p>
+      <Link className="button-solid" href="/" data-testid="link-not-found-home">
+        Back to home <ArrowRight size={15} aria-hidden="true" />
+      </Link>
+    </section>
+  );
+}
+
+function SiteLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [location] = useLocation();
+  const previousLocation = useRef(location);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -370,6 +413,28 @@ function Home() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    setMenuOpen(false);
+    window.scrollTo(0, 0);
+    if (previousLocation.current !== location) {
+      document.querySelector<HTMLElement>('#main-content h1')?.focus({ preventScroll: true });
+      previousLocation.current = location;
+    }
+
+    const metadata = pageMetadata[location] ?? {
+      title: 'Page Not Found | ROSALOGIC',
+      description: 'The requested ROSALOGIC page could not be found.',
+    };
+    document.title = metadata.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', metadata.description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', metadata.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', metadata.description);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', metadata.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', metadata.description);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', window.location.href);
+    document.querySelector('meta[name="twitter:url"]')?.setAttribute('content', window.location.href);
+  }, [location]);
+
   return (
     <div className="site-shell">
       <a className="skip-link" href="#main-content" data-testid="link-skip-content">
@@ -377,11 +442,14 @@ function Home() {
       </a>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <main id="main-content">
-        <Hero />
-        <IntroSection />
-        <IndustriesSection />
-        <AboutSection />
-        <ContactSection />
+        <Switch>
+          <Route path="/" component={HomePage} />
+          <Route path="/solutions" component={SolutionsPage} />
+          <Route path="/industries" component={IndustriesPage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route component={NotFound} />
+        </Switch>
       </main>
       <Footer />
     </div>
@@ -391,7 +459,9 @@ function Home() {
 function App() {
   return (
     <>
-      <Home />
+      <Router base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+        <SiteLayout />
+      </Router>
       <Toaster />
     </>
   );
