@@ -101,8 +101,7 @@
   line-height: 1.02;
 }
 .inner-page .ip-serif-heading em { color: var(--site-blue); font-weight: 400; }
-.inner-page .ip-split-intro > div:last-child > p,
-.inner-page .ip-contact-status-grid > div:last-child > p {
+.inner-page .ip-split-intro > div:last-child > p {
   max-width: 670px;
   margin: 0;
   color: #687078;
@@ -163,8 +162,7 @@
 .inner-page .ip-capability-detail li::before { position: absolute; left: 0; top: 16px; width: 5px; height: 5px; background: #b89a67; content: ''; }
 
 .inner-page .ip-navy-panel,
-.inner-page .ip-principles,
-.inner-page .ip-contact-explore { background: #0b1726; color: #f5f3ee; }
+.inner-page .ip-principles { background: #0b1726; color: #f5f3ee; }
 .inner-page .ip-navy-panel { padding: 100px 0 110px; }
 .inner-page .ip-panel-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; align-items: end; gap: 12%; }
 .inner-page .ip-panel-grid h2,
@@ -234,27 +232,27 @@
 .inner-page .ip-quote-band span { color: #687078; font-family: var(--app-font-mono); font-size: .62rem; letter-spacing: .11em; }
 .inner-page .ip-quote-band p { max-width: 1050px; margin: 26px 0 0; color: #255884; font-family: var(--app-font-serif); font-size: clamp(2.8rem, 5vw, 6rem); font-style: italic; line-height: 1.08; }
 
-.inner-page .ip-contact-topics { background: #e9ecec; padding: 0 0 105px; }
-.inner-page .ip-topics-header { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0; border-top: 1px solid #b89a67; color: #687078; font-family: var(--app-font-mono); font-size: .62rem; letter-spacing: .09em; }
-.inner-page .ip-topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #c5cdce; }
-.inner-page .ip-topics-grid article { display: flex; flex-direction: column; align-items: flex-start; min-height: 280px; padding: 28px 36px 0; border-right: 1px solid #c5cdce; }
-.inner-page .ip-topics-grid article:first-child { padding-left: 0; }
-.inner-page .ip-topics-grid article:last-child { border-right: 0; }
-.inner-page .ip-topics-grid article > span { margin-bottom: 34px; color: #a78a61; font-family: var(--app-font-mono); font-size: .66rem; }
-.inner-page .ip-topics-grid svg { color: #255884; }
-.inner-page .ip-topics-grid h3 { margin: 20px 0 10px; font-family: var(--app-font-serif); font-size: 2.35rem; font-weight: 400; }
-.inner-page .ip-topics-grid p { max-width: 320px; margin: 0; color: #687078; font-size: .83rem; line-height: 1.75; }
-.inner-page .ip-contact-status { background: #f5f3ee; }
-.inner-page .ip-contact-status-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 13%; align-items: center; }
-.inner-page .ip-contact-status-grid .ip-serif-heading { margin: 20px 0 0; }
-.inner-page .ip-contact-note { display: block; margin-top: 30px; padding-top: 17px; border-top: 1px solid #cfd2d0; color: #a78a61; font-family: var(--app-font-mono); font-size: .61rem; letter-spacing: .1em; }
-.inner-page .ip-contact-explore { padding: 100px 0 115px; }
-.inner-page .ip-contact-explore h2 { max-width: 840px; margin-bottom: 60px; }
-.inner-page .ip-explore-links { border-top: 1px solid rgba(245,243,238,.3); }
-.inner-page .ip-explore-links a { display: grid; grid-template-columns: minmax(180px,.4fr) 1fr auto; align-items: center; gap: 30px; padding: 29px 0; border-bottom: 1px solid rgba(245,243,238,.3); color: #f5f3ee; text-decoration: none; transition: padding 220ms ease, color 220ms ease; }
-.inner-page .ip-explore-links a:hover { padding-left: 14px; color: #d7c3a1; }
-.inner-page .ip-explore-links span { color: #c9b99d; font-family: var(--app-font-mono); font-size: .63rem; letter-spacing: .1em; }
-.inner-page .ip-explore-links strong { font-family: var(--app-font-serif); font-size: clamp(1.6rem, 2.5vw, 2.7rem); font-weight: 400; }
+.inner-page .ip-contact-form-section { padding: clamp(78px, 9vw, 140px) 0; background: #f5f3ee; }
+.inner-page .ip-contact-form-layout { display: grid; grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr); align-items: start; gap: clamp(48px, 8vw, 135px); }
+.inner-page .ip-contact-form-copy .ip-serif-heading { margin: 20px 0 25px; font-size: clamp(3rem, 4.5vw, 5.2rem); }
+.inner-page .ip-contact-form-copy > p:not(.eyebrow) { max-width: 450px; margin: 0; color: #687078; font-size: .96rem; line-height: 1.8; }
+.inner-page .ip-contact-direct { margin-top: 47px; padding-top: 17px; border-top: 1px solid #cfd2d0; }
+.inner-page .ip-contact-direct span { display: block; margin-bottom: 12px; color: #7a8185; font-family: var(--app-font-mono); font-size: .6rem; letter-spacing: .13em; }
+.inner-page .ip-contact-direct a { color: #255884; font-size: .9rem; text-decoration-color: #b89a67; text-underline-offset: 4px; }
+.inner-page .ip-contact-form { padding: clamp(26px, 4vw, 50px); border: 1px solid #d8dad8; background: #fbfaf7; }
+.inner-page .ip-contact-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 23px 20px; }
+.inner-page .ip-contact-field { display: grid; align-content: start; gap: 9px; color: #394b58; font-size: .72rem; font-weight: 600; letter-spacing: .04em; }
+.inner-page .ip-contact-field b { color: #a78a61; font-weight: 600; }
+.inner-page .ip-contact-field-wide { grid-column: 1 / -1; }
+.inner-page .ip-contact-field input,
+.inner-page .ip-contact-field textarea { width: 100%; min-width: 0; padding: 14px 15px; border: 1px solid #cfd2d0; border-radius: 0; outline: none; background: #fff; color: #0b1726; font: 400 .92rem/1.5 var(--app-font-sans); letter-spacing: normal; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.inner-page .ip-contact-field textarea { min-height: 160px; resize: vertical; }
+.inner-page .ip-contact-field input:focus,
+.inner-page .ip-contact-field textarea:focus { border-color: #255884; box-shadow: 0 0 0 3px rgba(37,88,132,.13); }
+.inner-page .ip-contact-form-footer { display: flex; align-items: center; flex-wrap: wrap; gap: 20px 25px; margin-top: 30px; }
+.inner-page .ip-contact-form .button-solid:disabled { cursor: not-allowed; opacity: .55; }
+.inner-page .ip-contact-form-note { max-width: 360px; margin: 0; color: #687078; font-size: .72rem; line-height: 1.65; }
+.inner-page .ip-contact-form-note a { color: #255884; text-underline-offset: 3px; }
 
 @media (max-width: 1000px) {
   .inner-page .ip-hero-inner { grid-template-columns: 1fr; gap: 45px; min-height: 0; padding-top: 80px; padding-bottom: 70px; }
@@ -277,8 +275,8 @@
   .inner-page .ip-capability-label { flex-direction: row; align-items: center; }
   .inner-page .ip-capability-heading h3 { margin: 0 0 12px; }
   .inner-page .ip-capability-detail > p { margin-bottom: 19px; }
-  .inner-page .ip-navy-panel, .inner-page .ip-principles, .inner-page .ip-contact-explore { padding: 76px 0 85px; }
-  .inner-page .ip-panel-grid h2, .inner-page .ip-principles-heading h2, .inner-page .ip-contact-explore h2 { font-size: clamp(2.6rem, 9vw, 4.4rem); }
+.inner-page .ip-navy-panel, .inner-page .ip-principles { padding: 76px 0 85px; }
+.inner-page .ip-panel-grid h2, .inner-page .ip-principles-heading h2 { font-size: clamp(2.6rem, 9vw, 4.4rem); }
   .inner-page .ip-system-diagram > div { min-height: 105px; padding: 14px 9px; }
   .inner-page .ip-system-diagram > div span { font-size: .48rem; }
   .inner-page .ip-close { padding: 76px 0 85px; }
@@ -297,14 +295,13 @@
   .inner-page .ip-discipline-grid { grid-template-columns: 1fr; margin-top: 55px; }
   .inner-page .ip-discipline-grid article, .inner-page .ip-discipline-grid article:first-child { padding: 26px 0; border-right: 0; border-bottom: 1px solid #cfd2d0; }
   .inner-page .ip-discipline-grid h3 { margin-top: 18px; }
-  .inner-page .ip-contact-topics { padding-bottom: 70px; }
-  .inner-page .ip-topics-header span:last-child { display: none; }
-  .inner-page .ip-topics-grid { grid-template-columns: 1fr; }
-  .inner-page .ip-topics-grid article, .inner-page .ip-topics-grid article:first-child { min-height: 0; padding: 28px 0 35px; border-right: 0; border-bottom: 1px solid #c5cdce; }
-  .inner-page .ip-topics-grid article > span { margin-bottom: 18px; }
-  .inner-page .ip-contact-status-grid { grid-template-columns: 1fr; gap: 30px; }
-  .inner-page .ip-explore-links a { grid-template-columns: 1fr auto; gap: 10px; }
-  .inner-page .ip-explore-links span { grid-column: 1 / -1; }
+  .inner-page .ip-contact-form-section { padding: 75px 0; }
+  .inner-page .ip-contact-form-layout { grid-template-columns: 1fr; gap: 38px; }
+  .inner-page .ip-contact-form-copy .ip-serif-heading { font-size: clamp(2.8rem, 9vw, 4.4rem); }
+  .inner-page .ip-contact-form { padding: 25px 18px; }
+  .inner-page .ip-contact-fields { grid-template-columns: 1fr; gap: 19px; }
+  .inner-page .ip-contact-field-wide { grid-column: auto; }
+  .inner-page .ip-contact-form-footer { align-items: flex-start; }
 }
 @media (max-width: 420px) {
   .inner-page .ip-hero-title { font-size: 2.65rem; }

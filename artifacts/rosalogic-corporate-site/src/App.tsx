@@ -51,8 +51,8 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
     description: 'Learn how ROSALOGIC approaches dependable business systems with efficiency, control, reliability, and longevity.',
   },
   '/contact': {
-    title: 'Contact Information | ROSALOGIC',
-    description: 'Explore how to prepare a conversation with ROSALOGIC and find verified contact information when it becomes available.',
+    title: 'Contact ROSALOGIC | Business Systems & Technology',
+    description: 'Tell ROSALOGIC what your operation needs from software, data, and technology.',
   },
 };
 
@@ -355,7 +355,7 @@ function Footer() {
         </div>
         <div className="footer-group footer-contact">
           <h2>Contact details</h2>
-          <p className="footer-contact-placeholder">Verified contact details will be shared here soon.</p>
+          <a href="mailto:contact@rosalogic.com" data-testid="link-footer-email">contact@rosalogic.com</a>
         </div>
       </div>
       <div className="container-wide footer-bottom">

@@ -836,10 +836,6 @@
   color: #d3c4aa;
 }
 
-.footer-contact-placeholder {
-  color: rgba(245, 243, 238, 0.5) !important;
-}
-
 .footer-bottom {
   display: flex;
   align-items: center;

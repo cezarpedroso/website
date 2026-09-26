@@ -2,7 +2,6 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
-  Boxes,
   Cloud,
   Code2,
   Database,
@@ -298,42 +297,51 @@ export function ContactPage() {
     <div className="inner-page">
       <PageHero
         label="Contact"
-        title="Where could your operation"
-        emphasis="perform better?"
-        description="A useful conversation starts with the work—not a predetermined solution. Start by identifying where the friction is, what the system needs to support, and what dependable technology would make possible."
-        aside="Let’s understand the operation, define the architecture, and build the right system."
+        title="Let’s talk about"
+        emphasis="the work."
+        description="Tell us a little about your operation and what you would like technology to make easier."
+        aside="A few details can help frame a useful conversation."
       />
-      <section className="ip-section ip-contact-intro">
-        <div className="container-wide ip-split-intro">
-          <div className="ip-section-index"><span>Starting point</span></div>
-          <div><h2 className="ip-serif-heading">Begin with <em>the real question.</em></h2><p>Whether you are replacing a fragile process, connecting disconnected information, or planning a new system, the first step is understanding what the operation asks of technology.</p></div>
-        </div>
-      </section>
-      <section className="ip-contact-topics">
-        <div className="container-wide">
-          <div className="ip-topics-header"><span>WHAT TO BRING TO A CONVERSATION</span><span>THREE USEFUL STARTING POINTS</span></div>
-          <div className="ip-topics-grid">
-            <article><span>01</span><Boxes size={29} strokeWidth={1.3} aria-hidden="true" /><h3>The work</h3><p>Which processes, teams, assets, or customer experiences need better support?</p></article>
-            <article><span>02</span><Database size={29} strokeWidth={1.3} aria-hidden="true" /><h3>The friction</h3><p>Where is information lost, duplicated, delayed, or difficult to act on?</p></article>
-            <article><span>03</span><ArrowUpRight size={29} strokeWidth={1.3} aria-hidden="true" /><h3>The direction</h3><p>What needs to be more reliable, more visible, or easier to adapt over time?</p></article>
+      <section className="ip-contact-form-section" aria-labelledby="contact-form-title">
+        <div className="container-wide ip-contact-form-layout">
+          <div className="ip-contact-form-copy">
+            <p className="eyebrow intro-eyebrow">Start a conversation</p>
+            <h2 id="contact-form-title" className="ip-serif-heading">Tell us about <em>the work.</em></h2>
+            <p>Share the process, system, or operational challenge you would like to improve. A little context helps us understand where to start.</p>
+            <div className="ip-contact-direct">
+              <span>DIRECT EMAIL</span>
+              <a href="mailto:contact@rosalogic.com">contact@rosalogic.com</a>
+            </div>
           </div>
-        </div>
-      </section>
-      <section className="ip-section ip-contact-status">
-        <div className="container-wide ip-contact-status-grid">
-          <div><p className="eyebrow intro-eyebrow">Direct contact</p><h2 className="ip-serif-heading">Contact details, <em>coming soon.</em></h2></div>
-          <div><p>We&apos;re finalizing a direct way to reach ROSALOGIC. Once those details are confirmed, you&apos;ll find them here. In the meantime, explore our work and the kinds of operations we support.</p><span className="ip-contact-note">Contact information pending confirmation</span></div>
-        </div>
-      </section>
-      <section className="ip-contact-explore">
-        <div className="container-wide">
-          <p className="eyebrow industries-eyebrow">In the meantime</p>
-          <h2 className="display-heading">Explore how we think <em>about the work.</em></h2>
-          <div className="ip-explore-links">
-            <Link href="/solutions" data-testid="link-contact-solutions"><span>01 / SOLUTIONS</span><strong>Software, data &amp; technology</strong><ArrowUpRight size={20} strokeWidth={1.5} aria-hidden="true" /></Link>
-            <Link href="/industries" data-testid="link-contact-industries"><span>02 / INDUSTRIES</span><strong>Built for operational businesses</strong><ArrowUpRight size={20} strokeWidth={1.5} aria-hidden="true" /></Link>
-            <Link href="/about" data-testid="link-contact-about"><span>03 / ABOUT</span><strong>Engineering technology that lasts</strong><ArrowUpRight size={20} strokeWidth={1.5} aria-hidden="true" /></Link>
-          </div>
+          <form className="ip-contact-form" onSubmit={(event) => event.preventDefault()}>
+            <div className="ip-contact-fields">
+              <label className="ip-contact-field">
+                <span>Full name <b aria-hidden="true">*</b></span>
+                <input name="name" type="text" autoComplete="name" maxLength={120} required />
+              </label>
+              <label className="ip-contact-field">
+                <span>Email address <b aria-hidden="true">*</b></span>
+                <input name="email" type="email" autoComplete="email" maxLength={254} required />
+              </label>
+              <label className="ip-contact-field ip-contact-field-wide">
+                <span>Company or organization</span>
+                <input name="company" type="text" autoComplete="organization" maxLength={160} />
+              </label>
+              <label className="ip-contact-field ip-contact-field-wide">
+                <span>How can we help? <b aria-hidden="true">*</b></span>
+                <textarea name="message" rows={6} maxLength={4000} required />
+              </label>
+            </div>
+            <div className="ip-contact-form-footer">
+              <button className="button-solid" type="button" disabled data-testid="button-contact-submit">
+                Send message <ArrowUpRight size={15} aria-hidden="true" />
+              </button>
+              <p className="ip-contact-form-note">
+                Form submissions aren&apos;t enabled yet. For now, email{' '}
+                <a href="mailto:contact@rosalogic.com">contact@rosalogic.com</a>.
+              </p>
+            </div>
+          </form>
         </div>
       </section>
     </div>
