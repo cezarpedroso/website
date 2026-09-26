@@ -636,71 +636,6 @@
   line-height: 1.55;
 }
 
-.approach-section {
-  padding: 0;
-  background: #f3f2ed;
-}
-
-.approach-inner {
-  display: grid;
-  grid-template-columns: minmax(125px, 0.9fr) minmax(0, 5fr) minmax(155px, 1.1fr);
-  align-items: center;
-  min-height: 86px;
-}
-
-.approach-label {
-  margin: 0;
-  color: #a48a62;
-  font-size: 0.63rem;
-  font-weight: 600;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
-}
-
-.process-list {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  margin: 0;
-  padding: 0;
-  border-right: 1px solid #deddd8;
-  border-left: 1px solid #deddd8;
-  list-style: none;
-}
-
-.process-step {
-  display: flex;
-  min-height: 86px;
-  align-items: center;
-  gap: 7px;
-  padding: 0 9px;
-  color: #22313a;
-  font-size: 0.7rem;
-  white-space: nowrap;
-}
-
-.process-step-number {
-  color: #ad8f65;
-  font-size: 0.68rem;
-}
-
-.process-step svg {
-  flex: none;
-  margin-left: auto;
-  color: #c5c6bf;
-}
-
-.process-step:last-child svg {
-  display: none;
-}
-
-.approach-signoff {
-  margin: 0;
-  padding-left: 20px;
-  color: #8e9697;
-  font-size: 0.66rem;
-  line-height: 1.5;
-}
-
 .about-section {
   padding: 108px 0 116px;
   background: #f5f3ee;
@@ -1090,34 +1025,6 @@
     grid-column: span 2;
   }
 
-  .approach-inner {
-    grid-template-columns: 1fr;
-    padding-block: 22px;
-  }
-
-  .approach-label {
-    margin-bottom: 18px;
-  }
-
-  .process-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    border-top: 1px solid #deddd8;
-    border-bottom: 1px solid #deddd8;
-  }
-
-  .process-step {
-    min-height: 60px;
-    padding: 0 12px;
-  }
-
-  .process-step:nth-child(n + 4) {
-    border-top: 1px solid #deddd8;
-  }
-
-  .approach-signoff {
-    padding: 16px 0 0;
-  }
-
   .footer-main {
     grid-template-columns: 1.2fr 0.8fr 0.8fr;
   }
@@ -1260,23 +1167,6 @@
 
   .industry-card h3 {
     font-size: 1.4rem;
-  }
-
-  .process-list {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .process-step {
-    min-height: 55px;
-    padding: 0 10px;
-  }
-
-  .process-step:nth-child(odd) {
-    border-right: 1px solid #deddd8;
-  }
-
-  .process-step:nth-child(n + 3) {
-    border-top: 1px solid #deddd8;
   }
 
   .cta-section {

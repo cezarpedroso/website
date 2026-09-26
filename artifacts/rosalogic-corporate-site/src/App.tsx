@@ -81,15 +81,6 @@ const industries = [
   },
 ];
 
-const processSteps = [
-  { number: '01', title: 'Understand', copy: 'Learn the operation before prescribing a system.' },
-  { number: '02', title: 'Architect', copy: 'Shape a durable technical foundation.' },
-  { number: '03', title: 'Build', copy: 'Make the system useful, clear and maintainable.' },
-  { number: '04', title: 'Deploy', copy: 'Put reliable software into the real environment.' },
-  { number: '05', title: 'Operate', copy: 'Keep the technology healthy as work changes.' },
-  { number: '06', title: 'Improve', copy: 'Make the next decision from better information.' },
-];
-
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <span className="brand-link" aria-label="ROSALOGIC home">
@@ -258,27 +249,6 @@ function IndustriesSection() {
   );
 }
 
-function ApproachSection() {
-  return (
-    <section id="approach" className="approach-section" aria-labelledby="approach-title">
-      <div className="container-wide approach-inner">
-        <h2 id="approach-title" className="approach-label">Our approach</h2>
-        <ol className="process-list" aria-label="ROSALOGIC engineering process">
-          {processSteps.map((step) => (
-            <li className="process-step" key={step.number}>
-              <span className="process-step-number">{step.number}</span>
-              <span>{step.title}</span>
-              <ArrowRight size={13} aria-hidden="true" />
-              <span className="sr-only"> — {step.copy}</span>
-            </li>
-          ))}
-        </ol>
-        <p className="approach-signoff">Long-term partnerships. Real results.</p>
-      </div>
-    </section>
-  );
-}
-
 function AboutSection() {
   return (
     <section id="about" className="about-section" aria-labelledby="about-title">
@@ -312,7 +282,7 @@ function ContactSection() {
         <div>
           <p className="eyebrow eyebrow-light">06 / Contact</p>
           <h2 id="contact-title" className="display-heading cta-title">
-            Have a system that needs <em>to work better?</em>
+            Where could your operation <em>perform better?</em>
           </h2>
         </div>
         <div>
@@ -398,7 +368,6 @@ function Home() {
         <Hero />
         <IntroSection />
         <IndustriesSection />
-        <ApproachSection />
         <AboutSection />
         <ContactSection />
       </main>
