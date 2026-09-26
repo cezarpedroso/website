@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { Toaster } from '@/components/ui/toaster';
 import heroBackdrop from '@assets/heroback_1790416036994.jpg';
-import logoTopbar from '@assets/topbarlogo_1790416420245.png';
+import logoTopbar from '@assets/topbarlogo_1790416925834.png';
 
 const navItems = [
   { label: 'Home', href: '#home' },
