@@ -182,11 +182,11 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="container-wide hero-content">
-        <p className="eyebrow eyebrow-light">Business systems / technology</p>
+        <p className="eyebrow">Business systems / technology</p>
         <h1 id="hero-title" className="display-serif hero-title">
-          Systems,
-          <br />
-          <em>engineered.</em>
+          <span className="headline-line">Software and technology</span>{' '}
+          <span className="headline-line">for the systems your</span>{' '}
+          <em className="headline-line">business depends on.</em>
         </h1>
         <p className="hero-copy">
           ROSALOGIC designs, builds, and operates software systems for organizations with complex operations.
