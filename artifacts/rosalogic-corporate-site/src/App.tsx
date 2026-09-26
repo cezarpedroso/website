@@ -2,11 +2,7 @@ import { useEffect, useState } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
-  CloudCog,
-  Factory,
   Menu,
-  Network,
-  ShieldCheck,
   X,
 } from 'lucide-react';
 import { Toaster } from '@/components/ui/toaster';
@@ -190,7 +186,7 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="container-wide hero-content">
-        <p className="eyebrow">Business systems / technology</p>
+        <p className="eyebrow hero-kicker">SYSTEM ENGINEERED.</p>
         <h1 id="hero-title" className="display-serif hero-title">
           <span className="headline-line">Software and technology</span>{' '}
           <span className="headline-line">for the systems your</span>{' '}
@@ -206,24 +202,6 @@ function Hero() {
           <a className="button-line" href="#contact" data-testid="link-hero-contact">
             Get in touch <ArrowUpRight size={15} aria-hidden="true" />
           </a>
-        </div>
-        <div className="capability-rail" aria-label="Core capabilities">
-          <div className="capability-item">
-            <Factory className="capability-icon" size={16} aria-hidden="true" />
-            <span>Software systems</span>
-          </div>
-          <div className="capability-item">
-            <Network className="capability-icon" size={16} aria-hidden="true" />
-            <span>Data &amp; integration</span>
-          </div>
-          <div className="capability-item">
-            <CloudCog className="capability-icon" size={16} aria-hidden="true" />
-            <span>Cloud &amp; infrastructure</span>
-          </div>
-          <div className="capability-item">
-            <ShieldCheck className="capability-icon" size={16} aria-hidden="true" />
-            <span>Security</span>
-          </div>
         </div>
       </div>
     </section>
