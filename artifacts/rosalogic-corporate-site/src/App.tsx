@@ -250,7 +250,7 @@ function AboutSection() {
     <section id="about" className="about-section" aria-labelledby="about-title">
       <div className="container-wide about-grid">
         <div>
-          <p className="eyebrow">05 / About ROSALOGIC</p>
+          <p className="eyebrow intro-eyebrow">About ROSALOGIC</p>
           <h2 id="about-title" className="display-heading about-title">
             Engineering technology <em>that lasts.</em>
           </h2>
@@ -271,8 +271,10 @@ function AboutSection() {
         {operatingPrinciples.map(({ number, title, description }) => (
           <li className="about-principle" key={number}>
             <span className="about-principle-number">{number}</span>
-            <h3>{title}</h3>
-            <p>{description}</p>
+            <div className="about-principle-content">
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </div>
           </li>
         ))}
       </ol>
@@ -285,7 +287,7 @@ function ContactSection() {
     <section id="contact" className="cta-section" aria-labelledby="contact-title">
       <div className="container-wide cta-inner">
         <div>
-          <p className="eyebrow eyebrow-light">06 / Contact</p>
+          <p className="eyebrow intro-eyebrow eyebrow-light">Contact</p>
           <h2 id="contact-title" className="display-heading cta-title">
             Where could your operation <em>perform better?</em>
           </h2>

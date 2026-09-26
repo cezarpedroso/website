@@ -636,7 +636,7 @@
 }
 
 .about-section {
-  padding: 108px 0 116px;
+  padding: 72px 0 68px;
   background: #f5f3ee;
 }
 
@@ -648,7 +648,7 @@
 }
 
 .about-title {
-  margin-top: 22px;
+  margin-top: 14px;
   font-size: clamp(2.8rem, 5vw, 5.4rem);
   line-height: 1.06;
 }
@@ -662,13 +662,13 @@
   margin-left: auto;
   color: #687078;
   font-size: 0.96rem;
-  line-height: 1.85;
+  line-height: 1.7;
 }
 
 .about-rule {
   width: 100%;
   height: 1px;
-  margin: 34px 0;
+  margin: 26px 0;
   background: #cfd2d0;
 }
 
@@ -694,7 +694,7 @@
 .about-principles {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 82px;
+  margin-top: 32px;
   margin-bottom: 0;
   padding: 0;
   border-top: 1px solid #cfd2d0;
@@ -702,8 +702,12 @@
 }
 
 .about-principle {
-  min-height: 174px;
-  padding: 24px clamp(18px, 2.5vw, 36px) 0;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  min-height: 88px;
+  padding: 13px clamp(16px, 2vw, 28px);
   border-right: 1px solid #cfd2d0;
 }
 
@@ -717,14 +721,22 @@
 }
 
 .about-principle-number {
+  padding-top: 1px;
   color: var(--site-blue);
   font-family: var(--app-font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
 }
 
+.about-principle-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+}
+
 .about-principle h3 {
-  margin: 20px 0 10px;
+  margin: 0;
   color: var(--site-navy);
   font-size: 0.66rem;
   font-weight: 700;
@@ -732,11 +744,10 @@
 }
 
 .about-principle p {
-  max-width: 210px;
   margin: 0;
   color: #687078;
-  font-size: 0.82rem;
-  line-height: 1.55;
+  font-size: 0.76rem;
+  line-height: 1.4;
 }
 
 .cta-section {
@@ -1019,14 +1030,18 @@
     margin-left: 0;
   }
 
+  .about-grid {
+    gap: 26px;
+  }
+
   .about-principles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 56px;
+    margin-top: 28px;
   }
 
   .about-principle {
-    min-height: 160px;
-    padding: 22px 24px;
+    min-height: 96px;
+    padding: 12px 22px;
   }
 
   .about-principle:nth-child(even) {
@@ -1194,16 +1209,20 @@
   }
 
   .about-section {
-    padding: 76px 0;
+    padding: 48px 0 44px;
   }
 
   .about-principles {
-    margin-top: 46px;
+    margin-top: 24px;
   }
 
   .about-principle {
-    min-height: 145px;
-    padding: 18px 14px;
+    min-height: 84px;
+    padding: 10px 12px;
+  }
+
+  .about-rule {
+    margin: 20px 0;
   }
 
   .about-principle:first-child {
@@ -1214,13 +1233,16 @@
     padding-right: 0;
   }
 
+  .about-principle-content {
+    gap: 5px 8px;
+  }
+
   .about-principle h3 {
-    margin: 17px 0 9px;
-    font-size: 0.61rem;
+    font-size: 0.59rem;
   }
 
   .about-principle p {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
 
   .section-title {
