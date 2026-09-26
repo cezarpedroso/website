@@ -17,29 +17,6 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const capabilities = [
-  {
-    number: '01',
-    title: 'Software Systems',
-    copy: 'Custom applications, business systems, workflow platforms, CRM, EAM and operational software.',
-  },
-  {
-    number: '02',
-    title: 'Data & Integration',
-    copy: 'APIs, automation, reporting, analytics and connected business systems.',
-  },
-  {
-    number: '03',
-    title: 'Technology',
-    copy: 'Cloud infrastructure, DevOps, deployment and on-premise environments.',
-  },
-  {
-    number: '04',
-    title: 'Security',
-    copy: 'Secure architecture, access control, monitoring and infrastructure hardening.',
-  },
-];
-
 const solutions = [
   {
     number: '01',
@@ -216,7 +193,7 @@ function IntroSection() {
           <div>
             <p className="eyebrow">01 / The work</p>
             <h2 id="intro-title" className="display-serif section-title">
-              Technology should work <em>the way your business does.</em>
+              Built around <em>your operation.</em>
             </h2>
           </div>
           <div className="intro-copy">
@@ -228,15 +205,6 @@ function IntroSection() {
               How we work <ArrowRight size={15} aria-hidden="true" />
             </a>
           </div>
-        </div>
-        <div className="capability-grid" aria-label="ROSALOGIC capability areas">
-          {capabilities.map((capability) => (
-            <article className="capability-column" key={capability.number}>
-              <span className="capability-number">{capability.number}</span>
-              <h3>{capability.title}</h3>
-              <p>{capability.copy}</p>
-            </article>
-          ))}
         </div>
       </div>
     </section>

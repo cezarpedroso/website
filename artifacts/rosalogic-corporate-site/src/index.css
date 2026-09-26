@@ -147,7 +147,7 @@
 }
 
 .container-wide {
-  width: calc(100% - 32px);
+  width: min(100% - 64px, 1680px);
   margin-inline: auto;
 }
 
@@ -400,7 +400,7 @@
 }
 
 .intro-section {
-  padding: 72px 0 64px;
+  padding: 48px 0 52px;
 }
 
 .intro-grid {
@@ -412,9 +412,9 @@
 
 .section-title {
   max-width: 750px;
-  margin: 22px 0 0;
-  font-size: clamp(3.1rem, 5.3vw, 5.8rem);
-  line-height: 0.94;
+  margin: 14px 0 0;
+  font-size: clamp(2.8rem, 4.2vw, 4.8rem);
+  line-height: 1.02;
 }
 
 .section-title em {
@@ -451,46 +451,10 @@
   transform: translateX(5px);
 }
 
-.capability-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 48px;
-  border-top: 1px solid #cfd2d0;
-}
-
-.capability-column {
-  min-height: 155px;
-  padding: 18px 26px 0 0;
-  border-right: 1px solid #cfd2d0;
-}
-
-.capability-column:not(:first-child) {
-  padding-left: 26px;
-}
-
-.capability-column:last-child {
-  border-right: 0;
-}
-
-.capability-number,
 .solution-number {
   color: #b89a67;
   font-family: var(--app-font-mono);
   font-size: 0.67rem;
-}
-
-.capability-column h3 {
-  margin: 20px 0 10px;
-  font-size: 1rem;
-  letter-spacing: -0.02em;
-}
-
-.capability-column p {
-  max-width: 225px;
-  margin: 0;
-  color: #687078;
-  font-size: 0.82rem;
-  line-height: 1.7;
 }
 
 .solutions-section {
@@ -1147,7 +1111,7 @@
 
 @media (max-width: 620px) {
   .container-wide {
-    width: calc(100% - 28px);
+    width: calc(100% - 36px);
   }
 
   .header-inner {
@@ -1214,7 +1178,11 @@
   }
 
   .intro-section {
-    padding: 56px 0 62px;
+    padding: 40px 0 44px;
+  }
+
+  .intro-grid {
+    gap: 24px;
   }
 
   .about-section {
@@ -1230,27 +1198,8 @@
     font-size: clamp(3rem, 14vw, 4.5rem);
   }
 
-  .capability-grid {
-    grid-template-columns: 1fr 1fr;
-    margin-top: 44px;
-  }
-
-  .capability-column {
-    min-height: 175px;
-    padding: 20px 18px 0 0;
-    border-bottom: 1px solid #cfd2d0;
-  }
-
-  .capability-column:not(:first-child) {
-    padding-left: 18px;
-  }
-
-  .capability-column:nth-child(2) {
-    border-right: 0;
-  }
-
-  .capability-column:nth-child(n + 3) {
-    border-bottom: 0;
+  .intro-section .section-title {
+    font-size: clamp(2.6rem, 10.5vw, 3.6rem);
   }
 
   .solution-grid {
