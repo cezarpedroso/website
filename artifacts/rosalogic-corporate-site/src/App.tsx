@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Toaster } from '@/components/ui/toaster';
 import heroBackdrop from '@assets/heroback_1790416036994.jpg';
+import footerLogo from '@assets/footer_1790418113742.png';
 import logoTopbar from '@assets/topbarlogo_1790416925834.png';
 import manufacturingPhoto from './assets/industry-manufacturing.jpg';
 import agriculturePhoto from './assets/industry-agriculture.jpg';
@@ -80,18 +81,6 @@ const industries = [
     image: professionalServicesPhoto,
   },
 ];
-
-function Logo({ light = false }: { light?: boolean }) {
-  return (
-    <span className="brand-link" aria-label="ROSALOGIC home">
-      <span className="logo-mark" aria-hidden="true">
-        <span className="logo-r">R</span>
-      </span>
-      <span className="logo-wordmark">ROSALOGIC</span>
-      {light ? <span className="sr-only">Business Systems &amp; Technology</span> : null}
-    </span>
-  );
-}
 
 function Header({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (open: boolean) => void }) {
   const closeMenu = () => setMenuOpen(false);
@@ -305,10 +294,15 @@ function Footer() {
     <footer id="footer-contact" className="site-footer">
       <div className="container-wide footer-main">
         <div className="footer-brand">
-          <a className="brand-link" href="#home" data-testid="link-footer-logo">
-            <Logo light />
+          <a className="footer-logo-link" href="#home" data-testid="link-footer-logo">
+            <img
+              className="footer-logo-image"
+              src={footerLogo}
+              alt="ROSALOGIC — Business Systems & Technology"
+              width="1000"
+              height="120"
+            />
           </a>
-          <p>Business Systems &amp; Technology</p>
         </div>
         <nav className="footer-group" aria-label="Footer navigation">
           <h2>Navigate</h2>
