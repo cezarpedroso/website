@@ -2,12 +2,25 @@ import { useEffect, useState } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
+  Cloud,
+  Code2,
+  Database,
+  Factory,
+  HardHat,
   Menu,
+  Sprout,
+  Truck,
+  UsersRound,
   X,
 } from 'lucide-react';
 import { Toaster } from '@/components/ui/toaster';
 import heroBackdrop from '@assets/heroback_1790416036994.jpg';
 import logoTopbar from '@assets/topbarlogo_1790416925834.png';
+import manufacturingPhoto from './assets/industry-manufacturing.jpg';
+import agriculturePhoto from './assets/industry-agriculture.jpg';
+import logisticsPhoto from './assets/industry-logistics.jpg';
+import constructionPhoto from './assets/industry-construction.jpg';
+import professionalServicesPhoto from './assets/industry-professional-services.jpg';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -17,62 +30,54 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const solutions = [
+const capabilities = [
   {
-    number: '01',
-    title: 'Business Systems',
-    copy: 'The core systems that give your operation a clear, dependable source of truth.',
-    image:
-      'https://images.pexels.com/photos/4481327/pexels-photo-4481327.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    title: 'Software Systems',
+    Icon: Code2,
+    copy: 'Custom business applications for operations, customers, assets, workflows and internal processes.',
   },
   {
-    number: '02',
-    title: 'Operational Software',
-    copy: 'Purpose-built tools for the work that generic software cannot see.',
-    image:
-      'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    title: 'Data & Integration',
+    Icon: Database,
+    copy: 'Business intelligence, reporting, APIs, integrations, automation and data systems.',
   },
   {
-    number: '03',
-    title: 'Data & Analytics',
-    copy: 'Turn fragmented operational data into decisions your teams can use.',
-    image:
-      'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  },
-  {
-    number: '04',
-    title: 'Integration & Automation',
-    copy: 'Connect the systems you rely on and remove the friction between them.',
-    image:
-      'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    title: 'Technology',
+    Icon: Cloud,
+    copy: 'Cloud infrastructure, deployment, DevOps, security and monitoring for reliable operations.',
   },
 ];
 
 const industries = [
   {
     name: 'Manufacturing',
-    image:
-      'https://images.pexels.com/photos/3846554/pexels-photo-3846554.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    Icon: Factory,
+    details: 'Production · Maintenance · Inventory · Quality',
+    image: manufacturingPhoto,
   },
   {
     name: 'Agriculture',
-    image:
-      'https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    Icon: Sprout,
+    details: 'Equipment · Operations · Inventory · Data',
+    image: agriculturePhoto,
   },
   {
-    name: 'Logistics & Transportation',
-    image:
-      'https://images.pexels.com/photos/6169056/pexels-photo-6169056.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    name: 'Logistics',
+    Icon: Truck,
+    details: 'Fleet · Dispatch · Transportation · Customers',
+    image: logisticsPhoto,
   },
   {
     name: 'Construction',
-    image:
-      'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    Icon: HardHat,
+    details: 'Projects · Equipment · Field Operations',
+    image: constructionPhoto,
   },
   {
     name: 'Professional Services',
-    image:
-      'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    Icon: UsersRound,
+    details: 'Clients · Workflow · Documents · Billing',
+    image: professionalServicesPhoto,
   },
 ];
 
@@ -163,7 +168,7 @@ function Hero() {
         fetchPriority="high"
       />
       <div className="container-wide hero-content">
-        <h1 id="hero-title" className="display-serif hero-title">
+        <h1 id="hero-title" className="display-heading hero-title">
           <span className="headline-line">Software and technology</span>{' '}
           <span className="headline-line">for the systems your</span>{' '}
           <em className="headline-line">business depends on.</em>
@@ -186,66 +191,27 @@ function Hero() {
 
 function IntroSection() {
   return (
-    <section className="section-light intro-section" aria-labelledby="intro-title">
-      <div className="container-wide">
-        <div className="intro-grid">
-          <div>
-            <p className="eyebrow">01 / The work</p>
-            <h2 id="intro-title" className="display-serif section-title">
-              Built around <em>your operation.</em>
-            </h2>
-          </div>
-          <div className="intro-copy">
-            <p>
-              Your operation is not a template. We build around the decisions, handoffs, constraints and
-              opportunities that make your business work — not around the assumptions baked into generic software.
-            </p>
-            <a className="text-link" href="#about" data-testid="link-intro-about">
-              How we work <ArrowRight size={15} aria-hidden="true" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function SolutionsSection() {
-  return (
-    <section id="solutions" className="solutions-section" aria-labelledby="solutions-title">
-      <div className="container-wide">
-        <div className="solutions-header">
-          <div>
-            <p className="eyebrow eyebrow-light">02 / Solutions</p>
-            <h2 id="solutions-title" className="display-serif solutions-title">
-              Systems built for how <em>business actually operates.</em>
-            </h2>
-          </div>
-          <p className="solutions-header-copy">
-            Connected by design. Built for use. Supported for the long term.
+    <section id="solutions" className="section-light intro-section" aria-labelledby="intro-title">
+      <div className="container-wide solutions-strip">
+        <div className="intro-heading">
+          <p className="eyebrow intro-eyebrow">OUR SOLUTIONS</p>
+          <h2 id="intro-title" className="display-heading section-title">
+            Built around <em>your operation.</em>
+          </h2>
+          <p className="intro-copy">
+            Your business has processes, people, assets, data and systems that need to work together. We build
+            technology around those realities — not around a generic software template.
           </p>
         </div>
-        <div className="solution-grid">
-          {solutions.map((solution) => (
-            <article className="solution-card" key={solution.number}>
-              <img
-                className="solution-image"
-                src={solution.image}
-                alt={`${solution.title} technology environment`}
-                width="1600"
-                height="1000"
-                loading="lazy"
-              />
-              <div>
-                <span className="solution-number">{solution.number}</span>
-                <h3>{solution.title}</h3>
-              </div>
-              <div className="solution-bottom">
-                <p>{solution.copy}</p>
-                <span className="solution-arrow" aria-hidden="true">
-                  <ArrowUpRight size={17} />
-                </span>
-              </div>
+        <div className="capability-grid" aria-label="ROSALOGIC capability areas">
+          {capabilities.map(({ title, Icon, copy }) => (
+            <article className="capability-card" key={title}>
+              <Icon size={30} strokeWidth={1.35} aria-hidden="true" />
+              <h3>{title}</h3>
+              <p>{copy}</p>
+              <a href="#about" aria-label={`Learn more about ${title}`}>
+                Learn more <ArrowRight size={13} aria-hidden="true" />
+              </a>
             </article>
           ))}
         </div>
@@ -257,36 +223,36 @@ function SolutionsSection() {
 function IndustriesSection() {
   return (
     <section id="industries" className="industries-section" aria-labelledby="industries-title">
-      <div className="container-wide">
-        <div className="industries-header">
-          <div>
-            <p className="eyebrow">03 / Industries</p>
-            <h2 id="industries-title" className="display-serif industries-title">
-              Built for <em>complex operations.</em>
-            </h2>
-          </div>
+      <div className="industries-mosaic">
+        <div className="industries-intro">
+          <p className="eyebrow industries-eyebrow">Industries</p>
+          <h2 id="industries-title" className="display-heading industries-title">
+            Built for operational businesses.
+          </h2>
           <p className="industries-copy">
-            From the plant floor to the project site, we make technology accountable to the work it supports.
+            We work with organizations across industries that rely on complex operations and real-world systems.
           </p>
+          <a className="industry-link" href="#contact">
+            Learn more <ArrowRight size={13} aria-hidden="true" />
+          </a>
         </div>
-        <div className="industry-grid">
-          {industries.map((industry, index) => (
-            <article className="industry-card" key={industry.name}>
-              <img
-                className="industry-image"
-                src={industry.image}
-                alt={`${industry.name} industrial environment`}
-                width="1600"
-                height="1000"
-                loading="lazy"
-              />
-              <div>
-                <span>{`0${index + 1}`}</span>
-                <h3>{industry.name}</h3>
-              </div>
-            </article>
-          ))}
-        </div>
+        {industries.map(({ name, image, Icon, details }) => (
+          <article className="industry-card" key={name}>
+            <img
+              className="industry-image"
+              src={image}
+              alt={`${name} environment`}
+              width="1600"
+              height="1000"
+              loading="lazy"
+            />
+            <div className="industry-card-content">
+              <Icon size={25} strokeWidth={1.35} aria-hidden="true" />
+              <h3>{name}</h3>
+              <p>{details}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -294,29 +260,20 @@ function IndustriesSection() {
 
 function ApproachSection() {
   return (
-    <section className="approach-section" aria-labelledby="approach-title">
-      <div className="container-wide">
-        <div className="approach-header">
-          <div>
-            <p className="eyebrow">04 / Approach</p>
-            <h2 id="approach-title" className="display-serif approach-title">
-              From architecture <em>to operation.</em>
-            </h2>
-          </div>
-          <p className="approach-copy">
-            Software is only useful when it survives contact with the real world. We stay close to the full
-            technology lifecycle — from the first question through the years of improvement that follow.
-          </p>
-        </div>
-        <div className="process-list" aria-label="ROSALOGIC engineering process">
+    <section id="approach" className="approach-section" aria-labelledby="approach-title">
+      <div className="container-wide approach-inner">
+        <h2 id="approach-title" className="approach-label">Our approach</h2>
+        <ol className="process-list" aria-label="ROSALOGIC engineering process">
           {processSteps.map((step) => (
-            <article className="process-step" key={step.number}>
+            <li className="process-step" key={step.number}>
               <span className="process-step-number">{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.copy}</p>
-            </article>
+              <span>{step.title}</span>
+              <ArrowRight size={13} aria-hidden="true" />
+              <span className="sr-only"> — {step.copy}</span>
+            </li>
           ))}
-        </div>
+        </ol>
+        <p className="approach-signoff">Long-term partnerships. Real results.</p>
       </div>
     </section>
   );
@@ -328,7 +285,7 @@ function AboutSection() {
       <div className="container-wide about-grid">
         <div>
           <p className="eyebrow">05 / About ROSALOGIC</p>
-          <h2 id="about-title" className="display-serif about-title">
+          <h2 id="about-title" className="display-heading about-title">
             Engineering technology <em>that lasts.</em>
           </h2>
         </div>
@@ -354,7 +311,7 @@ function ContactSection() {
       <div className="container-wide cta-inner">
         <div>
           <p className="eyebrow eyebrow-light">06 / Contact</p>
-          <h2 id="contact-title" className="display-serif cta-title">
+          <h2 id="contact-title" className="display-heading cta-title">
             Have a system that needs <em>to work better?</em>
           </h2>
         </div>
@@ -440,7 +397,6 @@ function Home() {
       <main id="main-content">
         <Hero />
         <IntroSection />
-        <SolutionsSection />
         <IndustriesSection />
         <ApproachSection />
         <AboutSection />
