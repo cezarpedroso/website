@@ -23,7 +23,8 @@ import agriculturePhoto from './assets/industry-agriculture.jpg';
 import logisticsPhoto from './assets/industry-logistics.jpg';
 import constructionPhoto from './assets/industry-construction.jpg';
 import professionalServicesPhoto from './assets/industry-professional-services.jpg';
-import { AboutPage, ContactPage, IndustriesPage, SolutionsPage } from './pages/InnerPages';
+import { AboutPage, ContactPage, IndustriesPage } from './pages/InnerPages';
+import { SolutionsPage } from './pages/SolutionsPage';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -40,7 +41,7 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
   },
   '/solutions': {
     title: 'Software & Technology Solutions | ROSALOGIC',
-    description: 'Explore ROSALOGIC software systems, data integration, and technology services built around operational businesses.',
+    description: 'Explore ROSALOGIC custom business applications, system integration, reporting, automation, cloud infrastructure, DevOps, and security services.',
   },
   '/industries': {
     title: 'Industries We Serve | ROSALOGIC',
@@ -202,11 +203,11 @@ function IntroSection() {
         <div className="intro-heading">
           <p className="eyebrow intro-eyebrow">OUR SOLUTIONS</p>
           <h2 id="intro-title" className="display-heading section-title">
-            Built around <em>your operation.</em>
+            The systems behind <em>the work.</em>
           </h2>
           <p className="intro-copy">
-            Your business has processes, people, assets, data and systems that need to work together. We build
-            technology around those realities — not around a generic software template.
+            Explore how purpose-built software, connected information, and dependable technology can support
+            the work your organization relies on.
           </p>
         </div>
         <div className="capability-grid" aria-label="ROSALOGIC capability areas">

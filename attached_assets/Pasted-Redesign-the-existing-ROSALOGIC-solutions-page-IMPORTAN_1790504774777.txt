@@ -1,0 +1,705 @@
+Redesign the existing ROSALOGIC /solutions page.
+
+IMPORTANT:
+Do not make this page feel like a longer version of the homepage.
+
+The homepage is responsible for introducing ROSALOGIC, its positioning, philosophy, and brand.
+
+The Solutions page should instead be a detailed, commercially useful explanation of:
+1. What ROSALOGIC actually builds
+2. What problems those systems solve
+3. How the different technical layers fit together
+4. Examples of systems we can build
+5. How a client engages us when they don't know exactly what they need
+
+The page should feel like the website of a serious software engineering and technology consultancy, not a SaaS startup or freelance developer.
+
+--------------------------------------------------
+BRAND
+--------------------------------------------------
+
+Company:
+ROSALOGIC
+
+Positioning:
+Business Systems & Technology
+
+Brand line:
+SYSTEMS, ENGINEERED.
+
+Core idea:
+We engineer software, data, and technology systems around the way organizations actually operate.
+
+Primary industries:
+- Manufacturing
+- Agriculture
+- Logistics & Transportation
+- Construction
+- SMBs / Professional Services
+
+Primary capabilities:
+- Business software
+- Operational systems
+- CRM
+- EAM / CMMS
+- Workflow systems
+- Data & analytics
+- System integration
+- Automation
+- Cloud infrastructure
+- DevOps
+- Security
+
+Brand personality:
+- Corporate
+- Established
+- Technical
+- Precise
+- Serious
+- Architectural
+- Engineering-oriented
+- Premium but restrained
+- Timeless
+
+Do NOT make it:
+- Startup-y
+- Flashy
+- Futuristic
+- Neon
+- Generic SaaS
+- AI-themed
+- A freelance developer portfolio
+
+--------------------------------------------------
+VISUAL DESIGN
+--------------------------------------------------
+
+Preserve the existing ROSALOGIC visual identity already used on the site.
+
+Color palette:
+
+Deep Navy:
+#0B1726
+
+Warm White:
+#F5F3EE
+
+White:
+#FFFFFF
+
+Charcoal:
+#20252B
+
+Gray:
+#687078
+
+Muted brass accent:
+#B89A67
+
+Use brass extremely sparingly.
+
+The overall page should primarily use:
+- warm white
+- white
+- charcoal
+- deep navy
+
+Typography:
+Use the existing site typography if already configured.
+
+If needed:
+- Inter / Manrope / IBM Plex Sans for UI and body
+- Elegant editorial serif for selected large headings
+
+Maintain:
+- generous whitespace
+- thin borders
+- precise grid alignment
+- editorial typography
+- restrained animation
+- architectural composition
+- large imagery where appropriate
+
+Avoid:
+- excessive rounded cards
+- giant gradients
+- excessive shadows
+- pill buttons
+- colorful icons
+- generic SaaS card grids
+
+--------------------------------------------------
+PAGE PURPOSE
+--------------------------------------------------
+
+The visitor should finish this page understanding:
+
+"ROSALOGIC can help us build or improve the systems behind our operation."
+
+They should be able to recognize their own situation in the page.
+
+The page should explain the actual services in enough detail that a prospective client could understand whether ROSALOGIC is relevant to them.
+
+Do not use vague phrases repeatedly such as:
+"technology that transforms businesses"
+"innovative solutions"
+"cutting-edge technology"
+"unlock your potential"
+
+Use concrete business and technical language.
+
+--------------------------------------------------
+SECTION 01 — HERO
+--------------------------------------------------
+
+Use a strong editorial hero.
+
+Small eyebrow:
+
+01 / SOLUTIONS
+
+Headline:
+
+"Built around
+your operation."
+
+Supporting copy:
+
+"Your business has processes, people, assets, data, and systems that need to work together. ROSALOGIC designs and builds the technology around those realities—not around a generic software template."
+
+Add a second short line:
+
+"The goal isn't more technology. It's a better-running operation."
+
+Use the existing ROSALOGIC hero visual language.
+
+Do not make the hero excessively tall. It should establish the page without consuming the entire screen.
+
+--------------------------------------------------
+SECTION 02 — DEFINE BUSINESS SYSTEMS
+--------------------------------------------------
+
+Create a section that explains what ROSALOGIC means by "business systems."
+
+Eyebrow:
+
+02 / THE SYSTEM
+
+Headline:
+
+"The system is more than
+the software."
+
+Body:
+
+"A business system is the combination of software, processes, information, integrations, and infrastructure that allows an organization to operate."
+
+Then create a visual architecture diagram.
+
+Use a clean editorial diagram:
+
+PEOPLE
+↓
+PROCESSES
+↓
+SOFTWARE
+↓
+DATA
+↓
+INTEGRATIONS
+↓
+INFRASTRUCTURE
+
+Beside or below it:
+
+"ROSALOGIC works across these layers when the problem requires it. Sometimes that means building a new application. Sometimes it means connecting systems that already exist. Sometimes the right answer is improving the infrastructure underneath them."
+
+This should be visually sophisticated, not a generic flowchart.
+
+--------------------------------------------------
+SECTION 03 — SOFTWARE SYSTEMS
+--------------------------------------------------
+
+Eyebrow:
+
+03 / SOFTWARE SYSTEMS
+
+Large heading:
+
+"Software shaped around
+the way work actually happens."
+
+Body:
+
+"Off-the-shelf software is useful when your processes fit the product. When they don't, teams often compensate with spreadsheets, manual workarounds, disconnected tools, and repetitive data entry."
+
+"ROSALOGIC builds purpose-specific applications around your actual workflows, users, assets, and decisions."
+
+Then create four detailed subsections.
+
+### 01 / Operations & Workflow
+
+"Systems for managing the processes that keep the organization moving."
+
+Examples:
+- Workflow management
+- Work orders
+- Approvals
+- Scheduling
+- Inventory
+- Procurement
+- Internal portals
+- Field operations
+
+### 02 / Customer & Relationship Systems
+
+"Applications for managing customers and the processes surrounding them."
+
+Examples:
+- CRM
+- Customer portals
+- Sales workflows
+- Service management
+- Account management
+- Quoting & proposals
+
+### 03 / Asset & Maintenance Systems
+
+"Systems for organizations managing physical assets, equipment, and maintenance."
+
+Examples:
+- EAM
+- CMMS
+- Asset registers
+- Preventive maintenance
+- Work orders
+- Inspections
+- Parts & inventory
+- Equipment history
+
+### 04 / Purpose-Built Applications
+
+"When an existing product doesn't adequately support the operation, we design and build the system around it."
+
+Examples:
+- Internal business platforms
+- Management portals
+- Operational dashboards
+- Industry-specific applications
+- Specialized workflow systems
+
+Design this section as a sophisticated editorial grid rather than four generic cards.
+
+--------------------------------------------------
+SECTION 04 — DATA & INTEGRATION
+--------------------------------------------------
+
+Eyebrow:
+
+04 / DATA & INTEGRATION
+
+Headline:
+
+"Make systems communicate.
+Make information useful."
+
+Body:
+
+"Businesses rarely operate on one system. Accounting, CRM, ERP, production, inventory, spreadsheets, customer portals, and external services all contain pieces of the organization's information."
+
+Then three subsections.
+
+### System Integration
+
+"Connect the systems that already run the business."
+
+Examples:
+- REST APIs
+- Webhooks
+- Third-party APIs
+- Database integration
+- ETL / ELT
+- Event-driven workflows
+- System synchronization
+
+Create a visual showing:
+
+CRM → ERP → Accounting → Inventory → Custom Software
+
+### Reporting & Business Intelligence
+
+"Turn operational data into information people can actually use."
+
+Examples:
+- Management dashboards
+- Operational reporting
+- KPIs
+- Data visualization
+- Automated reports
+- Business intelligence
+
+### Automation
+
+"Reduce repetitive work by allowing systems to handle predictable processes."
+
+Examples:
+- Data synchronization
+- Notifications
+- Document generation
+- Scheduled processes
+- Approval workflows
+- Automated imports and exports
+
+Use diagrams and typography rather than generic stock illustrations.
+
+--------------------------------------------------
+SECTION 05 — INFRASTRUCTURE & SECURITY
+--------------------------------------------------
+
+Eyebrow:
+
+05 / INFRASTRUCTURE & SECURITY
+
+Headline:
+
+"The foundation
+behind the system."
+
+Body:
+
+"Software is only useful when the environment supporting it is reliable, secure, and maintainable."
+
+Create three subsections.
+
+### Cloud & Infrastructure
+
+- AWS
+- Azure
+- On-premise environments
+- Networking
+- Databases
+- Containers
+- Compute
+- Storage
+
+### DevOps & Delivery
+
+- CI/CD
+- Deployment automation
+- Environment management
+- Monitoring
+- Logging
+- Backups
+
+### Security
+
+- Identity & access management
+- Secure architecture
+- Secrets management
+- Network security
+- Security monitoring
+- Backup & recovery
+
+Include this principle:
+
+"We work with the infrastructure you already have when appropriate."
+
+Do not make AWS/Azure logos dominate the page.
+
+--------------------------------------------------
+SECTION 06 — CONNECTED APPROACH
+--------------------------------------------------
+
+Create a visually strong dark navy section.
+
+Eyebrow:
+
+06 / CONNECTED SYSTEMS
+
+Headline:
+
+"One system.
+Multiple layers."
+
+Create a large architectural diagram:
+
+BUSINESS
+↓
+OPERATIONS + USERS
+↓
+SOFTWARE SYSTEMS
+↓
+DATA + INTEGRATIONS
+↓
+INFRASTRUCTURE
+↓
+SECURITY
+
+Supporting text:
+
+"A new application may require new infrastructure. A reporting problem may actually be an integration problem. An automation opportunity may require changes to the underlying workflow."
+
+"That's why ROSALOGIC does not treat software, data, and infrastructure as isolated services."
+
+Make this section feel like the conceptual centerpiece of the page.
+
+--------------------------------------------------
+SECTION 07 — REAL-WORLD EXAMPLES
+--------------------------------------------------
+
+Eyebrow:
+
+07 / WHAT THIS CAN LOOK LIKE
+
+Headline:
+
+"Systems designed for
+real operations."
+
+Create four large editorial industry examples.
+
+Do not make these generic service cards.
+
+### MANUFACTURING
+
+Title:
+
+"Production + Maintenance + Inventory"
+
+Description:
+
+"A production company needs better visibility into equipment, maintenance, parts, and production activity."
+
+Show a simple system relationship:
+
+Production
+→ Equipment
+→ Maintenance
+→ Parts Inventory
+→ Operational Data
+→ Management Dashboard
+
+### AGRICULTURE
+
+Title:
+
+"Operations + Assets + Field Data"
+
+Description:
+
+"Connect equipment, field operations, inventory, work orders, and operational reporting."
+
+### LOGISTICS & TRANSPORTATION
+
+Title:
+
+"Fleet + Dispatch + Customers + Data"
+
+Description:
+
+"Connect vehicles, drivers, scheduling, customers, maintenance, and operational information."
+
+### PROFESSIONAL SERVICES
+
+Title:
+
+"CRM + Projects + Documents + Billing"
+
+Description:
+
+"Connect customer relationships, projects, work, documents, and business information."
+
+These are examples, NOT claims that ROSALOGIC already has clients in these industries.
+
+--------------------------------------------------
+SECTION 08 — HOW CLIENTS ENGAGE US
+--------------------------------------------------
+
+Eyebrow:
+
+08 / FROM PROBLEM TO SYSTEM
+
+Headline:
+
+"Not sure what you need?
+Start with the problem."
+
+Body:
+
+"You don't need to arrive with a technical specification. If you know the business problem, we can help define the system around it."
+
+Create a six-step process:
+
+01 — UNDERSTAND
+"We learn how the operation works and where the friction exists."
+
+02 — DEFINE
+"We identify requirements, constraints, integrations, and priorities."
+
+03 — ARCHITECT
+"We design the technical and operational solution."
+
+04 — BUILD
+"We develop, test, and integrate the system."
+
+05 — DEPLOY
+"We put the system into its production environment."
+
+06 — OPERATE
+"We can continue supporting, maintaining, and improving the system."
+
+Make this look like an engineering process, not a startup timeline.
+
+--------------------------------------------------
+SECTION 09 — TYPES OF ENGAGEMENT
+--------------------------------------------------
+
+Add a section explaining that clients can engage ROSALOGIC in different ways.
+
+Headline:
+
+"Engage us where the problem is."
+
+Three or four options:
+
+### BUILD
+"Design and development of a new business or operational system."
+
+### IMPROVE
+"Modernize, extend, or replace an existing system."
+
+### CONNECT
+"Integrate existing applications and data."
+
+### OPERATE
+"Maintain, monitor, secure, and continuously improve critical systems."
+
+This helps prospects understand that ROSALOGIC isn't only available for giant greenfield software projects.
+
+--------------------------------------------------
+SECTION 10 — FINAL CTA
+--------------------------------------------------
+
+Do NOT end with "Explore Industries."
+
+End with a strong commercial CTA.
+
+Dark navy background.
+
+Eyebrow:
+
+09 / START A CONVERSATION
+
+Headline:
+
+"Where could your
+operation work better?"
+
+Supporting copy:
+
+"Tell us what's slowing your business down. We'll help understand the problem, determine what technology can improve it, and define a practical path forward."
+
+Primary button:
+
+"Start a Conversation →"
+
+Secondary link:
+
+"Explore Industries →"
+
+--------------------------------------------------
+IMPORTANT COPY RULES
+--------------------------------------------------
+
+Do not invent:
+- clients
+- case studies
+- certifications
+- statistics
+- revenue improvements
+- years of experience
+- employees
+- partnerships
+- awards
+
+Do not make unsupported claims such as:
+"we reduce costs by 30%"
+"we have helped hundreds of businesses"
+
+ROSALOGIC is an emerging company.
+
+Position the company around:
+- engineering quality
+- understanding operations
+- technical breadth
+- maintainability
+- security
+- practical business outcomes
+
+--------------------------------------------------
+IMPORTANT DESIGN RULE
+--------------------------------------------------
+
+This page should be MORE INFORMATION-DENSE than the homepage.
+
+The homepage should sell the company.
+
+The Solutions page should explain the company's capabilities.
+
+Do not repeat the exact same copy or sections from the homepage.
+
+The visitor should be able to spend several minutes on this page and genuinely understand what ROSALOGIC can build.
+
+Use different visual treatments between sections so it does not become a giant stack of identical cards.
+
+Use:
+- editorial layouts
+- diagrams
+- large typography
+- numbered sections
+- thin dividers
+- dark/light transitions
+- occasional photography
+- architectural system diagrams
+- asymmetric grids
+
+Avoid:
+- repeating 3-card grids
+- excessive icons
+- huge amounts of text in cards
+- generic illustrations
+- excessive rounded containers
+
+--------------------------------------------------
+RESPONSIVENESS
+--------------------------------------------------
+
+Desktop:
+Preserve the sophisticated editorial grid.
+
+Tablet:
+Collapse complex grids while maintaining hierarchy.
+
+Mobile:
+Stack sections naturally.
+Keep diagrams readable.
+Maintain generous spacing.
+Do not simply shrink desktop layouts.
+
+Navigation should use the existing responsive navigation system.
+
+--------------------------------------------------
+FINAL GOAL
+--------------------------------------------------
+
+The final page should communicate:
+
+"ROSALOGIC understands that software is part of a larger business system. They can build the application, connect the data, engineer the infrastructure, and help operate it."
+
+It should feel like a company that could start with one engineer today and grow into a serious technology engineering firm over the next decade.
+
+Do not make the design feel like a one-person freelance agency.
+
+Do not make it feel like a fake large corporation.
+
+Make it feel like a young but highly disciplined engineering company.

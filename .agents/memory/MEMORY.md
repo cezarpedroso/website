@@ -1,1 +1,2 @@
 - [Contact-channel integrity](contact-channel-integrity.md) — a displayed form may stay inactive; never imply delivery until sending is configured.
+- [Home and Solutions copy separation](home-solutions-copy.md) — keep the homepage teaser distinct from the detailed Solutions page when required hero copy overlaps.
