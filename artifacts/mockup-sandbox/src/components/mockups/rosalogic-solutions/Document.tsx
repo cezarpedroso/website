@@ -38,17 +38,18 @@ const engagements = [
   ['Operate', 'Maintain, monitor, secure, and improve critical systems.'],
 ];
 
-function Section({ id, label, title, intro, tone = 'paper', showLabel = true, children }: {
-  id?: string; label: string; title?: ReactNode; intro?: ReactNode; tone?: 'paper' | 'white'; showLabel?: boolean; children: ReactNode;
+function Section({ id, label, title, intro, media, tone = 'paper', showLabel = true, children }: {
+  id?: string; label: string; title?: ReactNode; intro?: ReactNode; media?: ReactNode; tone?: 'paper' | 'white'; showLabel?: boolean; children: ReactNode;
 }) {
   return (
     <section id={id} aria-label={!title ? label : undefined} className={`rd-section rd-tone-${tone}`}>
       <div className="rd-wrap">
-        {(showLabel || title || intro) && (
-          <header className={`rd-grid rd-section-head${title ? '' : ' rd-section-head--compact'}${showLabel ? '' : ' rd-section-head--plain'}`}>
+        {(showLabel || title || intro || media) && (
+          <header className={`rd-grid rd-section-head${title ? '' : ' rd-section-head--compact'}${showLabel ? '' : ' rd-section-head--plain'}${media ? ' rd-section-head--with-media' : ''}`}>
             {showLabel && (title ? <p className="rd-index">{label}</p> : <h2 className="rd-index">{label}</h2>)}
             {title && <h2 className="rd-section-title">{title}</h2>}
             {intro && <p className="rd-section-intro">{intro}</p>}
+            {media}
           </header>
         )}
         <div className="rd-section-body">{children}</div>
@@ -84,8 +85,7 @@ export function Document() {
           <div className="rd-grid rd-hero-main">
             <h1 tabIndex={-1}>Built around<br /><em>your operation.</em></h1>
             <div className="rd-hero-copy">
-              <p>Your processes, people, assets, data, and systems need to work together. ROSALOGIC designs and builds technology around those realities—not around a generic software template.</p>
-              <p className="rd-hero-principle">The goal isn't more technology. <strong>It's a better-running operation.</strong></p>
+              <p>ROSALOGIC designs and builds technology around your people, processes, and existing systems—not a generic software template.</p>
             </div>
           </div>
         </div>
@@ -102,10 +102,7 @@ export function Document() {
         </div>
       </Section>
 
-      <Section label="Software systems" title={<>Software shaped around<br /><em>the work itself.</em></>} tone="white">
-        <div className="rd-feature rd-feature--image-only">
-          <EditorialImage src={manufacturingImage} alt="A technician working beside industrial production equipment on a factory floor." />
-        </div>
+      <Section label="Software systems" title={<>Software shaped around<br /><em>the work itself.</em></>} media={<EditorialImage src={manufacturingImage} alt="A technician working beside industrial production equipment on a factory floor." />} tone="white">
         <div className="rd-row-list">{softwareAreas.map((area) => <DetailRow key={area.no} title={area.title} description={area.description} examples={area.examples} />)}</div>
       </Section>
 
