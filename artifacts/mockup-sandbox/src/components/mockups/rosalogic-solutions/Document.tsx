@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import manufacturingImage from './assets/industry-manufacturing.jpg';
-import agricultureImage from './assets/industry-agriculture.jpg';
 import './_group.css';
 import './Document.css';
 
@@ -21,13 +20,6 @@ const infrastructure = [
   { no: '01', title: 'Cloud & infrastructure', description: 'Environments sized and structured for the system they support.', examples: ['AWS and Azure', 'On-premise environments', 'Networking', 'Databases', 'Containers', 'Compute and storage'] },
   { no: '02', title: 'DevOps & delivery', description: 'Repeatable ways to release, monitor, and maintain software.', examples: ['CI/CD', 'Deployment automation', 'Environment management', 'Monitoring and logging', 'Backups'] },
   { no: '03', title: 'Security', description: 'Practical safeguards built into architecture and operations.', examples: ['Identity and access management', 'Secure architecture', 'Secrets management', 'Network security', 'Backup and recovery'] },
-];
-
-const industries = [
-  { no: '01', industry: 'Manufacturing', title: 'Production, maintenance & inventory', description: 'Illustrative example: connect equipment, maintenance, parts, and production activity for clearer operational visibility.', relationships: ['Production', 'Equipment', 'Maintenance', 'Parts inventory', 'Operational data'] },
-  { no: '02', industry: 'Agriculture', title: 'Operations, assets & field data', description: 'Illustrative example: bring equipment, field work, inventory, and work orders into a more connected view.', relationships: ['Equipment', 'Field operations', 'Inventory', 'Work orders', 'Operational reporting'] },
-  { no: '03', industry: 'Logistics & transportation', title: 'Fleet, dispatch & customers', description: 'Illustrative example: connect vehicles, drivers, schedules, customer information, and maintenance activity.', relationships: ['Vehicles', 'Drivers', 'Scheduling', 'Customers', 'Maintenance'] },
-  { no: '04', industry: 'Professional services', title: 'CRM, projects & billing', description: 'Illustrative example: connect customer relationships with project work, documents, and business information.', relationships: ['Relationships', 'Projects', 'Work', 'Documents', 'Billing'] },
 ];
 
 const process = [
@@ -122,21 +114,6 @@ export function Document() {
       <Section label="Infrastructure & security" tone="white">
         <div className="rd-row-list">{infrastructure.map((area) => <DetailRow key={area.no} title={area.title} description={area.description} examples={area.examples} />)}</div>
         <p className="rd-principle">We work with the infrastructure you already have when it is the right fit.</p>
-      </Section>
-
-      <Section id="illustrative-examples" label="Illustrative examples" tone="white">
-        <div className="rd-feature rd-feature--reverse">
-          <EditorialImage src={agricultureImage} alt="A tractor in a cultivated agricultural field beneath a wide open sky." />
-        </div>
-        <div className="rd-row-list rd-industry-list">
-          {industries.map((item) => (
-            <article className="rd-grid rd-industry-row" key={item.no}>
-              <span className="rd-industry-name">{item.industry}</span>
-              <div className="rd-industry-description"><h3>{item.title}</h3><p>{item.description}</p></div>
-              <ul className="rd-relationship-list">{item.relationships.map((relationship) => <li key={relationship}>{relationship}</li>)}</ul>
-            </article>
-          ))}
-        </div>
       </Section>
 
       <Section label="How we work" intro="You do not need to arrive with a technical specification. We can help shape the work from the operational challenge." tone="white">

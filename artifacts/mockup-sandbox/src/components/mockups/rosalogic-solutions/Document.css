@@ -57,20 +57,9 @@
 .rd-example-list li::before { position: absolute; left: 0; color: var(--rd-brass); content: '—'; }
 
 .rd-feature { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: center; margin: 14px 0 52px; isolation: isolate; }
-.rd-feature-copy { grid-column: 1 / span 6; grid-row: 1; z-index: 1; display: flex; align-items: center; min-height: clamp(290px, 28vw, 370px); padding: clamp(32px, 5vw, 68px); background: #e3eaec; box-shadow: 12px 14px 0 rgba(37, 88, 132, .14), 0 30px 50px -38px rgba(11, 23, 38, .45); }
-.rd-feature-copy p { margin: 0; color: var(--rd-navy); font-size: clamp(18px, 1.6vw, 23px); font-weight: 500; line-height: 1.55; }
 .rd-feature .rd-editorial-image { grid-column: 6 / -1; grid-row: 1; margin: 0; box-shadow: 0 25px 45px -35px rgba(11, 23, 38, .55); }
 .rd-feature--image-only .rd-editorial-image { grid-column: 5 / -1; }
 .rd-feature .rd-editorial-image img { display: block; width: 100%; height: clamp(310px, 34vw, 440px); object-fit: cover; object-position: center; }
-.rd-feature--reverse .rd-feature-copy { grid-column: 7 / -1; min-height: 250px; background: #e9e6de; box-shadow: -12px 14px 0 rgba(167, 138, 97, .20), 0 30px 50px -38px rgba(11, 23, 38, .38); }
-.rd-feature--reverse .rd-editorial-image { grid-column: 1 / span 7; }
-.rd-industry-row { align-items: start; padding: 25px 0; }
-.rd-industry-name { grid-column: 1 / span 2; color: var(--rd-brass); font-size: 13px; font-weight: 600; }
-.rd-industry-description { grid-column: 3 / span 4; }
-.rd-industry-description h3 { margin: 0 0 7px; color: var(--rd-navy); font-size: 23px; font-weight: 500; letter-spacing: -.025em; line-height: 1.2; }
-.rd-industry-description p { margin: 0; color: var(--rd-muted); font-size: 14px; line-height: 1.7; }
-.rd-relationship-list { grid-column: 7 / span 6; display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; padding: 4px 0 0; list-style: none; }
-.rd-relationship-list li { color: #45535d; font-size: 14px; line-height: 1.5; }
 
 .rd-principle { max-width: 710px; margin: 30px 12px 12px auto; padding: 26px 34px; color: #334959; background: #e6ebec; box-shadow: 12px 12px 0 rgba(37, 88, 132, .12); font-size: 17px; font-weight: 500; }
 .rd-process-list { position: relative; margin: 0; padding: 0; list-style: none; }
@@ -104,13 +93,8 @@
   .rd-section-intro { grid-column: 9 / span 4; font-size: 14px; }
   .rd-detail-title { grid-column: 1 / span 5; }
   .rd-example-list { grid-column: 7 / span 6; gap: 8px 12px; }
-  .rd-feature-copy { grid-column: 1 / span 7; padding: 32px; }
   .rd-feature .rd-editorial-image { grid-column: 7 / -1; }
   .rd-feature--image-only .rd-editorial-image { grid-column: 5 / -1; }
-  .rd-feature--reverse .rd-feature-copy { grid-column: 7 / -1; }
-  .rd-feature--reverse .rd-editorial-image { grid-column: 1 / span 7; }
-  .rd-industry-description { grid-column: 3 / span 4; }
-  .rd-relationship-list { grid-column: 7 / span 6; }
 }
 @media (max-width: 680px) {
   .rd-wrap { width: calc(100% - 36px); }
@@ -145,21 +129,10 @@
   .rd-example-list { grid-column: 1 / -1; gap: 7px 12px; padding-top: 2px; }
   .rd-example-list li { font-size: 13px; }
   .rd-feature { display: flex; flex-direction: column; align-items: stretch; margin: 6px 0 46px; }
-  .rd-feature-copy { order: 0; width: calc(100% - 22px); min-height: 0; padding: 28px 26px; box-shadow: 9px 9px 0 rgba(37, 88, 132, .14); }
-  .rd-feature-copy p { font-size: 18px; }
   .rd-feature .rd-editorial-image { order: 1; width: calc(100% - 22px); margin: -14px 0 0 auto; }
   .rd-feature--image-only .rd-editorial-image { margin: 0 0 0 auto; }
   .rd-feature .rd-editorial-image img { height: clamp(215px, 62vw, 320px); }
-  .rd-feature--reverse .rd-editorial-image { order: 0; margin: 0 auto 0 0; }
-  .rd-feature--reverse .rd-feature-copy { order: 1; min-height: 0; margin-left: auto; box-shadow: -9px 9px 0 rgba(167, 138, 97, .20); }
   .rd-principle { margin-right: 9px; padding: 24px 26px; font-size: 15px; }
-  .rd-industry-row { row-gap: 9px; padding: 20px 0; }
-  .rd-industry-name { grid-column: 1 / -1; }
-  .rd-industry-description { grid-column: 1 / -1; }
-  .rd-industry-description h3 { font-size: 21px; }
-  .rd-industry-description p { font-size: 14px; }
-  .rd-relationship-list { grid-column: 1 / -1; gap: 6px 16px; }
-  .rd-relationship-list li { font-size: 13px; }
   .rd-process-row, .rd-engagement-row { row-gap: 5px; padding: 15px 0; }
   .rd-process-row > .rd-row-no { grid-column: 1 / span 2; }
   .rd-process-row h3 { grid-column: 3 / span 10; }
