@@ -93,10 +93,12 @@ export function Document() {
 
       <Section label="The system" showLabel={false}>
         <div className="rd-grid rd-definition">
-          <ol className="rd-layers" aria-label="Business system layers">
-            {['People', 'Processes', 'Software', 'Data', 'Integrations', 'Infrastructure'].map((label) => <li className="rd-grid rd-layer-row" key={label}><span className="rd-layer-label">{label}</span></li>)}
-          </ol>
-          <p className="rd-definition-copy">We work across these layers when the problem calls for it: building an application, connecting existing systems, or improving the infrastructure beneath them. A reporting issue may begin with disconnected data; an automation opportunity may depend on a clearer workflow.</p>
+          <div className="rd-client-panel">
+            <p className="rd-client-panel-kicker">For the work you do every day</p>
+            <h2>You shouldn’t have to work around your own systems.</h2>
+            <p>Tell us where things slow down—repeated handoffs, missing information, or tools that do not fit the job.</p>
+          </div>
+          <p className="rd-definition-copy">We start with how your operation actually runs. Then we improve what gets in the way—whether that means connecting the tools you have, building something that fits, or strengthening the systems underneath.</p>
         </div>
       </Section>
 
