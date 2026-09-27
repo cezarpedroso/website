@@ -150,7 +150,7 @@
   .rd-feature .rd-editorial-image { order: 1; width: calc(100% - 22px); margin: -14px 0 0 auto; }
   .rd-feature--image-only .rd-editorial-image { margin: 0 0 0 auto; }
   .rd-feature .rd-editorial-image img { height: clamp(215px, 62vw, 320px); }
-  .rd-feature--reverse .rd-editorial-image { order: 0; margin: 0 auto -14px 0; }
+  .rd-feature--reverse .rd-editorial-image { order: 0; margin: 0 auto 0 0; }
   .rd-feature--reverse .rd-feature-copy { order: 1; min-height: 0; margin-left: auto; box-shadow: -9px 9px 0 rgba(167, 138, 97, .20); }
   .rd-principle { margin-right: 9px; padding: 24px 26px; font-size: 15px; }
   .rd-industry-row { row-gap: 9px; padding: 20px 0; }

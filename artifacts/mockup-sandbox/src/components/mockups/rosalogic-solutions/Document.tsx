@@ -52,11 +52,13 @@ function Section({ id, label, title, intro, tone = 'paper', showLabel = true, ch
   return (
     <section id={id} aria-label={!title ? label : undefined} className={`rd-section rd-tone-${tone}`}>
       <div className="rd-wrap">
-        <header className={`rd-grid rd-section-head${title ? '' : ' rd-section-head--compact'}${showLabel ? '' : ' rd-section-head--plain'}`}>
-          {showLabel && (title ? <p className="rd-index">{label}</p> : <h2 className="rd-index">{label}</h2>)}
-          {title && <h2 className="rd-section-title">{title}</h2>}
-          {intro && <p className="rd-section-intro">{intro}</p>}
-        </header>
+        {(showLabel || title || intro) && (
+          <header className={`rd-grid rd-section-head${title ? '' : ' rd-section-head--compact'}${showLabel ? '' : ' rd-section-head--plain'}`}>
+            {showLabel && (title ? <p className="rd-index">{label}</p> : <h2 className="rd-index">{label}</h2>)}
+            {title && <h2 className="rd-section-title">{title}</h2>}
+            {intro && <p className="rd-section-intro">{intro}</p>}
+          </header>
+        )}
         <div className="rd-section-body">{children}</div>
       </div>
     </section>
@@ -97,7 +99,7 @@ export function Document() {
         </div>
       </header>
 
-      <Section label="The system" showLabel={false} title={<>A business system is more<br /><em>than its software.</em></>}>
+      <Section label="The system" showLabel={false}>
         <div className="rd-grid rd-definition">
           <ol className="rd-layers" aria-label="Business system layers">
             {['People', 'Processes', 'Software', 'Data', 'Integrations', 'Infrastructure'].map((label) => <li className="rd-grid rd-layer-row" key={label}><span className="rd-layer-label">{label}</span></li>)}
@@ -117,14 +119,13 @@ export function Document() {
         <div className="rd-row-list">{integrationAreas.map((area) => <DetailRow key={area.no} title={area.title} description={area.description} examples={area.examples} />)}</div>
       </Section>
 
-      <Section label="Infrastructure & security" intro="Reliable, secure, maintainable environments support useful software." tone="white">
+      <Section label="Infrastructure & security" tone="white">
         <div className="rd-row-list">{infrastructure.map((area) => <DetailRow key={area.no} title={area.title} description={area.description} examples={area.examples} />)}</div>
         <p className="rd-principle">We work with the infrastructure you already have when it is the right fit.</p>
       </Section>
 
       <Section id="illustrative-examples" label="Illustrative examples" tone="white">
         <div className="rd-feature rd-feature--reverse">
-          <div className="rd-feature-copy"><p>These are illustrative system relationships—not client examples or claims of prior work.</p></div>
           <EditorialImage src={agricultureImage} alt="A tractor in a cultivated agricultural field beneath a wide open sky." />
         </div>
         <div className="rd-row-list rd-industry-list">
