@@ -2,5 +2,6 @@
 type ModuleMap = Record<string, () => Promise<Record<string, unknown>>>;
 export const modules: ModuleMap = {
   "./components/mockups/rosalogic-solutions/Current.tsx": () => import("../components/mockups/rosalogic-solutions/Current.tsx"),
+  "./components/mockups/rosalogic-solutions/Document.tsx": () => import("../components/mockups/rosalogic-solutions/Document.tsx"),
   "./components/mockups/rosalogic-solutions/Redesign.tsx": () => import("../components/mockups/rosalogic-solutions/Redesign.tsx")
 };

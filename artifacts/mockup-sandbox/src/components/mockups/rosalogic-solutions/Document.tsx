@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { Link } from 'wouter';
-import './solutions-page.css';
+import './_group.css';
+import './Document.css';
 
 const softwareAreas = [
   {
@@ -173,9 +173,9 @@ function NumberedLayers({ labels, dark = false }: { labels: string[]; dark?: boo
   );
 }
 
-export function SolutionsPage() {
+export function Document() {
   return (
-    <div className="inner-page rosalogic-solutions rd-page">
+    <main className="inner-page rosalogic-solutions rd-page">
       <header className="rd-hero rd-tone-paper">
         <div className="rd-wrap">
           <div className="rd-grid rd-hero-meta">
@@ -348,14 +348,14 @@ export function SolutionsPage() {
           </div>
           <div className="rd-grid rd-cta-actions">
             <span className="rd-side-note">ROSALOGIC / BUSINESS SYSTEMS &amp; TECHNOLOGY</span>
-            <Link href="/contact">Start a Conversation <span aria-hidden="true">→</span></Link>
-            <Link href="/industries">Explore Industries <span aria-hidden="true">→</span></Link>
+            <a href="/contact">Start a Conversation <span aria-hidden="true">→</span></a>
+            <a href="/industries">Explore Industries <span aria-hidden="true">→</span></a>
           </div>
           <div className="rd-grid rd-footer-line">
             <span>SYSTEMS, ENGINEERED.</span><span>ROSALOGIC</span><span>10 / 10</span>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
