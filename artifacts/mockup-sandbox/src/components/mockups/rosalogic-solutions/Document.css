@@ -38,8 +38,8 @@
 .rd-section-head h2 { grid-column: 3 / span 5; margin: 0; color: var(--rd-navy); font-size: clamp(36px, 4.1vw, 58px); font-weight: 500; letter-spacing: -.045em; line-height: 1.06; }
 .rd-section-intro { grid-column: 8 / span 5; max-width: 510px; margin: 5px 0 0; color: var(--rd-muted); font-size: 15px; line-height: 1.8; }
 .rd-section-body { padding-top: 28px; }
-.rd-definition { align-items: start; }
-.rd-layers { grid-column: 2 / span 5; margin: 0; padding: 0; list-style: none; }
+.rd-definition { align-items: center; }
+.rd-layers { grid-column: 2 / span 5; margin: 0 12px 12px 0; padding: 28px 36px; background: #e6ebec; box-shadow: 12px 12px 0 rgba(37, 88, 132, .12), 0 25px 40px -36px rgba(11, 23, 38, .32); list-style: none; }
 .rd-layer-row { grid-column: 1 / -1; align-items: center; min-height: 49px; }
 .rd-row-no { color: var(--rd-brass); font-size: 13px; font-variant-numeric: tabular-nums; }
 .rd-layer-label { grid-column: 1 / -1; color: var(--rd-navy); font-size: 15px; font-weight: 600; }
@@ -53,8 +53,13 @@
 .rd-example-list li { position: relative; padding-left: 14px; color: #45535d; font-size: 14px; line-height: 1.5; }
 .rd-example-list li::before { position: absolute; left: 0; color: var(--rd-brass); content: '—'; }
 
-.rd-editorial-image { grid-column: 1 / -1; margin: 0 0 32px; }
-.rd-editorial-image img { display: block; width: 100%; height: clamp(240px, 34vw, 440px); object-fit: cover; object-position: center; }
+.rd-feature { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: center; margin: 14px 0 52px; isolation: isolate; }
+.rd-feature-copy { grid-column: 1 / span 6; grid-row: 1; z-index: 1; display: flex; align-items: center; min-height: clamp(290px, 28vw, 370px); padding: clamp(32px, 5vw, 68px); background: #e3eaec; box-shadow: 12px 14px 0 rgba(37, 88, 132, .14), 0 30px 50px -38px rgba(11, 23, 38, .45); }
+.rd-feature-copy p { margin: 0; color: var(--rd-navy); font-size: clamp(18px, 1.6vw, 23px); font-weight: 500; line-height: 1.55; }
+.rd-feature .rd-editorial-image { grid-column: 6 / -1; grid-row: 1; margin: 0; box-shadow: 0 25px 45px -35px rgba(11, 23, 38, .55); }
+.rd-feature .rd-editorial-image img { display: block; width: 100%; height: clamp(310px, 34vw, 440px); object-fit: cover; object-position: center; }
+.rd-feature--reverse .rd-feature-copy { grid-column: 7 / -1; min-height: 250px; background: #e9e6de; box-shadow: -12px 14px 0 rgba(167, 138, 97, .20), 0 30px 50px -38px rgba(11, 23, 38, .38); }
+.rd-feature--reverse .rd-editorial-image { grid-column: 1 / span 7; }
 .rd-industry-row { align-items: start; padding: 25px 0; }
 .rd-industry-name { grid-column: 1 / span 2; color: var(--rd-brass); font-size: 13px; font-weight: 600; }
 .rd-industry-description { grid-column: 3 / span 4; }
@@ -63,7 +68,7 @@
 .rd-relationship-list { grid-column: 7 / span 6; display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; padding: 4px 0 0; list-style: none; }
 .rd-relationship-list li { color: #45535d; font-size: 14px; line-height: 1.5; }
 
-.rd-principle { max-width: 760px; margin: 27px 0 0; color: #334959; font-size: 17px; font-weight: 500; }
+.rd-principle { max-width: 710px; margin: 30px 12px 12px auto; padding: 26px 34px; color: #334959; background: #e6ebec; box-shadow: 12px 12px 0 rgba(37, 88, 132, .12); font-size: 17px; font-weight: 500; }
 .rd-process-list { margin: 0; padding: 0; list-style: none; }
 .rd-process-row, .rd-engagement-row { align-items: baseline; padding: 18px 0; }
 .rd-process-row > .rd-row-no { grid-column: 1 / span 2; }
@@ -93,6 +98,10 @@
   .rd-section-intro { grid-column: 9 / span 4; font-size: 14px; }
   .rd-detail-title { grid-column: 1 / span 5; }
   .rd-example-list { grid-column: 7 / span 6; gap: 8px 12px; }
+  .rd-feature-copy { grid-column: 1 / span 7; padding: 32px; }
+  .rd-feature .rd-editorial-image { grid-column: 7 / -1; }
+  .rd-feature--reverse .rd-feature-copy { grid-column: 7 / -1; }
+  .rd-feature--reverse .rd-editorial-image { grid-column: 1 / span 7; }
   .rd-industry-description { grid-column: 3 / span 4; }
   .rd-relationship-list { grid-column: 7 / span 6; }
 }
@@ -113,18 +122,24 @@
   .rd-section-head h2 { grid-column: 1 / -1; font-size: clamp(34px, 9vw, 48px); }
   .rd-section-intro { grid-column: 1 / -1; margin-top: 15px; font-size: 14px; }
   .rd-section-body { padding-top: 20px; }
-  .rd-layers { grid-column: 1 / -1; }
-  .rd-layer-row { min-height: 46px; }
+  .rd-layers { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 10px; padding: 18px 20px; }
+  .rd-layer-row { grid-column: auto; min-height: 48px; }
   .rd-layer-label { font-size: 14px; }
-  .rd-definition-copy { grid-column: 1 / -1; margin-top: 20px; font-size: 14px; }
+  .rd-definition-copy { grid-column: 1 / -1; margin-top: 32px; font-size: 14px; }
   .rd-detail-row { row-gap: 9px; padding: 21px 0; }
   .rd-detail-title { grid-column: 1 / -1; }
   .rd-detail-title h3 { font-size: 23px; }
   .rd-detail-title p { font-size: 14px; }
   .rd-example-list { grid-column: 1 / -1; gap: 7px 12px; padding-top: 2px; }
   .rd-example-list li { font-size: 13px; }
-  .rd-editorial-image { margin-bottom: 24px; }
-  .rd-editorial-image img { height: clamp(210px, 58vw, 340px); }
+  .rd-feature { display: flex; flex-direction: column; align-items: stretch; margin: 6px 0 46px; }
+  .rd-feature-copy { order: 0; width: calc(100% - 22px); min-height: 0; padding: 28px 26px; box-shadow: 9px 9px 0 rgba(37, 88, 132, .14); }
+  .rd-feature-copy p { font-size: 18px; }
+  .rd-feature .rd-editorial-image { order: 1; width: calc(100% - 22px); margin: -14px 0 0 auto; }
+  .rd-feature .rd-editorial-image img { height: clamp(215px, 62vw, 320px); }
+  .rd-feature--reverse .rd-editorial-image { order: 0; margin: 0 auto -14px 0; }
+  .rd-feature--reverse .rd-feature-copy { order: 1; min-height: 0; margin-left: auto; box-shadow: -9px 9px 0 rgba(167, 138, 97, .20); }
+  .rd-principle { margin-right: 9px; padding: 24px 26px; font-size: 15px; }
   .rd-industry-row { row-gap: 9px; padding: 20px 0; }
   .rd-industry-name { grid-column: 1 / -1; }
   .rd-industry-description { grid-column: 1 / -1; }

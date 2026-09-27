@@ -46,11 +46,11 @@ const engagements = [
   ['Operate', 'Maintain, monitor, secure, and improve critical systems.'],
 ];
 
-function Section({ label, title, intro, tone = 'paper', children }: {
-  label: string; title: ReactNode; intro?: ReactNode; tone?: 'paper' | 'white'; children: ReactNode;
+function Section({ id, label, title, intro, tone = 'paper', children }: {
+  id?: string; label: string; title: ReactNode; intro?: ReactNode; tone?: 'paper' | 'white'; children: ReactNode;
 }) {
   return (
-    <section className={`rd-section rd-tone-${tone}`}>
+    <section id={id} className={`rd-section rd-tone-${tone}`}>
       <div className="rd-wrap">
         <header className="rd-grid rd-section-head">
           <p className="rd-index">{label}</p>
@@ -81,6 +81,15 @@ function EditorialImage({ src, alt }: { src: string; alt: string }) {
   return <figure className="rd-editorial-image"><img src={src} alt={alt} loading="lazy" /></figure>;
 }
 
+function FeaturePanel({ src, alt, copy, reverse = false }: { src: string; alt: string; copy: string; reverse?: boolean }) {
+  return (
+    <div className={`rd-feature${reverse ? ' rd-feature--reverse' : ''}`}>
+      <div className="rd-feature-copy"><p>{copy}</p></div>
+      <EditorialImage src={src} alt={alt} />
+    </div>
+  );
+}
+
 export function Document() {
   return (
     <main className="inner-page rosalogic-solutions rd-page">
@@ -106,8 +115,8 @@ export function Document() {
         </div>
       </Section>
 
-      <Section label="Software systems" title={<>Software shaped around<br /><em>the work itself.</em></>} intro="When a product does not fit the process, teams often fall back on spreadsheets, workarounds, and repeated data entry." tone="white">
-        <EditorialImage src={manufacturingImage} alt="A technician working beside industrial production equipment on a factory floor." />
+      <Section label="Software systems" title={<>Software shaped around<br /><em>the work itself.</em></>} tone="white">
+        <FeaturePanel src={manufacturingImage} alt="A technician working beside industrial production equipment on a factory floor." copy="When a product does not fit the process, teams often fall back on spreadsheets, workarounds, and repeated data entry." />
         <div className="rd-row-list">{softwareAreas.map((area) => <DetailRow key={area.no} title={area.title} description={area.description} examples={area.examples} />)}</div>
       </Section>
 
@@ -120,8 +129,8 @@ export function Document() {
         <p className="rd-principle">We work with the infrastructure you already have when it is the right fit.</p>
       </Section>
 
-      <Section label="Illustrative examples" title={<>Systems designed for<br /><em>real operations.</em></>} intro="These are illustrative system relationships—not client examples or claims of prior work." tone="white">
-        <EditorialImage src={agricultureImage} alt="A tractor in a cultivated agricultural field beneath a wide open sky." />
+      <Section id="illustrative-examples" label="Illustrative examples" title={<>Systems designed for<br /><em>real operations.</em></>} tone="white">
+        <FeaturePanel src={agricultureImage} alt="A tractor in a cultivated agricultural field beneath a wide open sky." copy="These are illustrative system relationships—not client examples or claims of prior work." reverse />
         <div className="rd-row-list rd-industry-list">
           {industries.map((item) => (
             <article className="rd-grid rd-industry-row" key={item.no}>
