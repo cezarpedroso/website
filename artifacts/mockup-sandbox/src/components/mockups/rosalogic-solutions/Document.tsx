@@ -46,15 +46,15 @@ const engagements = [
   ['Operate', 'Maintain, monitor, secure, and improve critical systems.'],
 ];
 
-function Section({ id, label, title, intro, tone = 'paper', children }: {
-  id?: string; label: string; title: ReactNode; intro?: ReactNode; tone?: 'paper' | 'white'; children: ReactNode;
+function Section({ id, label, title, intro, tone = 'paper', showLabel = true, children }: {
+  id?: string; label: string; title?: ReactNode; intro?: ReactNode; tone?: 'paper' | 'white'; showLabel?: boolean; children: ReactNode;
 }) {
   return (
-    <section id={id} className={`rd-section rd-tone-${tone}`}>
+    <section id={id} aria-label={!title ? label : undefined} className={`rd-section rd-tone-${tone}`}>
       <div className="rd-wrap">
-        <header className="rd-grid rd-section-head">
-          <p className="rd-index">{label}</p>
-          <h2>{title}</h2>
+        <header className={`rd-grid rd-section-head${title ? '' : ' rd-section-head--compact'}${showLabel ? '' : ' rd-section-head--plain'}`}>
+          {showLabel && (title ? <p className="rd-index">{label}</p> : <h2 className="rd-index">{label}</h2>)}
+          {title && <h2 className="rd-section-title">{title}</h2>}
           {intro && <p className="rd-section-intro">{intro}</p>}
         </header>
         <div className="rd-section-body">{children}</div>
@@ -79,15 +79,6 @@ function DetailRow({ title, description, examples }: {
 
 function EditorialImage({ src, alt }: { src: string; alt: string }) {
   return <figure className="rd-editorial-image"><img src={src} alt={alt} loading="lazy" /></figure>;
-}
-
-function FeaturePanel({ src, alt, copy, reverse = false }: { src: string; alt: string; copy: string; reverse?: boolean }) {
-  return (
-    <div className={`rd-feature${reverse ? ' rd-feature--reverse' : ''}`}>
-      <div className="rd-feature-copy"><p>{copy}</p></div>
-      <EditorialImage src={src} alt={alt} />
-    </div>
-  );
 }
 
 export function Document() {
@@ -116,21 +107,26 @@ export function Document() {
       </Section>
 
       <Section label="Software systems" title={<>Software shaped around<br /><em>the work itself.</em></>} tone="white">
-        <FeaturePanel src={manufacturingImage} alt="A technician working beside industrial production equipment on a factory floor." copy="When a product does not fit the process, teams often fall back on spreadsheets, workarounds, and repeated data entry." />
+        <div className="rd-feature rd-feature--image-only">
+          <EditorialImage src={manufacturingImage} alt="A technician working beside industrial production equipment on a factory floor." />
+        </div>
         <div className="rd-row-list">{softwareAreas.map((area) => <DetailRow key={area.no} title={area.title} description={area.description} examples={area.examples} />)}</div>
       </Section>
 
-      <Section label="Data & integration" title={<>Make systems communicate.<br /><em>Make information useful.</em></>} intro="Accounting, CRM, ERP, production, inventory, and external services each hold part of the picture. We connect the right information and make it easier to use.">
+      <Section label="Data & integration" showLabel={false} intro="Accounting, CRM, ERP, production, inventory, and external services each hold part of the picture. We connect the right information and make it easier to use.">
         <div className="rd-row-list">{integrationAreas.map((area) => <DetailRow key={area.no} title={area.title} description={area.description} examples={area.examples} />)}</div>
       </Section>
 
-      <Section label="Infrastructure & security" title={<>A dependable foundation<br /><em>for the system.</em></>} intro="Reliable, secure, maintainable environments support useful software." tone="white">
+      <Section label="Infrastructure & security" intro="Reliable, secure, maintainable environments support useful software." tone="white">
         <div className="rd-row-list">{infrastructure.map((area) => <DetailRow key={area.no} title={area.title} description={area.description} examples={area.examples} />)}</div>
         <p className="rd-principle">We work with the infrastructure you already have when it is the right fit.</p>
       </Section>
 
-      <Section id="illustrative-examples" label="Illustrative examples" title={<>Systems designed for<br /><em>real operations.</em></>} tone="white">
-        <FeaturePanel src={agricultureImage} alt="A tractor in a cultivated agricultural field beneath a wide open sky." copy="These are illustrative system relationships—not client examples or claims of prior work." reverse />
+      <Section id="illustrative-examples" label="Illustrative examples" tone="white">
+        <div className="rd-feature rd-feature--reverse">
+          <div className="rd-feature-copy"><p>These are illustrative system relationships—not client examples or claims of prior work.</p></div>
+          <EditorialImage src={agricultureImage} alt="A tractor in a cultivated agricultural field beneath a wide open sky." />
+        </div>
         <div className="rd-row-list rd-industry-list">
           {industries.map((item) => (
             <article className="rd-grid rd-industry-row" key={item.no}>
@@ -142,11 +138,11 @@ export function Document() {
         </div>
       </Section>
 
-      <Section label="How we work" title={<>Start with the problem.<br /><em>Define the system together.</em></>} intro="You do not need to arrive with a technical specification. We can help shape the work from the operational challenge." tone="white">
+      <Section label="How we work" intro="You do not need to arrive with a technical specification. We can help shape the work from the operational challenge." tone="white">
         <ol className="rd-row-list rd-process-list">{process.map(([number, title, copy]) => <li className="rd-grid rd-process-row" key={number}><span className="rd-row-no">{number}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
       </Section>
 
-      <Section label="Engagements" title={<>Choose the work<br /><em>that fits the need.</em></>} intro="A focused improvement or integration can be the right place to begin.">
+      <Section label="Engagements" showLabel={false} intro="A focused improvement or integration can be the right place to begin.">
         <div className="rd-row-list rd-engagement-list">{engagements.map(([title, copy]) => <article className="rd-grid rd-engagement-row" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </Section>
 
