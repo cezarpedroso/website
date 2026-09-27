@@ -97,7 +97,7 @@ export function SolutionsPage() {
         </div>
       </header>
 
-      <Section label="The system" title={<>A business system is more<br /><em>than its software.</em></>}>
+      <Section label="The system" showLabel={false} title={<>A business system is more<br /><em>than its software.</em></>}>
         <div className="rd-grid rd-definition">
           <ol className="rd-layers" aria-label="Business system layers">
             {['People', 'Processes', 'Software', 'Data', 'Integrations', 'Infrastructure'].map((label) => <li className="rd-grid rd-layer-row" key={label}><span className="rd-layer-label">{label}</span></li>)}
