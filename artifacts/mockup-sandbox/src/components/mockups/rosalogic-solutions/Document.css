@@ -15,9 +15,8 @@
 .rs-page h1,.rs-page h2,.rs-page h3,.rs-page p,.rs-page figure,.rs-page ul,.rs-page ol { margin: 0; }
 .rs-page h1,.rs-page h2,.rs-page h3 { font-family: var(--app-font-corporate); }
 .rs-wrap { width: min(86%, 1390px); margin-inline: auto; }
-.rs-eyebrow { display: flex; gap: 7px; align-items: center; margin-bottom: 16px !important; color: #697075; font-family: var(--app-font-mono); font-size: 9px; font-weight: 400; letter-spacing: .09em; text-transform: uppercase; }
-.rs-eyebrow span:first-child { color: #a58d6c; }
-.rs-eyebrow-slash { color: #b2b4ae; }
+.rs-eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 16px !important; color: #687078; font-family: var(--app-font-sans); font-size: .61rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.rs-eyebrow::before { display: block; width: 38px; height: 1px; flex: none; background: #b89a67; content: ''; }
 .rs-hero { padding: 113px 0 27px; border-bottom: 1px solid var(--rs-line); }
 .rs-hero-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .93fr) 90px; gap: 30px; align-items: start; }
 .rs-hero-text { padding-top: 1px; border-top: 1px solid var(--rs-line); }
@@ -62,7 +61,7 @@
 .rs-connected { overflow: hidden; color: #e6e9e8; background: #102b3e; }
 .rs-connected-grid { display: grid; grid-template-columns: 35% 30% 35%; min-height: 230px; }
 .rs-connected-copy { padding: 24px 24px 22px 0; }
-.rs-connected .rs-eyebrow { color: #b9c5c9; }
+.rs-connected .rs-eyebrow { color: rgba(245,243,238,.68); }
 .rs-connected h2 { font-size: clamp(21px, 2vw, 31px); font-weight: 500; letter-spacing: -.045em; line-height: 1.08; }
 .rs-connected-copy > p:not(.rs-eyebrow) { max-width: 380px; margin-top: 10px; color: #c7d3d5; font-size: 13px; line-height: 1.55; }
 .rs-connected-diagram { display: grid; grid-template-columns: 25% 75%; align-items: center; padding: 19px 18px 19px 0; border-left: 1px solid rgba(220,229,228,.22); }
@@ -73,16 +72,16 @@
 .rs-industries { background: #f8f7f3; }
 .rs-industries .rs-column h3 { font-size: 13px; }
 .rs-industries .rs-industry-detail { margin-top: 14px; font-size: 12px; }
-.rs-process { background: #f0f0ed; }
+.rs-process { padding: 38px 0 40px; background: #f0f0ed; }
 .rs-process-steps { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); padding: 0; list-style: none; }
 .rs-process-steps li { min-width: 0; padding: 2px 10px 0; border-left: 1px solid var(--rs-line); }
 .rs-process-steps li:first-child { padding-left: 0; border-left: 0; }
 .rs-process-steps li > span { display: block; margin-bottom: 17px; color: #87918d; font-family: var(--app-font-mono); font-size: 8px; }
 .rs-process-steps h3 { margin-bottom: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
 .rs-process-steps p { color: #606b6e; font-size: 13px; line-height: 1.48; }
-.rs-engagement { background: #f8f7f3; }
+.rs-engagement { padding: 38px 0 40px; background: #f8f7f3; }
 .rs-engagement .rs-column h3 { text-transform: uppercase; }
-.rs-cta { padding: 26px 0 30px; color: #f3f4f0; background: #0d283a; }
+.rs-cta { padding: 38px 0 36px; color: #f3f4f0; background: #0d283a; }
 .rs-cta-grid { display: grid; grid-template-columns: 33% 32% 1fr; gap: 3%; align-items: center; }
 .rs-cta .rs-eyebrow { margin-bottom: 10px !important; color: #aebec4; }
 .rs-cta h2 { font-size: clamp(20px, 1.9vw, 30px); font-weight: 500; letter-spacing: -.045em; line-height: 1.08; }
@@ -110,6 +109,7 @@
   .rs-hero-photo { height: clamp(190px,49vw,330px); }
   .rs-hero-aside { display: none; }
   .rs-section { padding: 30px 0; }
+  .rs-process,.rs-engagement { padding: 38px 0 40px; }
   .rs-section-split,.rs-system-grid { grid-template-columns: 1fr; gap: 27px; }
   .rs-lead h2 { font-size: 25px; }
   .rs-lead > p:not(.rs-eyebrow) { font-size: 13px; }
@@ -139,5 +139,6 @@
   .rs-layer p::before { left: -16px; width: 11px; }
   .rs-connected-diagram { padding: 0 0 25px; border-left: 0; }
   .rs-cta nav { grid-column: auto; flex-wrap: wrap; }
+  .rs-process,.rs-engagement { padding: 34px 0 36px; }
 }
 @media(prefers-reduced-motion:reduce) { .rs-cta a svg { transition: none; } }
