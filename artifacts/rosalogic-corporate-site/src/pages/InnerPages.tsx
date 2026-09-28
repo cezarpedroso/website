@@ -15,7 +15,7 @@ import logisticsPhoto from '../assets/industry-logistics.jpg';
 import constructionPhoto from '../assets/industry-construction.jpg';
 import professionalServicesPhoto from '../assets/industry-professional-services.jpg';
 import industrialRoofPhoto from '../assets/about-industrial-roof.jpg';
-import teamWorkspacePhoto from '../assets/about-team-workspace.jpg';
+import teamDeveloperPhoto from '../assets/our-team-developer.png';
 import silosPhoto from '../assets/solutions-silos.jpg';
 import './inner-pages.css';
 import './about-page.css';
@@ -222,7 +222,7 @@ export function AboutPage() {
             <h2 id="about-team-heading" className="about-serif">A small team<br />with a broad skillset.</h2>
             <p className="about-copy">ROSALOGIC is a focused team of engineers and problem solvers. We bring together experience in software development, cloud infrastructure, data, and business systems to build solutions that fit your operation.</p>
           </div>
-          <img className="about-team-image" src={teamWorkspacePhoto} alt="Laptop and notebooks on a quiet workspace table" width="1024" height="1024" loading="lazy" />
+          <img className="about-team-image" src={teamDeveloperPhoto} alt="Software developer working at a desktop computer" width="2000" height="1414" loading="lazy" />
         </div>
       </section>
 
