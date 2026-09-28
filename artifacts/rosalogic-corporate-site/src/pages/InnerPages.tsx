@@ -1,12 +1,6 @@
 import {
-  ArrowDown,
   ArrowRight,
   ArrowUpRight,
-  Factory,
-  HardHat,
-  Sprout,
-  Truck,
-  UsersRound,
 } from 'lucide-react';
 import { Link } from 'wouter';
 import manufacturingPhoto from '../assets/industry-manufacturing.jpg';
@@ -14,56 +8,52 @@ import agriculturePhoto from '../assets/industry-agriculture.jpg';
 import logisticsPhoto from '../assets/industry-logistics.jpg';
 import constructionPhoto from '../assets/industry-construction.jpg';
 import professionalServicesPhoto from '../assets/industry-professional-services.jpg';
+import silosPhoto from '../assets/solutions-silos.jpg';
 import officePhoto from '../assets/about-office.png';
 import teamDeveloperPhoto from '../assets/our-team-developer.png';
-import silosPhoto from '../assets/solutions-silos.jpg';
 import './inner-pages.css';
 import './about-page.css';
+import './industries-page.css';
 
 const industryAreas = [
   {
     number: '01',
     name: 'Manufacturing',
-    Icon: Factory,
     image: manufacturingPhoto,
     alt: 'Manufacturing production environment',
-    details: 'Production · Maintenance · Inventory · Quality',
+    systems: ['Production tracking', 'Maintenance planning', 'Inventory management', 'Work orders and scheduling', 'Operational reporting'],
     copy: 'Production does not happen in one system. We help connect the information and workflows surrounding production, maintenance, inventory, and quality so teams can work with a clearer operational picture.',
   },
   {
     number: '02',
     name: 'Agriculture',
-    Icon: Sprout,
     image: agriculturePhoto,
     alt: 'Agricultural operations landscape',
-    details: 'Equipment · Operations · Inventory · Data',
+    systems: ['Field operations', 'Equipment and assets', 'Inventory management', 'Work orders and maintenance', 'Operational reporting'],
     copy: 'From equipment and inventory to the data that informs daily decisions, agricultural operations depend on information that remains useful beyond the office. We build around that reality.',
   },
   {
     number: '03',
     name: 'Logistics',
-    Icon: Truck,
     image: logisticsPhoto,
     alt: 'Logistics and transportation environment',
-    details: 'Fleet · Dispatch · Transportation · Customers',
+    systems: ['Fleet management', 'Dispatch and routing', 'Customer coordination', 'Maintenance planning', 'Tracking and reporting'],
     copy: 'Moving work demands coordination between people, vehicles, schedules, and customers. We create systems that make dispatch and transportation information easier to see and act on.',
   },
   {
     number: '04',
     name: 'Construction',
-    Icon: HardHat,
     image: constructionPhoto,
     alt: 'Construction site and field operations',
-    details: 'Projects · Equipment · Field Operations',
+    systems: ['Project management', 'Equipment and assets', 'Field operations', 'Document management', 'Reporting and analytics'],
     copy: 'Project information has to travel between the office and the field. We focus on the systems that support equipment, field operations, and the work of keeping projects coordinated.',
   },
   {
     number: '05',
     name: 'Professional Services',
-    Icon: UsersRound,
     image: professionalServicesPhoto,
     alt: 'Professional services working environment',
-    details: 'Clients · Workflow · Documents · Billing',
+    systems: ['Client relationship management', 'Project coordination', 'Document management', 'Time tracking and billing', 'Business reporting'],
     copy: 'Client work involves more than the final deliverable. We help bring structure to workflows, documents, and billing information so teams can spend less effort navigating the process.',
   },
 ];
@@ -91,94 +81,69 @@ const aboutBenefits = [
   { title: 'Scalability', text: 'Systems that grow with your business, not against it.' },
 ];
 
-function PageHero({
-  label,
-  title,
-  emphasis,
-  description,
-  aside,
-}: {
-  label: string;
-  title: string;
-  emphasis: string;
-  description: string;
-  aside: string;
-}) {
-  return (
-    <section className="ip-hero">
-      <div className="container-wide ip-hero-inner">
-        <div className="ip-hero-main">
-          <p className="eyebrow intro-eyebrow">{label}</p>
-          <h1 className="display-heading ip-hero-title" tabIndex={-1}>{title} <em>{emphasis}</em></h1>
-          <p className="ip-hero-description">{description}</p>
-        </div>
-        <div className="ip-hero-aside">
-          <span className="ip-aside-rule" />
-          <p>{aside}</p>
-          <ArrowDown size={19} strokeWidth={1.5} aria-hidden="true" />
-        </div>
-      </div>
-      <div className="container-wide ip-hero-bottom"><span>ROSALOGIC / BUSINESS SYSTEMS &amp; TECHNOLOGY</span><span>ENGINEERED FOR THE OPERATION</span></div>
-    </section>
-  );
-}
-
-function PageClose({ label, title, copy, link, linkText }: { label: string; title: string; copy: string; link: string; linkText: string }) {
-  return (
-    <section className="ip-close">
-      <div className="container-wide ip-close-grid">
-        <div>
-          <p className="eyebrow intro-eyebrow eyebrow-light">{label}</p>
-          <h2 className="display-heading">{title}</h2>
-        </div>
-        <div className="ip-close-action">
-          <p>{copy}</p>
-          <Link className="button-solid" href={link} data-testid={`link-${linkText.toLowerCase().replaceAll(' ', '-')}`}>
-            {linkText} <ArrowUpRight size={15} aria-hidden="true" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function IndustriesPage() {
   return (
-    <div className="inner-page">
-      <PageHero
-        label="Industries"
-        title="Built for operational"
-        emphasis="businesses."
-        description="We work with organizations across industries that rely on complex operations and real-world systems. Different environments, one shared need: technology that understands the work."
-        aside="From the production floor to the field, useful systems begin with operational context."
-      />
-      <section className="ip-section ip-industries-lead">
-        <div className="container-wide ip-split-intro">
-          <div className="ip-section-index"><span>Where we work</span></div>
-          <div><h2 className="ip-serif-heading">Built with the <em>real world in view.</em></h2><p>Processes cross teams, locations, and systems. Information changes hands. Work does not pause for software. We approach each industry through the operational details that matter within it.</p></div>
+    <div className="industries-page">
+      <section className="industries-hero" aria-labelledby="industries-page-title">
+        <div className="container-wide industries-hero-grid">
+          <div className="industries-hero-copy">
+            <p className="eyebrow intro-eyebrow">Industries / 01—05</p>
+            <h1 id="industries-page-title" className="display-heading industries-page-title" tabIndex={-1}>
+              Different industries.<br /><em>Same foundation.</em>
+            </h1>
+            <p>Every operation has its own challenges, workflows, and business drivers. We build software, data, and technology around the way your operation works—so you can reduce friction, improve control, and create a stronger foundation for what&apos;s next.</p>
+          </div>
+          <figure className="industries-hero-photo">
+            <img src={silosPhoto} alt="Agricultural grain silos beside a field" fetchPriority="high" />
+          </figure>
+          <aside className="industries-hero-aside">
+            <span>Industry solutions</span>
+            <span>Built around real operations</span>
+          </aside>
         </div>
       </section>
-      <section className="ip-industry-list" aria-label="Industries served">
-        {industryAreas.map(({ number, name, Icon, image, alt, details, copy }) => (
-          <article className="ip-industry-row" key={name}>
-            <div className="ip-industry-photo"><img src={image} alt={alt} loading="lazy" /><span>{number} / 05</span></div>
-            <div className="ip-industry-body">
-              <div className="ip-industry-kicker"><Icon size={26} strokeWidth={1.3} aria-hidden="true" /><span>INDUSTRY {number}</span></div>
-              <h2>{name}</h2>
-              <p className="ip-industry-details">{details}</p>
-              <p className="ip-industry-copy">{copy}</p>
-              <Link href="/solutions" className="ip-text-link" data-testid={`link-${name.toLowerCase().replaceAll(' ', '-')}-solutions`}>Explore relevant capabilities <ArrowRight size={16} aria-hidden="true" /></Link>
+
+      <section className="industries-list" aria-label="Industries and example operational systems">
+        {industryAreas.map(({ number, name, image, alt, systems, copy }) => (
+          <article className="industry-editorial-row" key={name}>
+            <div className="industry-editorial-copy">
+              <p className="industry-editorial-kicker"><span>{number}</span><span>/</span><span>{name}</span></p>
+              <h2>{name === 'Manufacturing' ? <>Production, maintenance<br />and inventory.</> :
+                name === 'Agriculture' ? <>Operations, assets<br />and field data.</> :
+                  name === 'Logistics' ? <>Fleet, dispatch, customers<br />and data.</> :
+                    name === 'Construction' ? <>Projects, assets<br />and teams.</> :
+                      <>Clients, projects<br />and performance.</>}</h2>
+              <p className="industry-editorial-description">{copy}</p>
+              <Link href="/solutions" className="industry-editorial-link" data-testid={`link-${name.toLowerCase().replaceAll(' ', '-')}-solutions`}>
+                Explore solutions <ArrowRight size={14} aria-hidden="true" />
+              </Link>
             </div>
+            <div className="industry-editorial-systems">
+              <p>Example systems</p>
+              <ul>
+                {systems.map((system) => <li key={system}>{system}</li>)}
+              </ul>
+            </div>
+            <figure className="industry-editorial-photo">
+              <img src={image} alt={alt} loading="lazy" />
+            </figure>
           </article>
         ))}
       </section>
-      <section className="ip-section ip-industry-outro">
-        <div className="container-wide ip-split-intro">
-          <div className="ip-section-index"><span>The common thread</span></div>
-          <div><h2 className="ip-serif-heading">Different work. <em>The same standard.</em></h2><p>Every operation has its own constraints, language, and pace. The goal is not to force a familiar solution into an unfamiliar setting. It is to understand the setting first, then engineer what belongs there.</p></div>
+
+      <section className="industries-invitation" aria-labelledby="industries-invitation-title">
+        <div className="container-wide industries-invitation-grid">
+          <div>
+            <p className="eyebrow intro-eyebrow eyebrow-light">Next steps</p>
+            <h2 id="industries-invitation-title" className="display-heading">Have an operation<br />that could <em>work better?</em></h2>
+          </div>
+          <p className="industries-invitation-copy">Tell us what is slowing your business down. We&apos;ll help you understand the problem, determine what technology can improve it, and define a practical path forward.</p>
+          <div className="industries-invitation-actions">
+            <Link className="button-solid" href="/contact" data-testid="link-industries-contact">Start a conversation <ArrowUpRight size={15} aria-hidden="true" /></Link>
+            <Link className="industries-about-link" href="/about" data-testid="link-industries-about">About ROSALOGIC <ArrowRight size={13} aria-hidden="true" /></Link>
+          </div>
         </div>
       </section>
-      <PageClose label="Our Solutions" title="Technology shaped by the work." copy="Explore the software, data, and technology capabilities that support complex operations." link="/solutions" linkText="Explore solutions" />
     </div>
   );
 }
@@ -251,7 +216,6 @@ export function AboutPage() {
             <h2 id="about-outcomes-heading" className="about-heading">Better systems create better operations.</h2>
             <p className="about-copy">When software, data, and infrastructure work together, your teams can move faster, make better decisions, and focus on what matters. That&apos;s the real value of a well-engineered system.</p>
           </div>
-          <img className="about-outcomes-image" src={silosPhoto} alt="Agricultural grain silos and surrounding operational site" width="1024" height="1024" loading="lazy" />
           <ul className="about-benefits">
             {aboutBenefits.map(({ title, text }) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}
           </ul>

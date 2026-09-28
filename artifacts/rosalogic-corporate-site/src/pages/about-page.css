@@ -234,50 +234,45 @@
 .about-page .about-step .about-number { margin-bottom: 15px; }
 .about-page .about-step h3 { margin-bottom: 8px; }
 
-.about-page .about-outcomes { padding: 43px 0 38px; }
+.about-page .about-outcomes { padding: 78px 0 84px; }
 .about-page .about-outcomes-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr) minmax(150px, .45fr);
-  align-items: center;
-  gap: clamp(30px, 4.5vw, 85px);
+  grid-template-columns: minmax(0, .93fr) minmax(0, 1.07fr);
+  align-items: start;
+  gap: clamp(50px, 8vw, 145px);
 }
 .about-page .about-outcomes h2 {
-  margin-bottom: 20px;
-  font-size: clamp(2rem, 2.75vw, 3rem);
+  max-width: 520px;
+  margin-bottom: 25px;
+  font-size: clamp(2.3rem, 3.25vw, 3.65rem);
 }
-.about-page .about-outcomes .about-copy { max-width: 445px; }
-.about-page .about-outcomes-image {
-  display: block;
-  width: 100%;
-  height: clamp(265px, 23vw, 365px);
-  object-fit: cover;
-  object-position: center 57%;
-}
+.about-page .about-outcomes .about-copy { max-width: 465px; }
 .about-page .about-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(24px, 3vw, 52px);
+  row-gap: 30px;
   margin: 0;
-  padding: 0 0 0 27px;
-  border-left: 1px solid var(--about-gold);
+  padding: 4px 0 0;
   list-style: none;
 }
 .about-page .about-benefits li {
-  padding: 12px 0;
-  border-bottom: 1px solid var(--about-line);
+  padding: 18px 0 0;
+  border-top: 1px solid var(--about-line);
 }
-.about-page .about-benefits li:first-child { padding-top: 0; }
-.about-page .about-benefits li:last-child { padding-bottom: 0; border-bottom: 0; }
 .about-page .about-benefits strong {
   display: block;
-  margin-bottom: 5px;
-  font-size: .61rem;
+  margin-bottom: 9px;
+  font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .09em;
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 .about-page .about-benefits span {
   display: block;
   color: var(--about-muted);
-  font-size: .68rem;
-  line-height: 1.5;
+  font-size: .82rem;
+  line-height: 1.62;
 }
 
 .about-page .about-cta {
@@ -337,8 +332,6 @@
   .about-page .about-value:first-of-type { padding-left: 0; border-left: 0; }
   .about-page .about-approach-grid { grid-template-columns: 1fr; gap: 42px; }
   .about-page .about-outcomes-grid { grid-template-columns: 1fr 1fr; }
-  .about-page .about-benefits { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  .about-page .about-benefits li { padding: 0; border-bottom: 0; }
   .about-page .about-cta .about-wrap { width: min(90%, 1390px); }
   .about-page .about-cta-grid { grid-template-columns: 30% 29% 1fr; }
   .about-page .about-cta-actions { gap: 8px; }
@@ -382,9 +375,10 @@
   .about-page .about-step, .about-page .about-step:nth-child(n + 4) { min-height: 155px; padding: 20px 15px 20px 0; border-left: 0; border-top: 1px solid var(--about-line); }
   .about-page .about-step:nth-child(even), .about-page .about-step:nth-child(3n + 1):nth-child(even) { padding-left: 15px; border-left: 1px solid var(--about-line); }
   .about-page .about-step:nth-child(3n + 1) { padding-left: 0; }
-  .about-page .about-outcomes { padding: 43px 0 48px; }
-  .about-page .about-outcomes-image { height: clamp(235px, 59vw, 390px); }
-  .about-page .about-benefits { grid-column: auto; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .about-page .about-outcomes { padding: 52px 0 58px; }
+  .about-page .about-outcomes-grid { gap: 34px; }
+  .about-page .about-benefits { grid-template-columns: 1fr; row-gap: 0; }
+  .about-page .about-benefits li { padding: 18px 0 20px; }
   .about-page .about-cta .about-wrap { width: calc(100% - 36px); }
   .about-page .about-cta-description { padding-left: 0; border-left: 0; }
   .about-page .about-cta-actions { justify-content: flex-start; flex-wrap: wrap; }
