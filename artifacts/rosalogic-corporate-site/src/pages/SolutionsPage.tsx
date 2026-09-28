@@ -71,7 +71,7 @@ function SolutionsContent() {
           <div className="rs-hero-text">
             <Eyebrow>Solutions</Eyebrow>
             <h1>Built around<br /><span>your operation.</span></h1>
-            <p>ROSALOGIC designs and builds custom business software around the way your operation works. We develop applications for workflows, customers, assets, and internal processes—and connect them to the systems your business already uses.</p>
+            <p>ROSALOGIC designs and builds custom business software around the way your operation works. We develop applications for workflows, customers, assets, and internal processes. We also connect them to the systems your business already uses.</p>
             <p className="rs-hero-closing">Business software first. Integration and support when needed.</p>
           </div>
           <figure className="rs-hero-photo"><img src={siloImage} alt="Steel grain silos at an agricultural processing facility beneath a pale sky" /></figure>
@@ -84,8 +84,8 @@ function SolutionsContent() {
             <div className="rs-lead">
               <Eyebrow>Business software</Eyebrow>
               <h2 id="rs-software-title">Software shaped around<br />the way work actually happens.</h2>
-              <p>Off-the-shelf software is useful when your processes fit the product. When they don’t, teams often compensate with spreadsheets, manual workarounds, disconnected tools, and repetitive data entry.</p>
-              <p>ROSALOGIC designs and builds custom business applications around your workflows, users, assets, and decisions—not around a generic software template.</p>
+              <p>Standard software is useful when your processes fit the product. When they don’t, teams often compensate with spreadsheets, manual workarounds, disconnected tools, and repetitive data entry.</p>
+              <p>ROSALOGIC designs and builds custom business applications around your workflows, users, assets, and decisions instead of a generic software template.</p>
             </div>
             <div className="rs-columns rs-four-columns">
               {softwareAreas.map(area => <article className="rs-column" key={area.no}><span className="rs-column-no">{area.no}</span><h3>{area.title}</h3><p>{area.copy}</p><ItemList items={area.items} /></article>)}
@@ -99,7 +99,7 @@ function SolutionsContent() {
               <Eyebrow>The system</Eyebrow>
               <h2 id="rs-system-title">The system is more than<br />the software.</h2>
               <p>Software is only one part of a business system. The surrounding processes, data, integrations, and technology have to work together for the system to be useful.</p>
-              <p>ROSALOGIC understands those layers and works across them when a project requires it—whether that means building an application, connecting existing tools, or improving the technology that supports the software.</p>
+              <p>ROSALOGIC understands those layers and works across them when a project requires it. That might mean building an application, connecting existing tools, or improving the technology that supports the software.</p>
             </div>
             <div className="rs-layer-list" aria-label="Six layers of a business system">
               {layers.map(({ name, copy, icon: Icon }) => <div className="rs-layer" key={name}><div className="rs-layer-name"><Icon size={16} strokeWidth={1.4} aria-hidden="true" /><strong>{name}</strong></div><p>{copy}</p></div>)}
@@ -145,7 +145,7 @@ function SolutionsContent() {
 
         <section className="rs-section rs-industries" aria-labelledby="rs-industries-title">
           <div className="rs-wrap rs-section-split">
-            <div className="rs-lead"><Eyebrow>Industries</Eyebrow><h2 id="rs-industries-title">Software for<br />real operations.</h2><p>Our strongest fit is with organizations where day-to-day operations involve people, equipment, workflows, customers, and information that need to work together.</p><p>We also work with other organizations whose operational challenges fit our capabilities.</p></div>
+            <div className="rs-lead"><Eyebrow>Industries</Eyebrow><h2 id="rs-industries-title">Software for<br />real operations.</h2><p>Our strongest fit is with organizations where daily operations involve people, equipment, workflows, customers, and information that need to work together.</p><p>We also work with other organizations whose operational challenges fit our capabilities.</p></div>
             <div className="rs-columns rs-four-columns">
               {industries.map(area => <article className="rs-column" key={area.title}><h3>{area.title}</h3><p>{area.copy}</p><p className="rs-industry-detail">{area.detail}</p></article>)}
             </div>

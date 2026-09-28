@@ -49,7 +49,7 @@ export function PrivacyPage() {
       </section>
       <section>
         <h2>Analytics, cookies, and third parties</h2>
-        <p>We do not currently run optional website analytics or advertising cookies. The site is hosted by a third-party provider, which may maintain operational logs or use technology necessary to deliver and secure the site. Fonts are provided by Google Fonts; loading them may send technical request information, including your IP address, to Google. Email providers process messages you send us. Third-party sites linked from this website have their own privacy practices.</p>
+        <p>We do not currently run optional website analytics or advertising cookies. The site is hosted by an external provider, which may maintain operational logs or use technology necessary to deliver and secure the site. Fonts are provided by Google Fonts; loading them may send technical request information, including your IP address, to Google. Email providers process messages you send us. External sites linked from this website have their own privacy practices.</p>
       </section>
       <section>
         <h2>Retention and security</h2>
@@ -88,7 +88,7 @@ export function TermsPage() {
       </section>
       <section>
         <h2>Governing law and contact</h2>
-        <p>These terms are governed by the laws of the jurisdiction where ROSALOGIC maintains its principal place of business, without regard to conflict-of-laws rules, unless mandatory local law provides otherwise. Questions about these terms can be sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. We may revise these terms by updating this page.</p>
+        <p>These terms are governed by the laws of the jurisdiction where ROSALOGIC maintains its principal place of business, without applying rules on conflicts of law, unless mandatory local law provides otherwise. Questions about these terms can be sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. We may revise these terms by updating this page.</p>
       </section>
     </SupportDocument>
   );

@@ -227,7 +227,7 @@ function IntroSection() {
             The systems behind <em>the work.</em>
           </h2>
           <p className="intro-copy">
-            Explore how purpose-built software, connected information, and dependable technology can support
+            Explore how custom software, connected information, and dependable technology can support
             the work your organization relies on.
           </p>
         </div>
@@ -258,7 +258,7 @@ function IndustriesSection() {
             Built for operational businesses.
           </h2>
           <p className="industries-copy">
-            We work with organizations across industries that rely on complex operations and real-world systems.
+            We work with organizations across industries that rely on complex operations and everyday business systems.
           </p>
           <Link className="industry-link" href="/industries" data-testid="link-industries-learn-more">
             Learn more <ArrowRight size={13} aria-hidden="true" />
@@ -299,7 +299,7 @@ function AboutSection() {
         <div className="about-copy">
           <p>
             ROSALOGIC is focused on the quiet disciplines that make technology dependable: clean architecture,
-            maintainable software, reliable infrastructure, security and long-term relationships.
+            maintainable software, reliable infrastructure, security and lasting relationships.
           </p>
           <div className="about-rule" />
           <div className="about-detail">

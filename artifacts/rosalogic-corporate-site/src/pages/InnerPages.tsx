@@ -3,11 +3,11 @@ import {
   ArrowUpRight,
 } from 'lucide-react';
 import { Link } from 'wouter';
-import manufacturingPhoto from '../assets/industries-manufacturing.jpg';
-import agriculturePhoto from '../assets/industries-agriculture.jpg';
-import logisticsPhoto from '../assets/industries-logistics.jpg';
-import constructionPhoto from '../assets/industries-construction.jpg';
-import professionalServicesPhoto from '../assets/industries-professional-services.jpg';
+import manufacturingPhoto from '../../../../attached_assets/manu_1790593663764.jpg';
+import agriculturePhoto from '../../../../attached_assets/agri_1790593634935.jpg';
+import logisticsPhoto from '../../../../attached_assets/fleet_1790593594106.jpg';
+import constructionPhoto from '../../../../attached_assets/const_1790593555507.jpg';
+import professionalServicesPhoto from '../../../../attached_assets/corp_1790593445391.jpg';
 import officePhoto from '../assets/about-office.png';
 import teamDeveloperPhoto from '../assets/our-team-developer.png';
 import './inner-pages.css';
@@ -53,9 +53,9 @@ const industryAreas = [
 ];
 
 const aboutValues = [
-  { number: '01', title: 'Practicality', text: 'We focus on solutions that work in the real world—not just in theory. Technology should make the operation easier, not more complex.' },
+  { number: '01', title: 'Practicality', text: 'We focus on solutions that work in the real world, not just in theory. Technology should make the operation easier, not more complex.' },
   { number: '02', title: 'Quality', text: 'We care about architecture, maintainability, and security. Good engineering isn’t just about what works today; it’s about what lasts.' },
-  { number: '03', title: 'Partnership', text: 'We work closely with clients as a long-term partner. Your business and goals guide our work, not generic templates.' },
+  { number: '03', title: 'Partnership', text: 'We work closely with clients as an ongoing partner. Your business and goals guide our work, not generic templates.' },
   { number: '04', title: 'Continuous Improvement', text: 'Operations change, businesses grow, and technology evolves. We build systems that can adapt with you.' },
 ];
 
@@ -85,7 +85,7 @@ export function IndustriesPage() {
             <h1 id="industries-page-title" className="display-heading industries-page-title" tabIndex={-1}>
               Different industries.<br /><em>Same foundation.</em>
             </h1>
-            <p>Every operation has its own challenges, workflows, and business drivers. We build software, data, and technology around the way your operation works—so you can reduce friction, improve control, and create a stronger foundation for what&apos;s next.</p>
+            <p>Every operation has its own challenges, workflows, and business drivers. We build software, data, and technology around the way your operation works so you can reduce friction, improve control, and create a stronger foundation for what&apos;s next.</p>
           </div>
         </div>
       </section>
@@ -143,7 +143,7 @@ export function AboutPage() {
           <div className="about-hero-text">
             <p className="about-label">About</p>
             <h1 id="about-heading" className="about-heading" tabIndex={-1}>Engineering<br />better operations.</h1>
-            <p className="about-copy">ROSALOGIC is a business software and technology company focused on building practical, reliable systems for real-world operations. We work with organizations to design, build, and maintain the technology that keeps their business running.</p>
+            <p className="about-copy">ROSALOGIC is a business software and technology company focused on building practical, reliable systems for real operations. We work with organizations to design, build, and maintain the technology that keeps their business running.</p>
           </div>
           <img className="about-hero-image" src={officePhoto} alt="Bright office workspace with desks and computer monitors" width="1124" height="750" fetchPriority="high" />
         </div>
@@ -201,7 +201,7 @@ export function AboutPage() {
           <div>
             <p className="about-label">Why it matters</p>
             <h2 id="about-outcomes-heading" className="about-heading">Better systems create better operations.</h2>
-            <p className="about-copy">When software, data, and infrastructure work together, your teams can move faster, make better decisions, and focus on what matters. That&apos;s the real value of a well-engineered system.</p>
+            <p className="about-copy">When software, data, and infrastructure work together, your teams can move faster, make better decisions, and focus on what matters. That&apos;s the real value of a thoughtfully engineered system.</p>
           </div>
           <ul className="about-benefits">
             {aboutBenefits.map(({ title, text }) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}
