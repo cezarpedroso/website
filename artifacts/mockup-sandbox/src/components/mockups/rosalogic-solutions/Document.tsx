@@ -139,7 +139,7 @@ export function Document() {
           <div className="rs-wrap rs-connected-grid">
             <div className="rs-connected-copy"><Eyebrow>Connected systems</Eyebrow><h2 id="rs-connected-title">One system.<br />Multiple layers.</h2><p>A new application may need integrations.<br />Reporting gaps can start with disconnected systems.<br />Automation may require changes to the underlying workflow.</p><p>ROSALOGIC brings these pieces together when the project requires them, so the software works reliably in practice.</p></div>
             <div className="rs-connected-diagram" aria-label="Business system stack"><span className="rs-diagram-side">Business<br />Operations<br />Users</span><div className="rs-stack"><span>Business</span><span>Operations + Users</span><span>Software Systems</span><span>Data + Integrations</span><span>Infrastructure</span><span>Security</span></div></div>
-            <img className="rs-connected-image" src={architectureImage} alt="Angular concrete and glass architecture against a blue sky" loading="lazy" />
+            <div className="rs-connected-photo"><img className="rs-connected-image" src={architectureImage} alt="Angular concrete and glass architecture against a blue sky" loading="lazy" /></div>
           </div>
         </section>
 
