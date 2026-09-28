@@ -41,7 +41,7 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
   },
   '/solutions': {
     title: 'Software & Technology Solutions | ROSALOGIC',
-    description: 'Explore ROSALOGIC custom business applications, system integration, reporting, automation, cloud infrastructure, DevOps, and security services.',
+    description: 'Explore ROSALOGIC custom business software, system integration, operational reporting, deployment, and ongoing support for the systems it builds.',
   },
   '/industries': {
     title: 'Industries We Serve | ROSALOGIC',

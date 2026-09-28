@@ -14,29 +14,29 @@ const layers = [
 ];
 
 const softwareAreas = [
-  { no: '01', title: 'Operations & Workflow', copy: 'Systems for managing the processes that keep an organization moving.', items: ['Workflow management', 'Work orders', 'Approvals', 'Scheduling', 'Inventory', 'Procurement', 'Internal portals', 'Field operations'] },
-  { no: '02', title: 'Customer & Relationship Systems', copy: 'Applications for managing customers and the processes surrounding them.', items: ['CRM', 'Customer portals', 'Sales workflows', 'Service management', 'Account management', 'Quoting & proposals'] },
+  { no: '01', title: 'Operations & Workflow', copy: 'Custom tools for the workflows that keep an operation moving.', items: ['Workflow management', 'Work orders', 'Approvals', 'Scheduling', 'Inventory', 'Procurement', 'Internal portals', 'Field operations'] },
+  { no: '02', title: 'Customer & Relationship Systems', copy: 'Applications for managing customer relationships and the work surrounding them.', items: ['CRM', 'Customer portals', 'Sales workflows', 'Service management', 'Account management', 'Quoting & proposals'] },
   { no: '03', title: 'Asset & Maintenance Systems', copy: 'Systems for organizations managing physical assets, equipment, and maintenance.', items: ['EAM / CMMS', 'Asset registers', 'Preventive maintenance', 'Inspections', 'Work orders', 'Parts & inventory', 'Equipment history'] },
-  { no: '04', title: 'Purpose-Built Applications', copy: 'When an existing product doesn’t adequately support the operation, we design and build the system around it.', items: ['Internal business platforms', 'Management portals', 'Operational dashboards', 'Industry-specific applications', 'Specialized workflows'] },
+  { no: '04', title: 'Purpose-Built Applications', copy: 'When existing tools don’t fit the work, we build a business application around it.', items: ['Internal business platforms', 'Management portals', 'Operational dashboards', 'Custom internal tools', 'Specialized workflows'] },
 ];
 
 const integrationAreas = [
-  { title: 'System Integration', copy: 'Connect the systems that already run the business.', items: ['REST APIs', 'Webhooks', 'Third-party APIs', 'Database integration', 'ETL / ELT', 'Event-driven workflows', 'System synchronization'] },
-  { title: 'Reporting & Business Intelligence', copy: 'Turn operational data into information people can actually use.', items: ['Management dashboards', 'Operational reporting', 'KPIs', 'Data visualization', 'Automated reports', 'Business intelligence'] },
-  { title: 'Automation', copy: 'Reduce repetitive work by allowing systems to handle predictable processes.', items: ['Data synchronization', 'Notifications', 'Document generation', 'Scheduled processes', 'Approval workflows', 'Automated imports/exports'] },
+  { title: 'System Integration', copy: 'Connect existing tools to the business software we build.', items: ['REST APIs', 'Third-party API integration', 'Webhooks', 'Database integration', 'System synchronization', 'Data imports / exports'] },
+  { title: 'Operational Reporting', copy: 'Make data from connected systems useful to the people running the operation.', items: ['Operational reports', 'Management dashboards', 'KPIs', 'Automated reports', 'Data visualization'] },
+  { title: 'Workflow Automation', copy: 'Automate repetitive steps in the systems we build and connect.', items: ['Data synchronization', 'Notifications', 'Document generation', 'Scheduled workflows', 'Approval workflows', 'Automated imports/exports'] },
 ];
 
 const infrastructure = [
-  { title: 'Cloud & Infrastructure', items: ['AWS / Azure', 'On-premise environments', 'Networking', 'Databases', 'Containers', 'Compute', 'Storage'] },
-  { title: 'DevOps & Delivery', items: ['CI/CD', 'Deployment automation', 'Environment management', 'Monitoring', 'Logging', 'Backups'] },
-  { title: 'Security', items: ['Identity & access management', 'Secure architecture', 'Secrets management', 'Network security', 'Security monitoring', 'Backup & recovery'] },
+  { title: 'Hosting & Environments', items: ['AWS / Azure', 'On-premise deployment', 'Databases', 'Containers', 'Application hosting', 'Environment configuration'] },
+  { title: 'Deployment & Support', items: ['CI/CD', 'Deployment automation', 'Environment management', 'Application monitoring', 'Logging', 'Backups'] },
+  { title: 'Security & Access', items: ['Application security', 'Identity & access', 'Secrets management', 'Secure architecture', 'Security hardening'] },
 ];
 
 const industries = [
-  { title: 'Manufacturing', copy: 'Production, maintenance, inventory, and quality systems.', detail: 'Agriculture · Food production · Industrial equipment' },
-  { title: 'Agriculture', copy: 'Connect operations, assets, people, and information across the field.', detail: 'Operations · Field services · Asset management' },
-  { title: 'Logistics & Transportation', copy: 'Flow of materials, information, and work across operations.', detail: 'Fleet · Dispatch · Customer systems' },
-  { title: 'Professional Services', copy: 'Systems that make delivery, knowledge, and relationships work together.', detail: 'CRM · Projects · Documents' },
+  { title: 'Manufacturing', copy: 'Software for production, maintenance, inventory, and quality workflows.', detail: 'Production · Maintenance · Inventory' },
+  { title: 'Agriculture', copy: 'Tools for coordinating field work, equipment, and operational information.', detail: 'Operations · Field services · Asset management' },
+  { title: 'Logistics & Transportation', copy: 'Systems for dispatch, fleet work, and the flow of information between teams.', detail: 'Fleet · Dispatch · Customer systems' },
+  { title: 'Professional Services', copy: 'Business tools for projects, client relationships, and service delivery.', detail: 'CRM · Projects · Documents' },
 ];
 
 const process = [
@@ -45,14 +45,14 @@ const process = [
   { no: '03', title: 'Architect', copy: 'We design the technical and operational solution.' },
   { no: '04', title: 'Build', copy: 'We develop, test, and integrate the system.' },
   { no: '05', title: 'Deploy', copy: 'We put the system into its production environment.' },
-  { no: '06', title: 'Operate', copy: 'We support, maintain, secure, and improve the system.' },
+  { no: '06', title: 'Support', copy: 'We maintain, monitor, secure, and improve the systems we build.' },
 ];
 
 const engagements = [
   { title: 'Build', copy: 'Design and development of a new business or operational system.' },
   { title: 'Improve', copy: 'Modernize, extend, or replace an existing system.' },
   { title: 'Connect', copy: 'Integrate existing applications and data.' },
-  { title: 'Operate', copy: 'Maintain, monitor, secure, and continuously improve critical systems.' },
+  { title: 'Support', copy: 'Maintain, monitor, secure, and improve systems over time.' },
 ];
 
 function Eyebrow({ children }: { children: string }) {
@@ -71,8 +71,8 @@ function SolutionsContent() {
           <div className="rs-hero-text">
             <Eyebrow>Solutions</Eyebrow>
             <h1>Built around<br /><span>your operation.</span></h1>
-            <p>Your business has processes, people, assets, data and systems that need to work together. ROSALOGIC designs and builds the technology around those realities—not around a generic software template.</p>
-            <p className="rs-hero-closing">The goal isn’t more technology. It’s a better-running operation.</p>
+            <p>ROSALOGIC builds and supports business systems around the way your operation works. We develop custom applications, connect existing tools, and provide the technology those systems need to run reliably.</p>
+            <p className="rs-hero-closing">Business software first. Integration and support when needed.</p>
           </div>
           <figure className="rs-hero-photo"><img src={siloImage} alt="Steel grain silos at an agricultural processing facility beneath a pale sky" /></figure>
         </div>
@@ -84,8 +84,8 @@ function SolutionsContent() {
             <div className="rs-lead">
               <Eyebrow>The system</Eyebrow>
               <h2 id="rs-system-title">The system is more than<br />the software.</h2>
-              <p>A business system is the combination of software, processes, information, integrations and infrastructure that allows an organization to operate.</p>
-              <p>ROSALOGIC works across these layers when the problem requires it. Sometimes that means building a new application. Sometimes it means connecting systems that already exist. Sometimes the right answer is improving the infrastructure underneath them.</p>
+              <p>Software is only one part of a business system. The surrounding processes, data, integrations, and technology have to work together for the system to be useful.</p>
+              <p>ROSALOGIC understands those layers and works across them when a project requires it—whether that means building an application, connecting existing tools, or improving the technology that supports the software.</p>
             </div>
             <div className="rs-layer-list" aria-label="Six layers of a business system">
               {layers.map(({ name, copy, icon: Icon }) => <div className="rs-layer" key={name}><div className="rs-layer-name"><Icon size={16} strokeWidth={1.4} aria-hidden="true" /><strong>{name}</strong></div><p>{copy}</p></div>)}
@@ -96,10 +96,10 @@ function SolutionsContent() {
         <section className="rs-section rs-software" aria-labelledby="rs-software-title">
           <div className="rs-wrap rs-section-split">
             <div className="rs-lead">
-              <Eyebrow>Software systems</Eyebrow>
+              <Eyebrow>Business software</Eyebrow>
               <h2 id="rs-software-title">Software shaped around<br />the way work actually happens.</h2>
               <p>Off-the-shelf software is useful when your processes fit the product. When they don’t, teams often compensate with spreadsheets, manual workarounds, disconnected tools and repetitive data entry.</p>
-              <p>ROSALOGIC builds purpose-specific applications around your actual workflows, users, assets and decisions.</p>
+              <p>Custom business and operational software is our primary work. We build applications around your workflows, users, assets and decisions—not a generic product catalog.</p>
             </div>
             <div className="rs-columns rs-four-columns">
               {softwareAreas.map(area => <article className="rs-column" key={area.no}><span className="rs-column-no">{area.no}</span><h3>{area.title}</h3><p>{area.copy}</p><ItemList items={area.items} /></article>)}
@@ -110,9 +110,9 @@ function SolutionsContent() {
         <section className="rs-section rs-integration" aria-labelledby="rs-integration-title">
           <div className="rs-wrap rs-section-split">
             <div className="rs-lead">
-              <Eyebrow>Data & integration</Eyebrow>
+              <Eyebrow>Integration & data</Eyebrow>
               <h2 id="rs-integration-title">Make systems communicate.<br />Make information useful.</h2>
-              <p>Businesses rarely operate on one system. Accounting, CRM, ERP, production, inventory, spreadsheets, customer portals and external services all contain pieces of the organization’s information.</p>
+              <p>The applications we build often need to work with tools a business already uses—accounting, CRM, inventory, and other systems. We connect them and make the information useful for daily operations.</p>
             </div>
             <div className="rs-columns rs-three-columns">
               {integrationAreas.map(area => <article className="rs-column" key={area.title}><h3>{area.title}</h3><p>{area.copy}</p><ItemList items={area.items} /></article>)}
@@ -123,10 +123,10 @@ function SolutionsContent() {
         <section className="rs-section rs-infrastructure" aria-labelledby="rs-infrastructure-title">
           <div className="rs-wrap rs-section-split">
             <div className="rs-lead">
-              <Eyebrow>Infrastructure & security</Eyebrow>
+              <Eyebrow>Technology & support</Eyebrow>
               <h2 id="rs-infrastructure-title">The foundation<br />behind the system.</h2>
-              <p>Software is only useful when the environment supporting it is reliable, secure and maintainable.</p>
-              <p className="rs-small-note">We work with the infrastructure you already have when appropriate.</p>
+              <p>We provide the infrastructure, deployment, security, and maintenance needed to keep the systems we build reliable.</p>
+              <p className="rs-small-note">We work with your existing environment when it fits the systems we build.</p>
             </div>
             <div className="rs-columns rs-three-columns">
               {infrastructure.map(area => <article className="rs-column" key={area.title}><h3>{area.title}</h3><ItemList items={area.items} /></article>)}
@@ -136,7 +136,7 @@ function SolutionsContent() {
 
         <section className="rs-connected" aria-labelledby="rs-connected-title">
           <div className="rs-wrap rs-connected-grid">
-            <div className="rs-connected-copy"><Eyebrow>Connected systems</Eyebrow><h2 id="rs-connected-title">One system.<br />Multiple layers.</h2><p>A new application may require new infrastructure.<br />A reporting problem may actually be an integration problem.<br />An automation opportunity may require changes to the underlying workflow.</p><p>That’s why ROSALOGIC does not treat software, data and infrastructure as isolated services.</p></div>
+            <div className="rs-connected-copy"><Eyebrow>Connected systems</Eyebrow><h2 id="rs-connected-title">One system.<br />Multiple layers.</h2><p>A new application may need integrations.<br />Reporting gaps can start with disconnected systems.<br />Automation may require workflow changes and dependable infrastructure.</p><p>ROSALOGIC brings these pieces together when the project needs them, so the software works reliably in practice.</p></div>
             <div className="rs-connected-diagram" aria-label="Business system stack"><span className="rs-diagram-side">Business<br />Operations<br />Users</span><div className="rs-stack"><span>Business</span><span>Operations + Users</span><span>Software Systems</span><span>Data + Integrations</span><span>Infrastructure</span><span>Security</span></div></div>
             <img className="rs-connected-image" src={architectureImage} alt="Angular concrete and glass architecture against a blue sky" loading="lazy" />
           </div>
@@ -144,7 +144,7 @@ function SolutionsContent() {
 
         <section className="rs-section rs-industries" aria-labelledby="rs-industries-title">
           <div className="rs-wrap rs-section-split">
-            <div className="rs-lead"><Eyebrow>Where this can live</Eyebrow><h2 id="rs-industries-title">Systems designed for<br />real operations.</h2></div>
+            <div className="rs-lead"><Eyebrow>Industries we can serve</Eyebrow><h2 id="rs-industries-title">Systems designed for<br />real operations.</h2></div>
             <div className="rs-columns rs-four-columns">
               {industries.map(area => <article className="rs-column" key={area.title}><h3>{area.title}</h3><p>{area.copy}</p><p className="rs-industry-detail">{area.detail}</p></article>)}
             </div>
@@ -168,7 +168,7 @@ function SolutionsContent() {
         <section className="rs-cta" aria-labelledby="rs-cta-title">
           <div className="rs-wrap rs-cta-grid">
             <div><Eyebrow>Let’s talk</Eyebrow><h2 id="rs-cta-title">Where could your<br />operation work better?</h2></div>
-            <p>Tell us what’s slowing your business down. We’ll help you understand the options, determine what technology can improve it, and define a practical path forward.</p>
+            <p>Tell us what’s slowing your operation down. We’ll help define a practical software or integration project—and how to support the system after it goes live.</p>
             <nav aria-label="Next steps"><Link href="/contact" data-testid="link-solutions-contact" className="rs-cta-primary">Start a Conversation <ArrowUpRight size={14} aria-hidden="true" /></Link><Link href="/industries" data-testid="link-solutions-industries" className="rs-cta-secondary">Explore Industries <ArrowUpRight size={14} aria-hidden="true" /></Link></nav>
           </div>
         </section>

@@ -1,3 +1,4 @@
 - [Contact-channel integrity](contact-channel-integrity.md) — a displayed form may stay inactive; never imply delivery until sending is configured.
 - [Home and Solutions copy separation](home-solutions-copy.md) — keep the homepage teaser distinct from the detailed Solutions page when required hero copy overlaps.
 - [Solutions visual restraint](solutions-visual-restraint.md) — prefer hierarchy and spacing over repeated rules, micro-labels, and numbered guides on the Solutions page.
+- [ROSALOGIC launch positioning](rosalogic-launch-positioning.md) — lead with custom business software; scope integration, data, and support to delivered systems.
