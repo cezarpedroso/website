@@ -190,7 +190,7 @@ export function AboutPage() {
         <div className="about-wrap about-hero-grid">
           <div className="about-hero-text">
             <p className="about-label">About</p>
-            <h1 id="about-heading" className="about-serif" tabIndex={-1}>Engineering<br />better operations.</h1>
+            <h1 id="about-heading" className="about-heading" tabIndex={-1}>Engineering<br />better operations.</h1>
             <p className="about-copy">ROSALOGIC is a business software and technology company focused on building practical, reliable systems for real-world operations. We work with organizations to design, build, and maintain the technology that keeps their business running.</p>
           </div>
           <img className="about-hero-image" src={industrialRoofPhoto} alt="Industrial building beneath an evening sky" width="1024" height="1024" fetchPriority="high" />
@@ -202,7 +202,7 @@ export function AboutPage() {
         <div className="about-wrap about-values-grid">
           <div className="about-values-intro">
             <p className="about-label">Our values</p>
-            <h2 id="about-values-heading" className="about-serif">What we believe in.</h2>
+            <h2 id="about-values-heading" className="about-heading">What we believe in.</h2>
             <p className="about-copy">Our work is guided by a few core principles. They shape how we approach problems, work with clients, and build systems that last.</p>
           </div>
           {aboutValues.map(({ number, title, text }) => (
@@ -219,7 +219,7 @@ export function AboutPage() {
         <div className="about-wrap about-team-grid">
           <div>
             <p className="about-label">Our team</p>
-            <h2 id="about-team-heading" className="about-serif">A small team<br />with a broad skillset.</h2>
+            <h2 id="about-team-heading" className="about-heading">A small team<br />with a broad skillset.</h2>
             <p className="about-copy">ROSALOGIC is a focused team of engineers and problem solvers. We bring together experience in software development, cloud infrastructure, data, and business systems to build solutions that fit your operation.</p>
           </div>
           <img className="about-team-image" src={teamDeveloperPhoto} alt="Software developer working at a desktop computer" width="2000" height="1414" loading="lazy" />
@@ -230,7 +230,7 @@ export function AboutPage() {
         <div className="about-wrap about-approach-grid">
           <div className="about-approach-intro">
             <p className="about-label">Our approach</p>
-            <h2 id="about-approach-heading" className="about-serif">A collaborative process, from problem to operation.</h2>
+            <h2 id="about-approach-heading" className="about-heading">A collaborative process, from problem to operation.</h2>
             <p className="about-copy">We don&apos;t start with a technology stack.<br />We start with your operation. Our process is designed to understand your needs, shape the right solution, and deliver a system that works in the real world.</p>
           </div>
           <div className="about-steps" aria-label="Six steps in our process">
@@ -249,7 +249,7 @@ export function AboutPage() {
         <div className="about-wrap about-outcomes-grid">
           <div>
             <p className="about-label">Why it matters</p>
-            <h2 id="about-outcomes-heading" className="about-serif">Better systems create better operations.</h2>
+            <h2 id="about-outcomes-heading" className="about-heading">Better systems create better operations.</h2>
             <p className="about-copy">When software, data, and infrastructure work together, your teams can move faster, make better decisions, and focus on what matters. That&apos;s the real value of a well-engineered system.</p>
           </div>
           <img className="about-outcomes-image" src={silosPhoto} alt="Agricultural grain silos and surrounding operational site" width="1024" height="1024" loading="lazy" />

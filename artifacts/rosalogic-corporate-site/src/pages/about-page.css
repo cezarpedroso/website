@@ -5,7 +5,7 @@
   --about-gold: #ab9166;
   color: var(--about-ink);
   background: #f7f6f2;
-  font-family: var(--app-font-sans);
+  font-family: var(--app-font-corporate);
 }
 
 .about-page * { box-sizing: border-box; }
@@ -37,17 +37,17 @@
   background: var(--about-gold);
   content: '';
 }
-.about-page .about-serif {
-  font-family: var(--app-font-serif);
-  font-weight: 400;
-  letter-spacing: -.029em;
-  line-height: .99;
+.about-page .about-heading {
+  font-family: var(--app-font-corporate);
+  font-weight: 500;
+  letter-spacing: -.055em;
+  line-height: 1.08;
 }
 .about-page .about-copy {
   max-width: none;
   margin: 0;
   color: var(--about-muted);
-  font-family: var(--app-font-sans);
+  font-family: var(--app-font-corporate);
   font-size: clamp(.81rem, .9vw, .94rem);
   font-weight: 400;
   line-height: 1.78;
@@ -68,7 +68,7 @@
 .about-page .about-hero h1 {
   max-width: 660px;
   margin: 0 0 24px;
-  font-size: clamp(3.65rem, 5vw, 6rem);
+  font-size: clamp(2.6rem, 3.25vw, 3.9rem);
 }
 .about-page .about-hero .about-copy { max-width: 540px; }
 .about-page .about-hero-image {
@@ -104,7 +104,7 @@
 .about-page .about-values-intro h2 {
   max-width: 320px;
   margin-bottom: 19px;
-  font-size: clamp(2.6rem, 3.2vw, 4rem);
+  font-size: clamp(2rem, 2.55vw, 3rem);
 }
 .about-page .about-values-intro .about-copy { max-width: 360px; }
 .about-page .about-value {
@@ -133,10 +133,10 @@
 .about-page .about-value h3,
 .about-page .about-step h3 {
   margin-bottom: 13px;
-  font-family: var(--app-font-serif);
+  font-family: var(--app-font-corporate);
   font-size: clamp(1.5rem, 1.65vw, 2rem);
-  font-weight: 400;
-  letter-spacing: -.02em;
+  font-weight: 500;
+  letter-spacing: -.035em;
   line-height: 1;
 }
 .about-page .about-value .about-copy,
@@ -166,7 +166,7 @@
 .about-page .about-team-grid > div { position: relative; z-index: 2; }
 .about-page .about-team h2 {
   margin-bottom: 19px;
-  font-size: clamp(2.9rem, 3.8vw, 4.8rem);
+  font-size: clamp(2.05rem, 2.8vw, 2.85rem);
 }
 .about-page .about-team .about-copy { max-width: 480px; color: #c7d3d5; }
 .about-page .about-team-image {
@@ -188,7 +188,7 @@
 }
 .about-page .about-approach-intro h2 {
   margin-bottom: 23px;
-  font-size: clamp(2.85rem, 3.45vw, 4.4rem);
+  font-size: clamp(2rem, 2.8vw, 3.1rem);
 }
 .about-page .about-approach-intro .about-copy { max-width: 430px; }
 .about-page .about-steps {
@@ -219,7 +219,7 @@
 }
 .about-page .about-outcomes h2 {
   margin-bottom: 20px;
-  font-size: clamp(2.7rem, 3.4vw, 4.3rem);
+  font-size: clamp(2rem, 2.75vw, 3rem);
 }
 .about-page .about-outcomes .about-copy { max-width: 445px; }
 .about-page .about-outcomes-image {
@@ -328,7 +328,7 @@
   .about-page .about-outcomes-grid,
   .about-page .about-cta-grid { grid-template-columns: 1fr; gap: 20px; }
   .about-page .about-hero-text { padding: 0; }
-  .about-page .about-hero h1 { font-size: clamp(3.4rem, 12vw, 5rem); }
+  .about-page .about-hero h1 { font-size: clamp(2.25rem, 9vw, 2.9rem); }
   .about-page .about-hero-image { height: clamp(240px, 65vw, 440px); }
   .about-page .about-hero-aside { grid-column: auto; }
   .about-page .about-values { padding: 42px 0 47px; }
@@ -339,6 +339,7 @@
   .about-page .about-team { padding: 42px 0; }
   .about-page .about-team::before { display: none; }
   .about-page .about-team-grid { min-height: 0; }
+  .about-page .about-team h2 { font-size: clamp(2rem, 8vw, 2.5rem); }
   .about-page .about-team-image { position: static; width: 100%; height: clamp(250px, 65vw, 440px); }
   .about-page .about-approach { padding: 43px 0 48px; }
   .about-page .about-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
