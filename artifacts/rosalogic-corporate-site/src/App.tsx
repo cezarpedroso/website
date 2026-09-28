@@ -33,12 +33,13 @@ import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage, ThankYouPage }
 import { OwnerInquiriesPage } from './pages/OwnerInquiriesPage';
 import './owner.css';
 
-const clerkPubKey = publishableKeyFromHost(
-  window.location.hostname,
-  import.meta.env.VITE_CLERK_PUBLISHABLE_KEY,
-);
-
 const clerkProxyUrl = import.meta.env.VITE_CLERK_PROXY_URL;
+// Replit-managed production auth derives a per-host key for its proxy.
+// Externally managed Clerk uses the configured key directly (including
+// Vercel preview domains, which have no matching Clerk custom domain).
+const clerkPubKey = clerkProxyUrl
+  ? publishableKeyFromHost(window.location.hostname, import.meta.env.VITE_CLERK_PUBLISHABLE_KEY)
+  : import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 function stripBase(path: string): string {
@@ -48,7 +49,7 @@ function stripBase(path: string): string {
 }
 
 if (!clerkPubKey) {
-  throw new Error('Missing VITE_CLERK_PUBLISHABLE_KEY in .env file');
+  throw new Error('Missing VITE_CLERK_PUBLISHABLE_KEY');
 }
 
 const clerkAppearance = {
