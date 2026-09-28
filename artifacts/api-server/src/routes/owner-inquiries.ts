@@ -84,17 +84,20 @@ router.post("/owner/inquiries/:id/retry", requireSameOrigin, async (req, res): P
     res.status(409).json({ error: "Delivery may already have been attempted; review this inquiry instead" });
     return;
   }
+  let claimedForSend = false;
   const outcome = await notifyContactInbox(row, async () => {
     const [claimed] = await db.update(contactMessagesTable).set({ deliveryState: "sending" })
       .where(and(eq(contactMessagesTable.id, row.id), eq(contactMessagesTable.deliveryState, "unsent")))
       .returning({ id: contactMessagesTable.id });
-    return !!claimed;
+    claimedForSend = !!claimed;
+    return claimedForSend;
   });
   if (outcome === "not-claimed") {
     res.status(409).json({ error: "Inquiry was already claimed for delivery" });
     return;
   }
-  if (outcome === "sent" || outcome === "uncertain") {
+  if (outcome === "sent" || outcome === "uncertain" ||
+      (outcome === "unsent" && claimedForSend)) {
     await db.update(contactMessagesTable).set({
       deliveryState: outcome,
       ...(outcome === "sent" ? { notificationSentAt: new Date() } : {}),
