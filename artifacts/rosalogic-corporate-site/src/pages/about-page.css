@@ -83,7 +83,7 @@
 }
 .about-page .about-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr) minmax(105px, .24fr);
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 1.24fr);
   align-items: center;
   gap: clamp(25px, 3.5vw, 70px);
   min-height: clamp(310px, 29vw, 465px);
@@ -106,19 +106,6 @@
   object-position: center top;
   pointer-events: none;
 }
-.about-page .about-hero-aside {
-  grid-column: 3;
-  align-self: center;
-  margin: 0;
-  padding: 22px 0 22px 24px;
-  border-left: 1px solid var(--about-gold);
-  font-size: .63rem;
-  font-weight: 700;
-  letter-spacing: .15em;
-  line-height: 1.9;
-  text-transform: uppercase;
-}
-
 .about-page .about-section {
   border-top: 1px solid var(--about-line);
 }
@@ -337,7 +324,6 @@
 @media (max-width: 1050px) {
   .about-page .about-wrap { width: min(calc(100% - 64px), 1440px); }
   .about-page .about-hero-grid { grid-template-columns: 1fr 1fr; }
-  .about-page .about-hero-aside { grid-column: 1 / -1; max-width: 380px; padding-block: 6px; }
   .about-page .about-values-grid { grid-template-columns: repeat(4, 1fr); row-gap: 35px; }
   .about-page .about-values-intro { grid-column: 1 / -1; }
   .about-page .about-value:first-of-type { padding-left: 0; border-left: 0; }
@@ -368,7 +354,6 @@
   }
   .about-page .about-hero h1 { font-size: clamp(2.25rem, 9vw, 2.9rem); }
   .about-page .about-hero-image { width: 100%; object-position: 40% top; }
-  .about-page .about-hero-aside { grid-column: 1; grid-row: 3; }
   .about-page .about-hero::before {
     background:
       linear-gradient(180deg, rgba(247, 246, 242, .78) 0%, rgba(247, 246, 242, 0) 130px),

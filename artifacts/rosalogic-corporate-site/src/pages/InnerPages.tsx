@@ -14,7 +14,7 @@ import agriculturePhoto from '../assets/industry-agriculture.jpg';
 import logisticsPhoto from '../assets/industry-logistics.jpg';
 import constructionPhoto from '../assets/industry-construction.jpg';
 import professionalServicesPhoto from '../assets/industry-professional-services.jpg';
-import industrialRoofPhoto from '../assets/about-industrial-roof.jpg';
+import officePhoto from '../assets/about-office.png';
 import teamDeveloperPhoto from '../assets/our-team-developer.png';
 import silosPhoto from '../assets/solutions-silos.jpg';
 import './inner-pages.css';
@@ -193,8 +193,7 @@ export function AboutPage() {
             <h1 id="about-heading" className="about-heading" tabIndex={-1}>Engineering<br />better operations.</h1>
             <p className="about-copy">ROSALOGIC is a business software and technology company focused on building practical, reliable systems for real-world operations. We work with organizations to design, build, and maintain the technology that keeps their business running.</p>
           </div>
-          <img className="about-hero-image" src={industrialRoofPhoto} alt="Industrial building beneath an evening sky" width="1024" height="1024" fetchPriority="high" />
-          <p className="about-hero-aside">We turn business needs into reliable technology systems.</p>
+          <img className="about-hero-image" src={officePhoto} alt="Bright office workspace with desks and computer monitors" width="1124" height="750" fetchPriority="high" />
         </div>
       </section>
 
