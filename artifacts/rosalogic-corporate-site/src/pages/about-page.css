@@ -109,7 +109,15 @@
 .about-page .about-section {
   border-top: 1px solid var(--about-line);
 }
-.about-page .about-values { padding: 58px 0 65px; }
+.about-page .about-values {
+  --about-line: rgba(225, 237, 241, .24);
+  padding: 58px 0 65px;
+  color: #f3f5f4;
+  background: #1d4258;
+}
+.about-page .about-values .about-label,
+.about-page .about-values .about-number { color: #d3e0e5; }
+.about-page .about-values .about-copy { color: #d2dfe4; }
 .about-page .about-values-grid {
   display: grid;
   grid-template-columns: minmax(210px, 1.35fr) repeat(4, minmax(0, 1fr));
