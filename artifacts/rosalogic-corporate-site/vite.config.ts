@@ -27,11 +27,19 @@ if (!basePath) {
   );
 }
 
+// Clerk's published browser client must use the same-origin API proxy. The
+// platform injects these build-time values for published static artifacts;
+// fail publishing rather than shipping a sign-in page that cannot load.
+if (process.env.NODE_ENV === 'production' &&
+    (!process.env.VITE_CLERK_PROXY_URL || !process.env.VITE_CLERK_PUBLISHABLE_KEY)) {
+  throw new Error('Published owner sign-in requires Clerk proxy and publishable key configuration');
+}
+
 // Vite injects inline scripts and opens a WebSocket during development.
 // Published static assets use the tighter policy in artifact.toml instead.
 const developmentHeaders = {
   'Content-Security-Policy':
-    "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:",
+    "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https:; script-src 'self' 'unsafe-inline' https:; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https: ws: wss:; frame-src 'self' https:",
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
 };
@@ -40,7 +48,7 @@ export default defineConfig({
   base: basePath,
   plugins: [
     react(),
-    tailwindcss(),
+    tailwindcss({ optimize: false }),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== 'production' &&
     process.env.REPL_ID !== undefined

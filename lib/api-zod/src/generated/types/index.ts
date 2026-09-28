@@ -9,3 +9,7 @@
 export * from './contactMessageInput';
 export * from './contactReceipt';
 export * from './healthStatus';
+export * from './listOwnerInquiriesParams';
+export * from './listOwnerInquiriesView';
+export * from './ownerInquiry';
+export * from './ownerInquiryDeliveryState';

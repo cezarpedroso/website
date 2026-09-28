@@ -3,22 +3,29 @@ import type { ContactMessage } from "@workspace/db";
 
 type GmailProfile = { emailAddress?: string };
 
-export async function notifyContactInbox(message: ContactMessage): Promise<boolean> {
+export type DeliveryResult = "unsent" | "sent" | "uncertain" | "not-claimed";
+
+// Claim is persisted immediately before the first possible send. If the process
+// dies while sending, "sending" remains for manual review rather than retry.
+export async function notifyContactInbox(
+  message: ContactMessage,
+  claim: () => Promise<boolean>,
+): Promise<DeliveryResult> {
   const recipient = process.env.CONTACT_RECIPIENT_EMAIL;
   if (!recipient || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(recipient)) {
-    return false;
+    return "unsent";
   }
 
   const connectors = new ReplitConnectors();
-  const profileResponse = await connectors.proxy("google-mail", "/gmail/v1/users/me/profile", {
-    method: "GET",
-  });
-  if (!profileResponse.ok) {
-    throw new Error(`Gmail profile request failed (${profileResponse.status})`);
-  }
-  const profile = (await profileResponse.json()) as GmailProfile;
-  if (profile.emailAddress?.toLowerCase() !== recipient.toLowerCase()) {
-    throw new Error("Connected Gmail account does not match the configured contact inbox");
+  try {
+    const profileResponse = await connectors.proxy("google-mail", "/gmail/v1/users/me/profile", {
+      method: "GET",
+    });
+    if (!profileResponse.ok) return "unsent";
+    const profile = (await profileResponse.json()) as GmailProfile;
+    if (profile.emailAddress?.toLowerCase() !== recipient.toLowerCase()) return "unsent";
+  } catch {
+    return "unsent";
   }
 
   // The visitor never controls the recipient, subject, or sender headers. A
@@ -40,13 +47,15 @@ export async function notifyContactInbox(message: ContactMessage): Promise<boole
     body,
   ].join("\r\n"), "utf8").toString("base64url");
 
-  const sendResponse = await connectors.proxy("google-mail", "/gmail/v1/users/me/messages/send", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ raw }),
-  });
-  if (!sendResponse.ok) {
-    throw new Error(`Gmail send failed (${sendResponse.status})`);
+  if (!await claim()) return "not-claimed";
+  try {
+    const sendResponse = await connectors.proxy("google-mail", "/gmail/v1/users/me/messages/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ raw }),
+    });
+    return sendResponse.ok ? "sent" : "uncertain";
+  } catch {
+    return "uncertain";
   }
-  return true;
 }

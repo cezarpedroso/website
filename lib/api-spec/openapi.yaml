@@ -55,8 +55,82 @@ paths:
           description: Unsupported content type
         "429":
           description: Too many requests
+  /owner/inquiries:
+    get:
+      operationId: listOwnerInquiries
+      tags: [contact]
+      summary: List inquiries for the verified inbox owner
+      parameters:
+        - in: query
+          name: view
+          schema: { type: string, enum: [pending, all], default: pending }
+        - in: query
+          name: page
+          schema: { type: integer, minimum: 1, default: 1 }
+      responses:
+        "200":
+          description: Page of up to 100 inquiries, newest first
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/OwnerInquiry" }
+        "401": { description: Sign-in required }
+        "403": { description: Not the inbox owner }
+  /owner/inquiries/{id}/retry:
+    post:
+      operationId: retryOwnerInquiry
+      tags: [contact]
+      summary: Retry an inquiry known not to have been sent
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Updated inquiry
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/OwnerInquiry" }
+        "401": { description: Sign-in required }
+        "403": { description: Not the inbox owner }
+        "404": { description: Inquiry not found }
+        "409": { description: Retry not safe or inquiry already claimed }
+  /owner/inquiries/{id}/review:
+    post:
+      operationId: reviewOwnerInquiry
+      tags: [contact]
+      summary: Mark an inquiry as handled without changing delivery status
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Updated inquiry
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/OwnerInquiry" }
+        "401": { description: Sign-in required }
+        "403": { description: Not the inbox owner }
+        "404": { description: Inquiry not found }
 components:
   schemas:
+    OwnerInquiry:
+      type: object
+      required: [id, name, email, company, message, createdAt, deliveryState, notificationSentAt, reviewedAt]
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        email: { type: string }
+        company: { type: ["string", "null"] }
+        message: { type: string }
+        createdAt: { type: string, format: date-time }
+        deliveryState: { type: string, enum: [unsent, sending, sent, uncertain] }
+        notificationSentAt: { type: ["string", "null"], format: date-time }
+        reviewedAt: { type: ["string", "null"], format: date-time }
     HealthStatus:
       type: object
       properties:

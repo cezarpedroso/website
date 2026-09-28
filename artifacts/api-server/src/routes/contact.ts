@@ -86,7 +86,7 @@ router.post("/contact", async (req, res): Promise<void> => {
       return { kind: "limited" as const };
     }
     const [saved] = await tx.insert(contactMessagesTable).values({
-      requestId, name, email, company, message, ipHash, emailHash,
+      requestId, name, email, company, message, ipHash, emailHash, deliveryState: "unsent",
     }).onConflictDoNothing({ target: contactMessagesTable.requestId }).returning();
     if (saved) return { kind: "saved" as const, saved };
     const [existing] = await tx.select({
@@ -110,10 +110,19 @@ router.post("/contact", async (req, res): Promise<void> => {
 
   if (result.kind === "saved") {
     try {
-      if (await notifyContactInbox(result.saved)) {
-        await db.update(contactMessagesTable).set({ notificationSentAt: new Date() })
-          .where(eq(contactMessagesTable.id, result.saved.id));
-      } else {
+      const outcome = await notifyContactInbox(result.saved, async () => {
+        const [claimed] = await db.update(contactMessagesTable).set({ deliveryState: "sending" })
+          .where(and(eq(contactMessagesTable.id, result.saved.id), eq(contactMessagesTable.deliveryState, "unsent")))
+          .returning({ id: contactMessagesTable.id });
+        return !!claimed;
+      });
+      if (outcome === "sent" || outcome === "uncertain") {
+        await db.update(contactMessagesTable).set({
+          deliveryState: outcome,
+          ...(outcome === "sent" ? { notificationSentAt: new Date() } : {}),
+        }).where(and(eq(contactMessagesTable.id, result.saved.id), eq(contactMessagesTable.deliveryState, "sending")));
+      }
+      if (outcome !== "sent") {
         req.log.warn("Contact message stored without email notification");
       }
     } catch {

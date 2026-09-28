@@ -1,4 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import { ClerkProvider, SignIn, SignUp, useClerk } from '@clerk/react';
+import { publishableKeyFromHost } from '@clerk/react/internal';
+import { shadcn } from '@clerk/themes';
+import { useQueryClient } from '@tanstack/react-query';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -26,6 +30,139 @@ import professionalServicesPhoto from './assets/industry-professional-services.j
 import { AboutPage, ContactPage, IndustriesPage } from './pages/InnerPages';
 import { SolutionsPage } from './pages/SolutionsPage';
 import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage, ThankYouPage } from './pages/SupportingPages';
+import { OwnerInquiriesPage } from './pages/OwnerInquiriesPage';
+import './owner.css';
+
+const clerkPubKey = publishableKeyFromHost(
+  window.location.hostname,
+  import.meta.env.VITE_CLERK_PUBLISHABLE_KEY,
+);
+
+const clerkProxyUrl = import.meta.env.VITE_CLERK_PROXY_URL;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function stripBase(path: string): string {
+  return basePath && path.startsWith(basePath)
+    ? path.slice(basePath.length) || '/'
+    : path;
+}
+
+if (!clerkPubKey) {
+  throw new Error('Missing VITE_CLERK_PUBLISHABLE_KEY in .env file');
+}
+
+const clerkAppearance = {
+  theme: shadcn,
+  cssLayerName: 'clerk',
+  options: {
+    logoPlacement: 'inside' as const,
+    logoLinkUrl: basePath || '/',
+    logoImageUrl: `${window.location.origin}${basePath}/logo.svg`,
+    socialButtonsPlacement: 'bottom' as const,
+    socialButtonsVariant: 'blockButton' as const,
+  },
+  variables: {
+    colorPrimary: '#255884',
+    colorForeground: '#102337',
+    colorMutedForeground: '#546473',
+    colorDanger: '#a3463f',
+    colorBackground: '#fbfaf7',
+    colorInput: '#f3f3ef',
+    colorInputForeground: '#102337',
+    colorNeutral: '#bdc5c5',
+    fontFamily: 'Montserrat, sans-serif',
+    borderRadius: '2px',
+  },
+  elements: {
+    rootBox: 'w-full flex justify-center',
+    cardBox: 'bg-[#fbfaf7] rounded-sm w-[440px] max-w-full overflow-hidden',
+    card: '!shadow-none !border-0 !bg-transparent !rounded-none',
+    footer: '!shadow-none !border-0 !bg-transparent !rounded-none',
+    headerTitle: 'text-[#102337] font-semibold tracking-tight',
+    headerSubtitle: 'text-[#546473]',
+    socialButtonsBlockButtonText: 'text-[#102337] font-semibold',
+    formFieldLabel: 'text-[#102337] font-semibold',
+    footerActionLink: 'text-[#255884] font-semibold',
+    footerActionText: 'text-[#546473]',
+    dividerText: 'text-[#546473]',
+    identityPreviewEditButton: 'text-[#255884]',
+    formFieldSuccessText: 'text-[#3d6a63]',
+    alertText: 'text-[#754a3c]',
+    logoBox: 'mx-auto',
+    logoImage: 'h-auto w-[210px]',
+    socialButtonsBlockButton: 'border border-[#bdc5c5] bg-[#fbfaf7] shadow-none',
+    formButtonPrimary: 'bg-[#102337] text-[#fbfaf7] shadow-none',
+    formFieldInput: 'border border-[#bdc5c5] bg-[#f3f3ef] text-[#102337] shadow-none',
+    footerAction: 'border-0',
+    dividerLine: 'bg-[#bdc5c5]',
+    alert: 'border border-[#dfc7be] bg-[#fcf2ed]',
+    otpCodeFieldInput: 'border-[#bdc5c5] text-[#102337]',
+    formFieldRow: 'gap-2',
+    main: 'px-7 pb-7',
+  },
+};
+
+function AuthPage({ mode }: { mode: 'sign-in' | 'sign-up' }) {
+  useEffect(() => {
+    document.title = `${mode === 'sign-in' ? 'Sign in' : 'Create an account'} | ROSALOGIC`;
+    document.querySelector('meta[name="robots"]')?.setAttribute('content', 'noindex, nofollow');
+  }, [mode]);
+  return <main className="owner-auth">
+    <div className="owner-auth-side">
+      <img src={footerLogo} alt="ROSALOGIC — Business Systems & Technology" />
+      <div className="owner-auth-copy"><span>Private workspace / ROSALOGIC</span><h1>Keep the work <em>in view.</em></h1><p>A quiet place to review the conversations that begin on the website. Access is restricted independently of sign-in.</p></div>
+      <footer><span>Systems, engineered.</span><Link href="/" data-testid="link-auth-website">Return to website ↗</Link></footer>
+    </div>
+    <div className="owner-auth-form"><div className="owner-auth-form-inner">
+      {mode === 'sign-in'
+        ? <SignIn routing="path" path={`${basePath}/sign-in`} signUpUrl={`${basePath}/sign-up`} fallbackRedirectUrl={`${basePath}/owner/inquiries`} />
+        : <SignUp routing="path" path={`${basePath}/sign-up`} signInUrl={`${basePath}/sign-in`} fallbackRedirectUrl={`${basePath}/owner/inquiries`} />}
+    </div><p className="owner-auth-note">An account alone does not grant access to the owner inbox.</p></div>
+  </main>;
+}
+
+function SignInPage() { return <AuthPage mode="sign-in" />; }
+function SignUpPage() { return <AuthPage mode="sign-up" />; }
+
+function ClerkQueryClientCacheInvalidator() {
+  const { addListener } = useClerk();
+  const queryClient = useQueryClient();
+  const prevUserIdRef = useRef<string | null | undefined>(undefined);
+  useEffect(() => {
+    const unsubscribe = addListener(({ user }) => {
+      const userId = user?.id ?? null;
+      if (prevUserIdRef.current !== undefined && prevUserIdRef.current !== userId) queryClient.clear();
+      prevUserIdRef.current = userId;
+    });
+    return unsubscribe;
+  }, [addListener, queryClient]);
+  return null;
+}
+
+function ClerkProviderWithRoutes() {
+  const [, setLocation] = useLocation();
+  return <ClerkProvider
+    publishableKey={clerkPubKey}
+    proxyUrl={clerkProxyUrl}
+    appearance={clerkAppearance}
+    signInUrl={`${basePath}/sign-in`}
+    signUpUrl={`${basePath}/sign-up`}
+    localization={{
+      signIn: { start: { title: 'Welcome back', subtitle: 'Sign in to ROSALOGIC' } },
+      signUp: { start: { title: 'Create an account', subtitle: 'Access is granted separately by the owner' } },
+    }}
+    routerPush={(to) => setLocation(stripBase(to))}
+    routerReplace={(to) => setLocation(stripBase(to), { replace: true })}
+  >
+    <ClerkQueryClientCacheInvalidator />
+    <Switch>
+      <Route path="/sign-in/*?" component={SignInPage} />
+      <Route path="/sign-up/*?" component={SignUpPage} />
+      <Route path="/owner/inquiries" component={OwnerInquiriesPage} />
+      <Route component={SiteLayout} />
+    </Switch>
+  </ClerkProvider>;
+}
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -482,8 +619,8 @@ function SiteLayout() {
 function App() {
   return (
     <>
-      <Router base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-        <SiteLayout />
+      <Router base={basePath}>
+        <ClerkProviderWithRoutes />
       </Router>
       <Toaster />
     </>

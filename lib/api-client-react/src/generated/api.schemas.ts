@@ -5,6 +5,31 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
+export type OwnerInquiryDeliveryState = typeof OwnerInquiryDeliveryState[keyof typeof OwnerInquiryDeliveryState];
+
+
+export const OwnerInquiryDeliveryState = {
+  unsent: 'unsent',
+  sending: 'sending',
+  sent: 'sent',
+  uncertain: 'uncertain',
+} as const;
+
+export interface OwnerInquiry {
+  id: number;
+  name: string;
+  email: string;
+  /** @nullable */
+  company: string | null;
+  message: string;
+  createdAt: string;
+  deliveryState: OwnerInquiryDeliveryState;
+  /** @nullable */
+  notificationSentAt: string | null;
+  /** @nullable */
+  reviewedAt: string | null;
+}
+
 export interface HealthStatus {
   status: string;
 }
@@ -35,4 +60,20 @@ export interface ContactMessageInput {
 export interface ContactReceipt {
   received: boolean;
 }
+
+export type ListOwnerInquiriesParams = {
+view?: ListOwnerInquiriesView;
+/**
+ * @minimum 1
+ */
+page?: number;
+};
+
+export type ListOwnerInquiriesView = typeof ListOwnerInquiriesView[keyof typeof ListOwnerInquiriesView];
+
+
+export const ListOwnerInquiriesView = {
+  pending: 'pending',
+  all: 'all',
+} as const;
 

@@ -1,6 +1,6 @@
-# [Project name]
+# ROSALOGIC
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Corporate website and private contact-inquiry review.
 
 ## Run & Operate
 
@@ -9,6 +9,8 @@ _Replace the heading above with the project's name, and this line with one sente
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
+- Contact schema changes are additive and applied to the development database by `scripts/post-merge.sh` after task merge. Replit's Publish flow compares development and managed production schemas and applies the diff before releasing the updated API. Do not add production DDL to application startup or build.
+- Owner inbox access: `/owner/inquiries`; a signed-in user's verified primary address must match `CONTACT_RECIPIENT_EMAIL`. The Clerk frontend proxy URL is injected at publish time; it is intentionally empty during development.
 - Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack

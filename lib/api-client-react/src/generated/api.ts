@@ -22,7 +22,9 @@ import type {
 import type {
   ContactMessageInput,
   ContactReceipt,
-  HealthStatus
+  HealthStatus,
+  ListOwnerInquiriesParams,
+  OwnerInquiry
 } from './api.schemas';
 
 import { customFetch } from '../custom-fetch';
@@ -217,5 +219,237 @@ export const useSubmitContactRequest = <TError = ErrorType<void>,
         TContext
       > => {
       return useMutation(getSubmitContactRequestMutationOptions(options));
+    }
+
+export const getListOwnerInquiriesUrl = (params?: ListOwnerInquiriesParams,) => {
+  const normalizedParams = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+
+    if (value !== undefined) {
+      normalizedParams.append(key, value === null ? 'null' : String(value))
+    }
+  });
+
+  const stringifiedParams = normalizedParams.toString();
+
+  return stringifiedParams.length > 0 ? `/api/owner/inquiries?${stringifiedParams}` : `/api/owner/inquiries`
+}
+
+/**
+ * @summary List inquiries for the verified inbox owner
+ */
+export const listOwnerInquiries = async (params?: ListOwnerInquiriesParams, options?: Parameters<typeof customFetch>[1]): Promise<OwnerInquiry[]> => {
+
+  return customFetch<OwnerInquiry[]>(getListOwnerInquiriesUrl(params),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+
+
+
+export const getListOwnerInquiriesQueryKey = (params?: ListOwnerInquiriesParams,) => {
+    return [
+    `/api/owner/inquiries`, ...(params ? [params] : [])
+    ] as const;
+    }
+
+
+export const getListOwnerInquiriesQueryOptions = <TData = Awaited<ReturnType<typeof listOwnerInquiries>>, TError = ErrorType<void>>(params?: ListOwnerInquiriesParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listOwnerInquiries>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
+) => {
+
+const {query: queryOptions, request: requestOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getListOwnerInquiriesQueryKey(params);
+
+
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof listOwnerInquiries>>> = ({ signal }) => listOwnerInquiries(params, { signal, ...requestOptions });
+
+
+
+
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof listOwnerInquiries>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type ListOwnerInquiriesQueryResult = NonNullable<Awaited<ReturnType<typeof listOwnerInquiries>>>
+export type ListOwnerInquiriesQueryError = ErrorType<void>
+
+
+/**
+ * @summary List inquiries for the verified inbox owner
+ */
+
+export function useListOwnerInquiries<TData = Awaited<ReturnType<typeof listOwnerInquiries>>, TError = ErrorType<void>>(
+ params?: ListOwnerInquiriesParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listOwnerInquiries>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
+
+ ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+
+  const queryOptions = getListOwnerInquiriesQueryOptions(params,options)
+
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  return withQueryKey(query, queryOptions.queryKey);
+}
+
+
+
+
+
+
+
+export const getRetryOwnerInquiryUrl = (id: number,) => {
+
+
+
+
+  return `/api/owner/inquiries/${id}/retry`
+}
+
+/**
+ * @summary Retry an inquiry known not to have been sent
+ */
+export const retryOwnerInquiry = async (id: number, options?: Parameters<typeof customFetch>[1]): Promise<OwnerInquiry> => {
+
+  return customFetch<OwnerInquiry>(getRetryOwnerInquiryUrl(id),
+  {
+    ...options,
+    method: 'POST'
+
+
+  }
+);}
+
+
+
+
+
+export const getRetryOwnerInquiryMutationKey = () => ['retryOwnerInquiry'] as const;
+
+export const getRetryOwnerInquiryMutationOptions = <TError = ErrorType<void>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof retryOwnerInquiry>>, TError,RetryOwnerInquiryMutationVariables, TContext>, request?: SecondParameter<typeof customFetch>}
+): UseMutationOptions<Awaited<ReturnType<typeof retryOwnerInquiry>>, TError,RetryOwnerInquiryMutationVariables, TContext> => {
+
+const mutationKey = getRetryOwnerInquiryMutationKey();
+const {mutation: mutationOptions, request: requestOptions} = options ?
+      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
+      options
+      : {...options, mutation: {...options.mutation, mutationKey}}
+      : {mutation: { mutationKey, }, request: undefined};
+
+
+
+
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof retryOwnerInquiry>>, RetryOwnerInquiryMutationVariables> = (props) => {
+          const {id} = props ?? {};
+
+          return  retryOwnerInquiry(id,requestOptions)
+        }
+
+
+
+
+
+
+  return  { mutationFn, ...mutationOptions }}
+
+    export type RetryOwnerInquiryMutationResult = NonNullable<Awaited<ReturnType<typeof retryOwnerInquiry>>>
+
+    export type RetryOwnerInquiryMutationError = ErrorType<void>
+    export type RetryOwnerInquiryMutationVariables = {id: number}
+
+    /**
+ * @summary Retry an inquiry known not to have been sent
+ */
+export const useRetryOwnerInquiry = <TError = ErrorType<void>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof retryOwnerInquiry>>, TError,RetryOwnerInquiryMutationVariables, TContext>, request?: SecondParameter<typeof customFetch>}
+ ): UseMutationResult<
+        Awaited<ReturnType<typeof retryOwnerInquiry>>,
+        TError,
+        RetryOwnerInquiryMutationVariables,
+        TContext
+      > => {
+      return useMutation(getRetryOwnerInquiryMutationOptions(options));
+    }
+
+export const getReviewOwnerInquiryUrl = (id: number,) => {
+
+
+
+
+  return `/api/owner/inquiries/${id}/review`
+}
+
+/**
+ * @summary Mark an inquiry as handled without changing delivery status
+ */
+export const reviewOwnerInquiry = async (id: number, options?: Parameters<typeof customFetch>[1]): Promise<OwnerInquiry> => {
+
+  return customFetch<OwnerInquiry>(getReviewOwnerInquiryUrl(id),
+  {
+    ...options,
+    method: 'POST'
+
+
+  }
+);}
+
+
+
+
+
+export const getReviewOwnerInquiryMutationKey = () => ['reviewOwnerInquiry'] as const;
+
+export const getReviewOwnerInquiryMutationOptions = <TError = ErrorType<void>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof reviewOwnerInquiry>>, TError,ReviewOwnerInquiryMutationVariables, TContext>, request?: SecondParameter<typeof customFetch>}
+): UseMutationOptions<Awaited<ReturnType<typeof reviewOwnerInquiry>>, TError,ReviewOwnerInquiryMutationVariables, TContext> => {
+
+const mutationKey = getReviewOwnerInquiryMutationKey();
+const {mutation: mutationOptions, request: requestOptions} = options ?
+      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
+      options
+      : {...options, mutation: {...options.mutation, mutationKey}}
+      : {mutation: { mutationKey, }, request: undefined};
+
+
+
+
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof reviewOwnerInquiry>>, ReviewOwnerInquiryMutationVariables> = (props) => {
+          const {id} = props ?? {};
+
+          return  reviewOwnerInquiry(id,requestOptions)
+        }
+
+
+
+
+
+
+  return  { mutationFn, ...mutationOptions }}
+
+    export type ReviewOwnerInquiryMutationResult = NonNullable<Awaited<ReturnType<typeof reviewOwnerInquiry>>>
+
+    export type ReviewOwnerInquiryMutationError = ErrorType<void>
+    export type ReviewOwnerInquiryMutationVariables = {id: number}
+
+    /**
+ * @summary Mark an inquiry as handled without changing delivery status
+ */
+export const useReviewOwnerInquiry = <TError = ErrorType<void>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof reviewOwnerInquiry>>, TError,ReviewOwnerInquiryMutationVariables, TContext>, request?: SecondParameter<typeof customFetch>}
+ ): UseMutationResult<
+        Awaited<ReturnType<typeof reviewOwnerInquiry>>,
+        TError,
+        ReviewOwnerInquiryMutationVariables,
+        TContext
+      > => {
+      return useMutation(getReviewOwnerInquiryMutationOptions(options));
     }
 

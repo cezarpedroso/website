@@ -47,3 +47,70 @@ export const SubmitContactRequestResponse = zod.object({
 })
 
 
+/**
+ * @summary List inquiries for the verified inbox owner
+ */
+export const listOwnerInquiriesQueryViewDefault = `pending`;
+export const listOwnerInquiriesQueryPageDefault = 1;
+
+
+
+export const ListOwnerInquiriesQueryParams = zod.object({
+  "view": zod.enum(['pending', 'all']).default(listOwnerInquiriesQueryViewDefault),
+  "page": zod.coerce.number().int().min(1).default(listOwnerInquiriesQueryPageDefault)
+})
+
+export const ListOwnerInquiriesResponseItem = zod.object({
+  "id": zod.number().int(),
+  "name": zod.string(),
+  "email": zod.string(),
+  "company": zod.string().nullable(),
+  "message": zod.string(),
+  "createdAt": zod.coerce.date(),
+  "deliveryState": zod.enum(['unsent', 'sending', 'sent', 'uncertain']),
+  "notificationSentAt": zod.coerce.date().nullable(),
+  "reviewedAt": zod.coerce.date().nullable()
+})
+export const ListOwnerInquiriesResponse = zod.array(ListOwnerInquiriesResponseItem)
+
+
+/**
+ * @summary Retry an inquiry known not to have been sent
+ */
+export const RetryOwnerInquiryParams = zod.object({
+  "id": zod.coerce.number().int()
+})
+
+export const RetryOwnerInquiryResponse = zod.object({
+  "id": zod.number().int(),
+  "name": zod.string(),
+  "email": zod.string(),
+  "company": zod.string().nullable(),
+  "message": zod.string(),
+  "createdAt": zod.coerce.date(),
+  "deliveryState": zod.enum(['unsent', 'sending', 'sent', 'uncertain']),
+  "notificationSentAt": zod.coerce.date().nullable(),
+  "reviewedAt": zod.coerce.date().nullable()
+})
+
+
+/**
+ * @summary Mark an inquiry as handled without changing delivery status
+ */
+export const ReviewOwnerInquiryParams = zod.object({
+  "id": zod.coerce.number().int()
+})
+
+export const ReviewOwnerInquiryResponse = zod.object({
+  "id": zod.number().int(),
+  "name": zod.string(),
+  "email": zod.string(),
+  "company": zod.string().nullable(),
+  "message": zod.string(),
+  "createdAt": zod.coerce.date(),
+  "deliveryState": zod.enum(['unsent', 'sending', 'sent', 'uncertain']),
+  "notificationSentAt": zod.coerce.date().nullable(),
+  "reviewedAt": zod.coerce.date().nullable()
+})
+
+

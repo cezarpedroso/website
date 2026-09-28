@@ -13,6 +13,9 @@ export const contactMessagesTable = pgTable("contact_messages", {
   emailHash: varchar("email_hash", { length: 64 }).notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   notificationSentAt: timestamp("notification_sent_at", { withTimezone: true }),
+  // NULL is a legacy record; its send history cannot be established safely.
+  deliveryState: varchar("delivery_state", { length: 16 }),
+  reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
 }, (table) => [
   index("contact_messages_ip_created_idx").on(table.ipHash, table.createdAt),
   index("contact_messages_email_created_idx").on(table.emailHash, table.createdAt),
@@ -22,6 +25,8 @@ export const insertContactMessageSchema = createInsertSchema(contactMessagesTabl
   id: true,
   createdAt: true,
   notificationSentAt: true,
+  deliveryState: true,
+  reviewedAt: true,
 });
 export type InsertContactMessage = z.infer<typeof insertContactMessageSchema>;
 export type ContactMessage = typeof contactMessagesTable.$inferSelect;
