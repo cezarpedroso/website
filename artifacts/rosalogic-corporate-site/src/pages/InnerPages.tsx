@@ -4,9 +4,6 @@ import {
   ArrowUpRight,
   Factory,
   HardHat,
-  Layers3,
-  Network,
-  ShieldCheck,
   Sprout,
   Truck,
   UsersRound,
@@ -17,7 +14,11 @@ import agriculturePhoto from '../assets/industry-agriculture.jpg';
 import logisticsPhoto from '../assets/industry-logistics.jpg';
 import constructionPhoto from '../assets/industry-construction.jpg';
 import professionalServicesPhoto from '../assets/industry-professional-services.jpg';
+import industrialRoofPhoto from '../assets/about-industrial-roof.jpg';
+import teamWorkspacePhoto from '../assets/about-team-workspace.jpg';
+import silosPhoto from '../assets/solutions-silos.jpg';
 import './inner-pages.css';
+import './about-page.css';
 
 const industryAreas = [
   {
@@ -67,11 +68,27 @@ const industryAreas = [
   },
 ];
 
-const principles = [
-  { number: '01', title: 'Efficiency', text: 'Reduce friction in the work people do every day.' },
-  { number: '02', title: 'Control', text: 'Connect information so decisions have context.' },
-  { number: '03', title: 'Reliability', text: 'Build systems people can trust when work depends on them.' },
-  { number: '04', title: 'Longevity', text: 'Create foundations that can evolve with the operation.' },
+const aboutValues = [
+  { number: '01', title: 'Practicality', text: 'We focus on solutions that work in the real world—not just in theory. Technology should make the operation easier, not more complex.' },
+  { number: '02', title: 'Quality', text: 'We care about architecture, maintainability, and security. Good engineering isn’t just about what works today; it’s about what lasts.' },
+  { number: '03', title: 'Partnership', text: 'We work closely with clients as a long-term partner. Your business and goals guide our work, not generic templates.' },
+  { number: '04', title: 'Continuous Improvement', text: 'Operations change, businesses grow, and technology evolves. We build systems that can adapt with you.' },
+];
+
+const aboutSteps = [
+  { number: '01', title: 'Understand', text: 'We learn how your operation works and where the friction exists.' },
+  { number: '02', title: 'Define', text: 'We identify requirements, constraints, integrations, and priorities.' },
+  { number: '03', title: 'Architect', text: 'We design the technical and operational solution.' },
+  { number: '04', title: 'Build', text: 'We develop, test, and integrate the system.' },
+  { number: '05', title: 'Deploy', text: 'We put the system into its production environment.' },
+  { number: '06', title: 'Operate', text: 'We can continue supporting, maintaining, and improving the system.' },
+];
+
+const aboutBenefits = [
+  { title: 'Efficiency', text: 'Less manual work. More time for what matters.' },
+  { title: 'Visibility', text: 'The right information, when and where it’s needed.' },
+  { title: 'Control', text: 'Processes that are structured, measurable, and manageable.' },
+  { title: 'Scalability', text: 'Systems that grow with your business, not against it.' },
 ];
 
 function PageHero({
@@ -168,40 +185,93 @@ export function IndustriesPage() {
 
 export function AboutPage() {
   return (
-    <div className="inner-page">
-      <PageHero
-        label="About ROSALOGIC"
-        title="Engineering technology"
-        emphasis="that lasts."
-        description="ROSALOGIC designs, builds, and operates software systems for organizations with complex operations. We focus on the quiet disciplines that make technology dependable."
-        aside="Clean architecture. Maintainable software. Reliable infrastructure. Long-term thinking."
-      />
-      <section className="ip-section ip-about-statement">
-        <div className="container-wide ip-split-intro">
-          <div className="ip-section-index"><span>Our perspective</span></div>
-          <div><h2 className="ip-serif-heading">Technology should serve <em>the operation.</em></h2><p>Not the other way around. The strongest systems begin with an understanding of how people work, where information moves, and what the business needs to rely on. That understanding informs the architecture, the software, and the decisions that follow.</p></div>
+    <div className="about-page">
+      <section className="about-hero" aria-labelledby="about-heading">
+        <div className="about-wrap about-hero-grid">
+          <div className="about-hero-text">
+            <p className="about-label">About</p>
+            <h1 id="about-heading" className="about-serif" tabIndex={-1}>Engineering<br />better operations.</h1>
+            <p className="about-copy">ROSALOGIC is a business software and technology company focused on building practical, reliable systems for real-world operations. We work with organizations to design, build, and maintain the technology that keeps their business running.</p>
+          </div>
+          <img className="about-hero-image" src={industrialRoofPhoto} alt="Industrial building beneath an evening sky" width="1024" height="1024" fetchPriority="high" />
+          <p className="about-hero-aside">We turn business needs into reliable technology systems.</p>
         </div>
       </section>
-      <section className="ip-principles">
-        <div className="container-wide">
-          <div className="ip-principles-heading"><p className="eyebrow industries-eyebrow">Operating principles</p><h2 className="display-heading">A practical measure of <em>good work.</em></h2></div>
-          <div className="ip-principles-grid">
-            {principles.map(({ number, title, text }) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}
+
+      <section className="about-section about-values" aria-labelledby="about-values-heading">
+        <div className="about-wrap about-values-grid">
+          <div className="about-values-intro">
+            <p className="about-label">Our values</p>
+            <h2 id="about-values-heading" className="about-serif">What we believe in.</h2>
+            <p className="about-copy">Our work is guided by a few core principles. They shape how we approach problems, work with clients, and build systems that last.</p>
+          </div>
+          {aboutValues.map(({ number, title, text }) => (
+            <article className="about-value" key={number}>
+              <span className="about-number">{number}</span>
+              <h3>{title}</h3>
+              <p className="about-copy">{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="about-section about-team" aria-labelledby="about-team-heading">
+        <div className="about-wrap about-team-grid">
+          <div>
+            <p className="about-label">Our team</p>
+            <h2 id="about-team-heading" className="about-serif">A small team<br />with a broad skillset.</h2>
+            <p className="about-copy">ROSALOGIC is a focused team of engineers and problem solvers. We bring together experience in software development, cloud infrastructure, data, and business systems to build solutions that fit your operation.</p>
+          </div>
+          <img className="about-team-image" src={teamWorkspacePhoto} alt="Laptop and notebooks on a quiet workspace table" width="1024" height="1024" loading="lazy" />
+        </div>
+      </section>
+
+      <section className="about-section about-approach" aria-labelledby="about-approach-heading">
+        <div className="about-wrap about-approach-grid">
+          <div className="about-approach-intro">
+            <p className="about-label">Our approach</p>
+            <h2 id="about-approach-heading" className="about-serif">A collaborative process, from problem to operation.</h2>
+            <p className="about-copy">We don&apos;t start with a technology stack.<br />We start with your operation. Our process is designed to understand your needs, shape the right solution, and deliver a system that works in the real world.</p>
+          </div>
+          <div className="about-steps" aria-label="Six steps in our process">
+            {aboutSteps.map(({ number, title, text }) => (
+              <article className="about-step" key={number}>
+                <span className="about-number">{number}</span>
+                <h3>{title}</h3>
+                <p className="about-copy">{text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
-      <section className="ip-section ip-about-disciplines">
-        <div className="container-wide">
-            <div className="ip-split-intro"><div className="ip-section-index"><span>The discipline</span></div><div><h2 className="ip-serif-heading">Dependability is <em>designed in.</em></h2><p>Reliable systems are not the result of one good feature. They come from considered choices throughout the life of the work—from architecture and deployment to security, monitoring, and the ability to change without losing control.</p></div></div>
-          <div className="ip-discipline-grid">
-            <article><Layers3 size={29} strokeWidth={1.3} aria-hidden="true" /><h3>Clear architecture</h3><p>Structure that keeps complex systems understandable and maintainable.</p></article>
-            <article><Network size={29} strokeWidth={1.3} aria-hidden="true" /><h3>Connected information</h3><p>Data and integrations that help the right context reach the right people.</p></article>
-            <article><ShieldCheck size={29} strokeWidth={1.3} aria-hidden="true" /><h3>Reliable operation</h3><p>Infrastructure, security, and monitoring that support continuity.</p></article>
+
+      <section className="about-section about-outcomes" aria-labelledby="about-outcomes-heading">
+        <div className="about-wrap about-outcomes-grid">
+          <div>
+            <p className="about-label">Why it matters</p>
+            <h2 id="about-outcomes-heading" className="about-serif">Better systems create better operations.</h2>
+            <p className="about-copy">When software, data, and infrastructure work together, your teams can move faster, make better decisions, and focus on what matters. That&apos;s the real value of a well-engineered system.</p>
+          </div>
+          <img className="about-outcomes-image" src={silosPhoto} alt="Agricultural grain silos and surrounding operational site" width="1024" height="1024" loading="lazy" />
+          <ul className="about-benefits">
+            {aboutBenefits.map(({ title, text }) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}
+          </ul>
+        </div>
+      </section>
+
+      <section className="about-cta" aria-labelledby="about-cta-heading">
+        <div className="about-wrap about-cta-grid">
+          <div>
+            <p className="about-label">Get in touch</p>
+            <h2 id="about-cta-heading" className="about-serif">Let&apos;s build the right system for your operation.</h2>
+          </div>
+          <p className="about-cta-description">Tell us about your goals, challenges, or the friction in your current systems. We&apos;ll help you understand the problem, explore what&apos;s possible, and define a practical path forward.</p>
+          <div className="about-cta-actions">
+            <Link className="about-cta-primary" href="/contact" data-testid="link-about-contact">Start a conversation <ArrowRight size={15} strokeWidth={1.5} aria-hidden="true" /></Link>
+            <Link className="about-cta-secondary" href="/industries" data-testid="link-about-industries">Explore industries <ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" /></Link>
           </div>
         </div>
       </section>
-      <section className="ip-quote-band"><div className="container-wide"><span>ROSALOGIC / BUSINESS SYSTEMS &amp; TECHNOLOGY</span><p>“Build systems people trust. Create systems that evolve.”</p></div></section>
-      <PageClose label="Contact" title="Start with the operation." copy="The best place to begin is with the work itself: what is changing, what is difficult, and what a better system needs to support." link="/contact" linkText="View contact page" />
     </div>
   );
 }
