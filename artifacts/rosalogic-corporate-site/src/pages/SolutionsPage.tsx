@@ -75,7 +75,6 @@ function SolutionsContent() {
             <p className="rs-hero-closing">The goal isn’t more technology. It’s a better-running operation.</p>
           </div>
           <figure className="rs-hero-photo"><img src={siloImage} alt="Steel grain silos at an agricultural processing facility beneath a pale sky" /></figure>
-          <div className="rs-hero-aside" aria-label="Solution layers"><span>Software</span><span>Data</span><span>Infrastructure</span></div>
         </div>
       </header>
 
