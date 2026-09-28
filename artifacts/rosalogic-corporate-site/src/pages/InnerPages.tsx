@@ -8,7 +8,6 @@ import agriculturePhoto from '../assets/industry-agriculture.jpg';
 import logisticsPhoto from '../assets/industry-logistics.jpg';
 import constructionPhoto from '../assets/industry-construction.jpg';
 import professionalServicesPhoto from '../assets/industry-professional-services.jpg';
-import silosPhoto from '../assets/solutions-silos.jpg';
 import officePhoto from '../assets/about-office.png';
 import teamDeveloperPhoto from '../assets/our-team-developer.png';
 import './inner-pages.css';
@@ -80,7 +79,7 @@ export function IndustriesPage() {
   return (
     <div className="industries-page">
       <section className="industries-hero" aria-labelledby="industries-page-title">
-        <div className="container-wide industries-hero-grid">
+        <div className="container-wide">
           <div className="industries-hero-copy">
             <p className="eyebrow intro-eyebrow">Industries</p>
             <h1 id="industries-page-title" className="display-heading industries-page-title" tabIndex={-1}>
@@ -88,13 +87,6 @@ export function IndustriesPage() {
             </h1>
             <p>Every operation has its own challenges, workflows, and business drivers. We build software, data, and technology around the way your operation works—so you can reduce friction, improve control, and create a stronger foundation for what&apos;s next.</p>
           </div>
-          <figure className="industries-hero-photo">
-            <img src={silosPhoto} alt="Agricultural grain silos beside a field" fetchPriority="high" />
-          </figure>
-          <aside className="industries-hero-aside">
-            <span>Industry solutions</span>
-            <span>Built around real operations</span>
-          </aside>
         </div>
       </section>
 

@@ -14,13 +14,6 @@
   background: var(--industry-paper);
 }
 
-.industries-page .industries-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.96fr) minmax(112px, 0.34fr);
-  align-items: center;
-  gap: clamp(25px, 4vw, 70px);
-}
-
 .industries-page .industries-hero-copy {
   padding: 16px 0 22px;
 }
@@ -53,40 +46,6 @@
   color: var(--industry-muted);
   font-size: clamp(0.79rem, 0.91vw, 0.92rem);
   line-height: 1.75;
-}
-
-.industries-page .industries-hero-photo {
-  position: relative;
-  height: clamp(190px, 22vw, 285px);
-  margin: 0;
-  overflow: hidden;
-  background: #d5d7ce;
-}
-
-.industries-page .industries-hero-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 53%;
-  filter: saturate(.78);
-}
-
-.industries-page .industries-hero-aside {
-  display: grid;
-  gap: 9px;
-  padding-left: 15px;
-  border-left: 1px solid #c9c9c1;
-  color: #586a70;
-  font-family: var(--app-font-mono);
-  font-size: .52rem;
-  line-height: 1.55;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.industries-page .industries-hero-aside span + span {
-  color: #8a8d86;
 }
 
 .industries-page .industries-list {
@@ -320,14 +279,6 @@
 }
 
 @media (max-width: 980px) {
-  .industries-page .industries-hero-grid {
-    grid-template-columns: minmax(0, 1.05fr) minmax(250px, .95fr);
-  }
-
-  .industries-page .industries-hero-aside {
-    display: none;
-  }
-
   .industries-page .industry-editorial-row,
   .industries-page .industry-editorial-row:nth-child(odd),
   .industries-page .industry-editorial-row:nth-child(even) {
@@ -379,11 +330,6 @@
     padding: 91px 0 25px;
   }
 
-  .industries-page .industries-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 23px;
-  }
-
   .industries-page .industries-hero-copy {
     padding: 11px 0 0;
   }
@@ -395,10 +341,6 @@
   .industries-page .industries-hero-copy > p:last-child {
     max-width: 500px;
     font-size: .78rem;
-  }
-
-  .industries-page .industries-hero-photo {
-    height: clamp(190px, 55vw, 310px);
   }
 
   .industries-page .industry-editorial-row,
