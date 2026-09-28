@@ -7,4 +7,6 @@ The Solutions page should read as a coherent document without looking like a rul
 
 **Why:** The user found the prior highly ruled, micro-labeled version too busy and its repeated explanations redundant. They later said the page also had too many section headers and suggested paragraphs or diagrams in their place.
 
-**How to apply:** When revising this page, simplify repeated guides, captions, and oversized headlines before adding new visual markers. Keep substantive service information and explicitly illustrative examples, but avoid padding the page with sections that restate the same point. Use visual connectors only for genuinely sequential content, such as the work process.
+**How to apply:** When revising this page, simplify repeated guides, captions, and oversized headlines before adding new visual markers. Keep substantive service information and explicitly illustrative examples, but avoid padding the page with sections that restate the same point. Use visual connectors only for genuinely sequential content, such as the work process. In Connected systems, keep the section height driven by its copy and diagram; a full-bleed photo should not increase its vertical size.
+
+**Additional constraint:** The user asked for the Connected systems image to reach the right edge while keeping the section the same height. Keep image width independent from the section's intrinsic row sizing.
