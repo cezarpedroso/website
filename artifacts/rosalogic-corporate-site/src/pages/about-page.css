@@ -55,14 +55,38 @@
 
 /* The introduction is deliberately composed like a page spread, not a full-bleed hero. */
 .about-page .about-hero {
+  position: relative;
+  isolation: isolate;
   padding-top: 128px;
   padding-bottom: 55px;
+  background: #f7f6f2;
+}
+.about-page .about-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(247, 246, 242, .78) 0%, rgba(247, 246, 242, 0) 130px),
+    linear-gradient(90deg, #f7f6f2 0%, #f7f6f2 29%, rgba(247, 246, 242, .96) 40%, rgba(247, 246, 242, .76) 55%, rgba(247, 246, 242, .08) 78%, rgba(247, 246, 242, 0) 100%);
+  content: '';
+  pointer-events: none;
+}
+.about-page .about-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .14;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  content: '';
+  mix-blend-mode: soft-light;
+  pointer-events: none;
 }
 .about-page .about-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr) minmax(105px, .24fr);
   align-items: center;
   gap: clamp(25px, 3.5vw, 70px);
+  min-height: clamp(310px, 29vw, 465px);
 }
 .about-page .about-hero-text { padding: 16px 0 8px; }
 .about-page .about-hero h1 {
@@ -72,13 +96,18 @@
 }
 .about-page .about-hero .about-copy { max-width: 540px; }
 .about-page .about-hero-image {
+  position: absolute;
+  z-index: -2;
+  inset: 0 0 0 auto;
   display: block;
-  width: 100%;
-  height: clamp(310px, 29vw, 465px);
+  width: 68%;
+  height: 100%;
   object-fit: cover;
-  object-position: center 57%;
+  object-position: center top;
+  pointer-events: none;
 }
 .about-page .about-hero-aside {
+  grid-column: 3;
   align-self: center;
   margin: 0;
   padding: 22px 0 22px 24px;
@@ -328,9 +357,23 @@
   .about-page .about-outcomes-grid,
   .about-page .about-cta-grid { grid-template-columns: 1fr; gap: 20px; }
   .about-page .about-hero-text { padding: 0; }
+  .about-page .about-hero-grid { min-height: 0; }
+  .about-page .about-hero-text { grid-column: 1; grid-row: 1; }
+  .about-page .about-hero-grid::after {
+    display: block;
+    grid-column: 1;
+    grid-row: 2;
+    height: clamp(240px, 65vw, 440px);
+    content: '';
+  }
   .about-page .about-hero h1 { font-size: clamp(2.25rem, 9vw, 2.9rem); }
-  .about-page .about-hero-image { height: clamp(240px, 65vw, 440px); }
-  .about-page .about-hero-aside { grid-column: auto; }
+  .about-page .about-hero-image { width: 100%; object-position: 40% top; }
+  .about-page .about-hero-aside { grid-column: 1; grid-row: 3; }
+  .about-page .about-hero::before {
+    background:
+      linear-gradient(180deg, rgba(247, 246, 242, .78) 0%, rgba(247, 246, 242, 0) 130px),
+      linear-gradient(90deg, #f7f6f2 0%, rgba(247, 246, 242, .99) 40%, rgba(247, 246, 242, .92) 72%, rgba(247, 246, 242, .6) 100%);
+  }
   .about-page .about-values { padding: 42px 0 47px; }
   .about-page .about-values-grid { grid-template-columns: repeat(2, 1fr); row-gap: 26px; }
   .about-page .about-values-intro { padding: 0; }
