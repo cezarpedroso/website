@@ -3,8 +3,6 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'wouter';
 import './supporting-pages.css';
 
-const contactEmail = 'contact@rosalogic.com';
-
 function SupportDocument({
   label,
   title,
@@ -40,7 +38,7 @@ export function PrivacyPage() {
     >
       <section>
         <h2>Information we receive</h2>
-        <p>When you email us, we receive the information you choose to provide, such as your name, email address, organization, and details of your inquiry. The contact form currently shown on this site is not enabled and does not transmit entries.</p>
+        <p>When you submit the contact form, we collect your name, email address, optional organization, and the details of your inquiry. We store your submission in a private database so we can respond and maintain appropriate business records. We also use a pseudonymous identifier derived from your IP address and email to limit abusive submissions.</p>
         <p>Our hosting provider may process technical information needed to serve and protect the site, such as IP addresses, browser and device information, pages requested, and request times.</p>
       </section>
       <section>
@@ -49,7 +47,7 @@ export function PrivacyPage() {
       </section>
       <section>
         <h2>Analytics, cookies, and third parties</h2>
-        <p>We do not currently run optional website analytics or advertising cookies. The site is hosted by an external provider, which may maintain operational logs or use technology necessary to deliver and secure the site. Fonts are provided by Google Fonts; loading them may send technical request information, including your IP address, to Google. Email providers process messages you send us. External sites linked from this website have their own privacy practices.</p>
+        <p>We do not currently run optional website analytics or advertising cookies. The site is hosted by an external provider, which may maintain operational logs or use technology necessary to deliver and secure the site. Fonts are provided by Google Fonts; loading them may send technical request information, including your IP address, to Google. When email notification is connected, Google processes a copy of contact inquiries in our private Gmail inbox. External sites linked from this website have their own privacy practices.</p>
       </section>
       <section>
         <h2>Retention and security</h2>
@@ -57,7 +55,7 @@ export function PrivacyPage() {
       </section>
       <section>
         <h2>Your requests</h2>
-        <p>To ask about, correct, or request deletion of information you have sent us, email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. We will review requests in accordance with applicable law. We may update this policy as the website or our practices change.</p>
+        <p>To ask about, correct, or request deletion of information you have sent us, use our <Link href="/contact">contact form</Link>. We will review requests in accordance with applicable law. We may update this policy as the website or our practices change.</p>
       </section>
     </SupportDocument>
   );
@@ -88,7 +86,7 @@ export function TermsPage() {
       </section>
       <section>
         <h2>Governing law and contact</h2>
-        <p>These terms are governed by the laws of the jurisdiction where ROSALOGIC maintains its principal place of business, without applying rules on conflicts of law, unless mandatory local law provides otherwise. Questions about these terms can be sent to <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. We may revise these terms by updating this page.</p>
+        <p>These terms are governed by the laws of the jurisdiction where ROSALOGIC maintains its principal place of business, without applying rules on conflicts of law, unless mandatory local law provides otherwise. Questions about these terms can be sent through our <Link href="/contact">contact form</Link>. We may revise these terms by updating this page.</p>
       </section>
     </SupportDocument>
   );
@@ -107,7 +105,7 @@ export function AccessibilityPage() {
       </section>
       <section>
         <h2>Feedback and assistance</h2>
-        <p>If you encounter a barrier or need information in another format, please email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. If possible, include the page URL, what you were trying to do, and any browser or assistive technology details you are comfortable sharing. We will review the issue, respond, and work toward a practical way for you to access the information.</p>
+        <p>If you encounter a barrier or need information in another format, please use our <Link href="/contact">contact form</Link>. If possible, include the page URL, what you were trying to do, and any browser or assistive technology details you are comfortable sharing. We will review the issue, respond, and work toward a practical way for you to access the information.</p>
       </section>
     </SupportDocument>
   );
@@ -147,15 +145,14 @@ export function NotFoundPage() {
 }
 
 export function ThankYouPage() {
-  // Only a future successful delivery handler should set this history state.
-  const confirmed = typeof window !== 'undefined' && window.history.state?.rosalogicContactDelivered === true;
+  const confirmed = typeof window !== 'undefined' && window.history.state?.rosalogicContactReceived === true;
 
   if (!confirmed) {
     return (
       <SupportMessage
         label="Contact"
-        title="No message has been sent."
-        description={<>The contact form is not accepting submissions yet. To reach us now, email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</>}
+        title="No message was submitted."
+        description={<>To send us an inquiry, please use the <Link href="/contact">contact form</Link>.</>}
       />
     );
   }
@@ -164,7 +161,7 @@ export function ThankYouPage() {
     <SupportMessage
       label="Contact"
       title="Thank you."
-      description={<>We&apos;ve received your message. We&apos;ll review what you shared and follow up by email about the next steps.</>}
+      description={<>Your inquiry has been saved. We&apos;ll review what you shared and follow up by email about the next steps.</>}
     />
   );
 }

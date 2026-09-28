@@ -1,10 +1,16 @@
 ---
 name: Contact-channel integrity
-description: How to describe contact actions while a verified destination is unavailable
+description: How to keep contact acknowledgements honest when inbox notification can fail
 ---
 
-The Contact page may display a form before delivery is set up, but its submit action must remain inactive and its copy must not imply that a message was sent. A recipient address alone does not make the form deliver messages.
+The Contact page may accept submissions once they are durably stored, even if Gmail notification is unavailable. A successful form acknowledgement means the inquiry was saved, not that an email reached the owner's inbox. Keep the private recipient in server configuration, not public copy or browser responses.
 
-**Why:** The user chose to show the form now without enabling submission. A working-looking send action without a delivery service would mislead visitors, even if a recipient address is known.
+**Why:** The original public mailbox does not exist yet, and the user chose a private Gmail inbox instead. Provider authorization can be missing or expire independently of safe message storage. Claiming email delivery based on storage would mislead visitors and the owner.
 
-**How to apply:** Keep the form's send action disabled and disclose that submissions are unavailable. A direct email link may be shown when the user supplies the address. When delivery is implemented, enable submission only with real success and error handling, and update surrounding copy at the same time.
+**How to apply:** Acknowledge only after a database commit; preserve the submission if notification fails, and keep undelivered records inspectable. Do not expose the private address, restore a non-working public mailto link, or conflate saved inquiries with delivered emails.
+
+Use a workspace secret for the private recipient, not a normal shared environment variable.
+
+**Why:** A normal shared environment variable can be written into tracked project configuration even though it is not included in the website bundle.
+
+**How to apply:** When setting or replacing a private contact destination, request it through the secure secrets form. Keep it out of tracked configuration and public text.

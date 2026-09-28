@@ -5,6 +5,8 @@ import { logger } from "./lib/logger";
 
 const app: Express = express();
 app.disable("x-powered-by");
+// The public API sits behind Replit's reverse proxy. Trust only its nearest hop.
+app.set("trust proxy", 1);
 
 app.use(
   pinoHttp({
@@ -35,7 +37,7 @@ app.use((_req, res, next) => {
 });
 // The API currently has no cross-origin browser consumers. Reassess CORS per
 // endpoint and allowed origin before adding any sensitive browser-facing routes.
-app.use(express.json());
+app.use(express.json({ limit: "12kb" }));
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", router);

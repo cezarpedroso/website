@@ -381,7 +381,7 @@ function Footer() {
         </div>
         <div className="footer-group footer-contact">
           <h2>Contact details</h2>
-          <a href="mailto:contact@rosalogic.com" data-testid="link-footer-email">contact@rosalogic.com</a>
+          <Link href="/contact" data-testid="link-footer-email">Send a message</Link>
           <a href="tel:+16419310461" data-testid="link-footer-phone">(641) 931-0461</a>
         </div>
       </div>

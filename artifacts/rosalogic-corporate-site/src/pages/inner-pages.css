@@ -254,6 +254,8 @@
 .inner-page .ip-contact-form .button-solid:disabled { cursor: not-allowed; opacity: .55; }
 .inner-page .ip-contact-form-note { max-width: 360px; margin: 0; color: #687078; font-size: .72rem; line-height: 1.65; }
 .inner-page .ip-contact-form-note a { color: #255884; text-underline-offset: 3px; }
+.inner-page .ip-contact-honeypot { display: none; }
+.inner-page .ip-contact-form-error { margin: 20px 0 0; color: #a73530; font-size: .85rem; line-height: 1.5; }
 
 @media (max-width: 1000px) {
   .inner-page .ip-hero-inner { grid-template-columns: 1fr; gap: 45px; min-height: 0; padding-top: 80px; padding-bottom: 70px; }

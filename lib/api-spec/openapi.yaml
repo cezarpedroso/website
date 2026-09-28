@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: contact
+    description: Public contact form
 paths:
   /healthz:
     get:
@@ -24,6 +26,35 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /contact:
+    post:
+      operationId: submitContactRequest
+      tags: [contact]
+      summary: Submit an inquiry
+      description: Stores an inquiry for ROSALOGIC to review. Email notification is best effort.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactMessageInput"
+      responses:
+        "201":
+          description: Inquiry securely stored
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactReceipt"
+        "400":
+          description: Invalid form input
+        "403":
+          description: Request is not from this site
+        "409":
+          description: A submission with this request ID already exists with different content
+        "415":
+          description: Unsupported content type
+        "429":
+          description: Too many requests
 components:
   schemas:
     HealthStatus:
@@ -33,4 +64,37 @@ components:
           type: string
       required:
         - status
+    ContactMessageInput:
+      type: object
+      additionalProperties: false
+      required: [requestId, name, email, message]
+      properties:
+        requestId:
+          type: string
+          format: uuid
+        name:
+          type: string
+          minLength: 1
+          maxLength: 120
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        company:
+          type: string
+          maxLength: 160
+        message:
+          type: string
+          minLength: 1
+          maxLength: 4000
+        website:
+          type: string
+          maxLength: 120
+          description: Leave empty. Used to identify automated submissions.
+    ContactReceipt:
+      type: object
+      properties:
+        received:
+          type: boolean
+      required: [received]
 

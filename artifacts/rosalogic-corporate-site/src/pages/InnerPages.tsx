@@ -1,8 +1,10 @@
+import { useRef, useState, type FormEvent } from 'react';
+import { useSubmitContactRequest } from '@workspace/api-client-react';
 import {
   ArrowRight,
   ArrowUpRight,
 } from 'lucide-react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import manufacturingPhoto from '../../../../attached_assets/manu_1790593663764.jpg';
 import agriculturePhoto from '../../../../attached_assets/agri_1790593634935.jpg';
 import logisticsPhoto from '../../../../attached_assets/fleet_1790593594106.jpg';
@@ -227,6 +229,45 @@ export function AboutPage() {
 }
 
 export function ContactPage() {
+  const [, navigate] = useLocation();
+  const submit = useSubmitContactRequest();
+  const requestId = useRef(crypto.randomUUID());
+  const previousSubmission = useRef<string | null>(null);
+  const [error, setError] = useState('');
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submit.isPending) return;
+    setError('');
+    const form = event.currentTarget;
+    const values = new FormData(form);
+    const fields = {
+      name: String(values.get('name') ?? '').trim(),
+      email: String(values.get('email') ?? '').trim(),
+      company: String(values.get('company') ?? '').trim(),
+      message: String(values.get('message') ?? '').trim(),
+      website: String(values.get('website') ?? ''),
+    };
+    const contents = JSON.stringify(fields);
+    if (previousSubmission.current !== null && previousSubmission.current !== contents) {
+      requestId.current = crypto.randomUUID();
+    }
+    previousSubmission.current = contents;
+    try {
+      const response = await submit.mutateAsync({
+        data: {
+          requestId: requestId.current,
+          ...fields,
+        },
+      });
+      if (!response.received) throw new Error('Submission was not stored');
+      form.reset();
+      navigate('/thank-you', { state: { rosalogicContactReceived: true } });
+    } catch {
+      setError('Your message could not be saved. Please try again in a moment.');
+    }
+  }
+
   return (
     <div className="inner-page">
       <section className="ip-contact-form-section" aria-labelledby="contact-form-title">
@@ -235,12 +276,8 @@ export function ContactPage() {
             <p className="eyebrow intro-eyebrow">Start a conversation</p>
             <h2 id="contact-form-title" className="display-heading ip-contact-title">Tell us about <em>the work.</em></h2>
             <p>Share the process, system, or operational challenge you would like to improve. A little context helps us understand where to start.</p>
-            <div className="ip-contact-direct">
-              <span>DIRECT EMAIL</span>
-              <a href="mailto:contact@rosalogic.com">contact@rosalogic.com</a>
-            </div>
           </div>
-          <form className="ip-contact-form" onSubmit={(event) => event.preventDefault()}>
+          <form className="ip-contact-form" onSubmit={handleSubmit}>
             <div className="ip-contact-fields">
               <label className="ip-contact-field">
                 <span>Full name <b aria-hidden="true">*</b></span>
@@ -258,14 +295,17 @@ export function ContactPage() {
                 <span>How can we help? <b aria-hidden="true">*</b></span>
                 <textarea name="message" rows={6} maxLength={4000} required />
               </label>
+              <div className="ip-contact-honeypot" aria-hidden="true">
+                <label>Website <input name="website" type="text" autoComplete="off" tabIndex={-1} /></label>
+              </div>
             </div>
+            {error && <p className="ip-contact-form-error" role="alert">{error}</p>}
             <div className="ip-contact-form-footer">
-              <button className="button-solid" type="button" disabled data-testid="button-contact-submit">
-                Send message <ArrowUpRight size={15} aria-hidden="true" />
+              <button className="button-solid" type="submit" disabled={submit.isPending} data-testid="button-contact-submit">
+                {submit.isPending ? 'Saving message…' : 'Send message'} <ArrowUpRight size={15} aria-hidden="true" />
               </button>
               <p className="ip-contact-form-note">
-                Form submissions aren&apos;t enabled yet. For now, email{' '}
-                <a href="mailto:contact@rosalogic.com">contact@rosalogic.com</a>.
+                After submission, we&apos;ll save your inquiry for review. See our <Link href="/privacy">Privacy Policy</Link> for how we handle it.
               </p>
             </div>
           </form>
