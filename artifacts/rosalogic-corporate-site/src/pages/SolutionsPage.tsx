@@ -79,20 +79,6 @@ function SolutionsContent() {
       </header>
 
       <div className="rs-content">
-        <section className="rs-section rs-system" aria-labelledby="rs-system-title">
-          <div className="rs-wrap rs-system-grid">
-            <div className="rs-lead">
-              <Eyebrow>The system</Eyebrow>
-              <h2 id="rs-system-title">The system is more than<br />the software.</h2>
-              <p>Software is only one part of a business system. The surrounding processes, data, integrations, and technology have to work together for the system to be useful.</p>
-              <p>ROSALOGIC understands those layers and works across them when a project requires it—whether that means building an application, connecting existing tools, or improving the technology that supports the software.</p>
-            </div>
-            <div className="rs-layer-list" aria-label="Six layers of a business system">
-              {layers.map(({ name, copy, icon: Icon }) => <div className="rs-layer" key={name}><div className="rs-layer-name"><Icon size={16} strokeWidth={1.4} aria-hidden="true" /><strong>{name}</strong></div><p>{copy}</p></div>)}
-            </div>
-          </div>
-        </section>
-
         <section className="rs-section rs-software" aria-labelledby="rs-software-title">
           <div className="rs-wrap rs-section-split">
             <div className="rs-lead">
@@ -103,6 +89,20 @@ function SolutionsContent() {
             </div>
             <div className="rs-columns rs-four-columns">
               {softwareAreas.map(area => <article className="rs-column" key={area.no}><span className="rs-column-no">{area.no}</span><h3>{area.title}</h3><p>{area.copy}</p><ItemList items={area.items} /></article>)}
+            </div>
+          </div>
+        </section>
+
+        <section className="rs-section rs-system" aria-labelledby="rs-system-title">
+          <div className="rs-wrap rs-system-grid">
+            <div className="rs-lead">
+              <Eyebrow>The system</Eyebrow>
+              <h2 id="rs-system-title">The system is more than<br />the software.</h2>
+              <p>Software is only one part of a business system. The surrounding processes, data, integrations, and technology have to work together for the system to be useful.</p>
+              <p>ROSALOGIC understands those layers and works across them when a project requires it—whether that means building an application, connecting existing tools, or improving the technology that supports the software.</p>
+            </div>
+            <div className="rs-layer-list" aria-label="Six layers of a business system">
+              {layers.map(({ name, copy, icon: Icon }) => <div className="rs-layer" key={name}><div className="rs-layer-name"><Icon size={16} strokeWidth={1.4} aria-hidden="true" /><strong>{name}</strong></div><p>{copy}</p></div>)}
             </div>
           </div>
         </section>
