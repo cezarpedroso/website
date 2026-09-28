@@ -3,11 +3,11 @@ import {
   ArrowUpRight,
 } from 'lucide-react';
 import { Link } from 'wouter';
-import manufacturingPhoto from '../assets/industry-manufacturing.jpg';
-import agriculturePhoto from '../assets/industry-agriculture.jpg';
-import logisticsPhoto from '../assets/industry-logistics.jpg';
-import constructionPhoto from '../assets/industry-construction.jpg';
-import professionalServicesPhoto from '../assets/industry-professional-services.jpg';
+import manufacturingPhoto from '../assets/industries-manufacturing.jpg';
+import agriculturePhoto from '../assets/industries-agriculture.jpg';
+import logisticsPhoto from '../assets/industries-logistics.jpg';
+import constructionPhoto from '../assets/industries-construction.jpg';
+import professionalServicesPhoto from '../assets/industries-professional-services.jpg';
 import officePhoto from '../assets/about-office.png';
 import teamDeveloperPhoto from '../assets/our-team-developer.png';
 import './inner-pages.css';
