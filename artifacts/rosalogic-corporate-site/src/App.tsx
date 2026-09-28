@@ -362,7 +362,7 @@ function Footer() {
               height="120"
             />
           </Link>
-          <p className="footer-location">Oskaloosa, Iowa, United States</p>
+          <p className="footer-location">Oskaloosa, Iowa 52577, United States</p>
         </div>
         <nav className="footer-group" aria-label="Footer navigation">
           <h2>Navigate</h2>
