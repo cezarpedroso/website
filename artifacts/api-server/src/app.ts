@@ -1,10 +1,10 @@
 import express, { type Express } from "express";
-import cors from "cors";
 import pinoHttp from "pino-http";
 import router from "./routes";
 import { logger } from "./lib/logger";
 
 const app: Express = express();
+app.disable("x-powered-by");
 
 app.use(
   pinoHttp({
@@ -25,7 +25,16 @@ app.use(
     },
   }),
 );
-app.use(cors());
+app.use((_req, res, next) => {
+  res.set({
+    "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+  });
+  next();
+});
+// The API currently has no cross-origin browser consumers. Reassess CORS per
+// endpoint and allowed origin before adding any sensitive browser-facing routes.
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

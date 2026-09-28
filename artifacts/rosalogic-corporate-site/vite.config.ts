@@ -27,6 +27,15 @@ if (!basePath) {
   );
 }
 
+// Vite injects inline scripts and opens a WebSocket during development.
+// Published static assets use the tighter policy in artifact.toml instead.
+const developmentHeaders = {
+  'Content-Security-Policy':
+    "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:",
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+};
+
 export default defineConfig({
   base: basePath,
   plugins: [
@@ -69,6 +78,7 @@ export default defineConfig({
     strictPort: true,
     host: '0.0.0.0',
     allowedHosts: true,
+    headers: developmentHeaders,
     fs: {
       strict: true,
     },
@@ -77,5 +87,6 @@ export default defineConfig({
     port,
     host: '0.0.0.0',
     allowedHosts: true,
+    headers: developmentHeaders,
   },
 });
