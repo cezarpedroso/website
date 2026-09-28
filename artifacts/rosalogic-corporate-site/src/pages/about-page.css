@@ -146,6 +146,15 @@
 }
 
 .about-page .about-team { position: relative; overflow: hidden; padding: 46px 0; color: #f3f4f0; background: #102b3e; }
+.about-page .about-team::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: #102b3e;
+  clip-path: polygon(0 0, 68% 0, 56% 100%, 0 100%);
+  content: "";
+  pointer-events: none;
+}
 .about-page .about-team .about-label { color: #c7d3d5; }
 .about-page .about-team-grid {
   display: grid;
@@ -154,6 +163,7 @@
   gap: clamp(45px, 8vw, 155px);
   min-height: clamp(300px, 25vw, 390px);
 }
+.about-page .about-team-grid > div { position: relative; z-index: 2; }
 .about-page .about-team h2 {
   margin-bottom: 19px;
   font-size: clamp(2.9rem, 3.8vw, 4.8rem);
@@ -161,9 +171,10 @@
 .about-page .about-team .about-copy { max-width: 480px; color: #c7d3d5; }
 .about-page .about-team-image {
   position: absolute;
+  z-index: 0;
   inset: 0 0 0 auto;
   display: block;
-  width: calc(50% + 40px);
+  width: calc(58% + 40px);
   height: 100%;
   object-fit: cover;
   object-position: center 56%;
@@ -326,6 +337,7 @@
   .about-page .about-value { min-height: 0; padding: 0 15px 18px 0; border-left: 0; border-bottom: 1px solid var(--about-line); }
   .about-page .about-value:nth-of-type(even) { padding-left: 15px; border-left: 1px solid var(--about-line); }
   .about-page .about-team { padding: 42px 0; }
+  .about-page .about-team::before { display: none; }
   .about-page .about-team-grid { min-height: 0; }
   .about-page .about-team-image { position: static; width: 100%; height: clamp(250px, 65vw, 440px); }
   .about-page .about-approach { padding: 43px 0 48px; }
