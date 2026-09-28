@@ -10,12 +10,12 @@
 }
 
 .industries-page .industries-hero {
-  padding: 108px 0 29px;
+  padding: 82px 0 14px;
   background: var(--industry-paper);
 }
 
 .industries-page .industries-hero-copy {
-  padding: 16px 0 22px;
+  padding: 4px 0 10px;
 }
 
 .industries-page .industries-hero-copy > .eyebrow {
@@ -327,11 +327,11 @@
 
 @media (max-width: 680px) {
   .industries-page .industries-hero {
-    padding: 91px 0 25px;
+    padding: 76px 0 16px;
   }
 
   .industries-page .industries-hero-copy {
-    padding: 11px 0 0;
+    padding: 5px 0 8px;
   }
 
   .industries-page .industries-page-title {
