@@ -810,6 +810,13 @@
   height: auto;
 }
 
+.footer-location {
+  margin: 17px 0 0;
+  color: rgba(245, 243, 238, 0.8);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
 .footer-group h2 {
   margin: 1px 0 22px;
   color: rgba(245, 243, 238, 0.42);
