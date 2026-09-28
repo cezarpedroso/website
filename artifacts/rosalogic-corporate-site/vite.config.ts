@@ -5,34 +5,25 @@ import { defineConfig } from 'vite';
 
 import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
 
-const rawPort = process.env.PORT;
-
-if (!rawPort) {
-  throw new Error(
-    'PORT environment variable is required but was not provided.',
-  );
-}
-
+// Replit supplies PORT and BASE_PATH for its routed preview. A standalone
+// Vercel build does not need either, and serves the site at the domain root.
+const rawPort = process.env.PORT ?? '19886';
 const port = Number(rawPort);
 
 if (Number.isNaN(port) || port <= 0) {
   throw new Error(`Invalid PORT value: "${rawPort}"`);
 }
 
-const basePath = process.env.BASE_PATH;
+const basePath = process.env.BASE_PATH ?? '/';
 
-if (!basePath) {
-  throw new Error(
-    'BASE_PATH environment variable is required but was not provided.',
-  );
+// Replit-managed Clerk requires its same-origin proxy in a Replit publish.
+// An externally managed Clerk tenant on Vercel uses Clerk directly instead.
+if (process.env.NODE_ENV === 'production' && !process.env.VITE_CLERK_PUBLISHABLE_KEY) {
+  throw new Error('VITE_CLERK_PUBLISHABLE_KEY is required for a production build');
 }
-
-// Clerk's published browser client must use the same-origin API proxy. The
-// platform injects these build-time values for published static artifacts;
-// fail publishing rather than shipping a sign-in page that cannot load.
-if (process.env.NODE_ENV === 'production' &&
-    (!process.env.VITE_CLERK_PROXY_URL || !process.env.VITE_CLERK_PUBLISHABLE_KEY)) {
-  throw new Error('Published owner sign-in requires Clerk proxy and publishable key configuration');
+if (process.env.NODE_ENV === 'production' && process.env.REPL_ID &&
+    !process.env.VERCEL && !process.env.VITE_CLERK_PROXY_URL) {
+  throw new Error('Replit publishing requires VITE_CLERK_PROXY_URL');
 }
 
 // Vite injects inline scripts and opens a WebSocket during development.
@@ -49,7 +40,9 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss({ optimize: false }),
-    runtimeErrorOverlay(),
+    ...(process.env.NODE_ENV !== 'production' && process.env.REPL_ID
+      ? [runtimeErrorOverlay()]
+      : []),
     ...(process.env.NODE_ENV !== 'production' &&
     process.env.REPL_ID !== undefined
       ? [
