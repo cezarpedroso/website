@@ -110,13 +110,16 @@ router.post("/contact", async (req, res): Promise<void> => {
 
   if (result.kind === "saved") {
     try {
+      let claimedForSend = false;
       const outcome = await notifyContactInbox(result.saved, async () => {
         const [claimed] = await db.update(contactMessagesTable).set({ deliveryState: "sending" })
           .where(and(eq(contactMessagesTable.id, result.saved.id), eq(contactMessagesTable.deliveryState, "unsent")))
           .returning({ id: contactMessagesTable.id });
-        return !!claimed;
+        claimedForSend = !!claimed;
+        return claimedForSend;
       });
-      if (outcome === "sent" || outcome === "uncertain") {
+      if (outcome === "sent" || outcome === "uncertain" ||
+          (outcome === "unsent" && claimedForSend)) {
         await db.update(contactMessagesTable).set({
           deliveryState: outcome,
           ...(outcome === "sent" ? { notificationSentAt: new Date() } : {}),
