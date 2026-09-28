@@ -145,7 +145,8 @@
   line-height: 1.68;
 }
 
-.about-page .about-team { padding: 46px 0; }
+.about-page .about-team { padding: 46px 0; color: #f3f4f0; background: #102b3e; }
+.about-page .about-team .about-label { color: #c7d3d5; }
 .about-page .about-team-grid {
   display: grid;
   grid-template-columns: minmax(0, .8fr) minmax(0, 1.12fr);
@@ -156,7 +157,7 @@
   margin-bottom: 19px;
   font-size: clamp(2.9rem, 3.8vw, 4.8rem);
 }
-.about-page .about-team .about-copy { max-width: 480px; }
+.about-page .about-team .about-copy { max-width: 480px; color: #c7d3d5; }
 .about-page .about-team-image {
   display: block;
   width: 100%;
@@ -242,55 +243,52 @@
 }
 
 .about-page .about-cta {
-  padding: 40px 0 44px;
-  color: #f2f1eb;
-  background: #0d2432;
+  padding: 48px 0 46px;
+  color: #f3f4f0;
+  background: #0d283a;
 }
+.about-page .about-cta .about-wrap { width: min(86%, 1390px); }
 .about-page .about-cta-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr) minmax(185px, .55fr);
+  grid-template-columns: 33% 32% 1fr;
   align-items: center;
-  gap: clamp(30px, 5vw, 95px);
+  gap: 3%;
 }
-.about-page .about-cta .about-label { color: #d7d4cc; }
+.about-page .about-cta .about-label { margin-bottom: 10px; color: #aebec4; }
 .about-page .about-cta h2 {
-  max-width: 570px;
   margin: 0;
-  font-size: clamp(2.4rem, 3.25vw, 4.1rem);
+  font-family: var(--app-font-corporate);
+  font-size: clamp(20px, 1.9vw, 30px);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.08;
 }
 .about-page .about-cta-description {
   margin: 0;
-  padding-left: clamp(25px, 3vw, 55px);
-  border-left: 1px solid rgba(242, 241, 235, .35);
-  color: #c2cbd0;
-  font-size: .82rem;
-  line-height: 1.75;
+  padding-left: 18px;
+  border-left: 1px solid rgba(235, 241, 241, .2);
+  color: #c7d3d5;
+  font-size: 13px;
+  line-height: 1.55;
 }
-.about-page .about-cta-actions { display: grid; gap: 12px; }
+.about-page .about-cta-actions { display: flex; align-items: center; justify-content: flex-end; gap: 13px; }
+.about-page .about-cta-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
 .about-page .about-cta-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 45px;
-  gap: 14px;
-  padding: 0 17px;
-  border: 1px solid #ab9166;
-  color: #f2f1eb;
-  font-size: .69rem;
-  text-decoration: none;
-  transition: background-color .2s ease, color .2s ease;
+  padding: 10px 13px;
+  color: #142535;
+  background: #f2f1ec;
 }
-.about-page .about-cta-primary:hover { background: #ab9166; color: #0d2432; }
-.about-page .about-cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #d6dce0;
-  font-size: .68rem;
-  text-decoration: none;
-  transition: color .2s ease;
-}
-.about-page .about-cta-secondary:hover { color: #d3b98d; }
+.about-page .about-cta-secondary { color: #e8eeed; }
+.about-page .about-cta-actions a svg { transition: transform .2s ease; }
+.about-page .about-cta-actions a:hover svg { transform: translate(2px, -2px); }
 .about-page a:focus-visible { outline: 2px solid #b89a67; outline-offset: 4px; }
 
 @media (max-width: 1050px) {
@@ -304,8 +302,9 @@
   .about-page .about-outcomes-grid { grid-template-columns: 1fr 1fr; }
   .about-page .about-benefits { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
   .about-page .about-benefits li { padding: 0; border-bottom: 0; }
-  .about-page .about-cta-grid { grid-template-columns: 1fr 1fr; }
-  .about-page .about-cta-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: 28px; }
+  .about-page .about-cta .about-wrap { width: min(90%, 1390px); }
+  .about-page .about-cta-grid { grid-template-columns: 30% 29% 1fr; }
+  .about-page .about-cta-actions { gap: 8px; }
 }
 @media (max-width: 767px) {
   .about-page .about-wrap { width: calc(100% - 36px); }
@@ -313,7 +312,7 @@
   .about-page .about-hero-grid,
   .about-page .about-team-grid,
   .about-page .about-outcomes-grid,
-  .about-page .about-cta-grid { grid-template-columns: 1fr; gap: 28px; }
+  .about-page .about-cta-grid { grid-template-columns: 1fr; gap: 20px; }
   .about-page .about-hero-text { padding: 0; }
   .about-page .about-hero h1 { font-size: clamp(3.4rem, 12vw, 5rem); }
   .about-page .about-hero-image { height: clamp(240px, 65vw, 440px); }
@@ -333,12 +332,14 @@
   .about-page .about-outcomes { padding: 43px 0 48px; }
   .about-page .about-outcomes-image { height: clamp(235px, 59vw, 390px); }
   .about-page .about-benefits { grid-column: auto; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .about-page .about-cta { padding: 42px 0 48px; }
-  .about-page .about-cta-description { padding-left: 20px; }
-  .about-page .about-cta-actions { grid-column: auto; }
+  .about-page .about-cta .about-wrap { width: calc(100% - 36px); }
+  .about-page .about-cta-description { padding-left: 0; border-left: 0; }
+  .about-page .about-cta-actions { justify-content: flex-start; flex-wrap: wrap; }
 }
 @media (max-width: 440px) {
-  .about-page .about-cta-actions { display: grid; justify-items: start; }
   .about-page .about-values-grid { column-gap: 10px; }
   .about-page .about-value h3 { font-size: 1.4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-page .about-cta-actions a svg { transition: none; }
 }

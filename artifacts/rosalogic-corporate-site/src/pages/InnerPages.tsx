@@ -262,14 +262,14 @@ export function AboutPage() {
       <section className="about-cta" aria-labelledby="about-cta-heading">
         <div className="about-wrap about-cta-grid">
           <div>
-            <p className="about-label">Get in touch</p>
-            <h2 id="about-cta-heading" className="about-serif">Let&apos;s build the right system for your operation.</h2>
+            <p className="about-label">Let&apos;s talk</p>
+            <h2 id="about-cta-heading">Where could your<br />operation work better?</h2>
           </div>
-          <p className="about-cta-description">Tell us about your goals, challenges, or the friction in your current systems. We&apos;ll help you understand the problem, explore what&apos;s possible, and define a practical path forward.</p>
-          <div className="about-cta-actions">
-            <Link className="about-cta-primary" href="/contact" data-testid="link-about-contact">Start a conversation <ArrowRight size={15} strokeWidth={1.5} aria-hidden="true" /></Link>
-            <Link className="about-cta-secondary" href="/industries" data-testid="link-about-industries">Explore industries <ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" /></Link>
-          </div>
+          <p className="about-cta-description">Tell us what is slowing your operation down. We can help define a practical software project, determine what should be built or connected, and plan how the system will be supported after it goes live.</p>
+          <nav className="about-cta-actions" aria-label="Next steps">
+            <Link className="about-cta-primary" href="/contact" data-testid="link-about-contact">Start a Conversation <ArrowUpRight size={14} aria-hidden="true" /></Link>
+            <Link className="about-cta-secondary" href="/industries" data-testid="link-about-industries">Explore Industries <ArrowUpRight size={14} aria-hidden="true" /></Link>
+          </nav>
         </div>
       </section>
     </div>
