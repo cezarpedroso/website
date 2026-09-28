@@ -1,5 +1,5 @@
 .industries-page {
-  --industry-paper: #f6f4ee;
+  --industry-paper: var(--site-light);
   --industry-ink: #142533;
   --industry-muted: #68757a;
   --industry-blue: #567985;

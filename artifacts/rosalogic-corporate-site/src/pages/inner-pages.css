@@ -232,7 +232,7 @@
 .inner-page .ip-quote-band span { color: #687078; font-family: var(--app-font-mono); font-size: .62rem; letter-spacing: .11em; }
 .inner-page .ip-quote-band p { max-width: 1050px; margin: 26px 0 0; color: #255884; font-family: var(--app-font-serif); font-size: clamp(2.8rem, 5vw, 6rem); font-style: italic; line-height: 1.08; }
 
-.inner-page .ip-contact-form-section { padding: clamp(78px, 9vw, 140px) 0; background: #f5f3ee; }
+.inner-page .ip-contact-form-section { padding: clamp(78px, 9vw, 140px) 0; background: var(--site-light); }
 .inner-page .ip-contact-form-layout { display: grid; grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr); align-items: start; gap: clamp(48px, 8vw, 135px); }
 .inner-page .ip-contact-form-copy .ip-contact-title { margin: 20px 0 25px; font-size: clamp(3rem, 4.5vw, 5.2rem); line-height: 1.02; }
 .inner-page .ip-contact-title em { color: var(--site-blue); }
