@@ -916,6 +916,14 @@
   color: #0b1726;
 }
 
+.site-header-solutions .desktop-nav a {
+  color: #f5f3ee;
+}
+
+.site-header-solutions .desktop-nav a:hover {
+  color: #aebec4;
+}
+
 .desktop-nav a:hover::after,
 .desktop-nav a[aria-current='page']::after {
   transform: scaleX(1);
@@ -929,6 +937,11 @@
   border: 1px solid rgba(11, 23, 38, 0.34);
   color: #0b1726;
   background: transparent;
+}
+
+.site-header-solutions .mobile-menu-button {
+  border-color: rgba(245, 243, 238, 0.4);
+  color: #f5f3ee;
 }
 
 .mobile-menu {

@@ -120,12 +120,12 @@ function Header({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (op
   const [location] = useLocation();
 
   return (
-    <header className="site-header">
+    <header className={location === '/solutions' ? 'site-header site-header-solutions' : 'site-header'}>
       <div className="container-wide header-inner">
         <Link className="brand-link" href="/" onClick={closeMenu} data-testid="link-home-logo">
           <img
             className="header-logo-image"
-            src={logoTopbar}
+            src={location === '/solutions' ? footerLogo : logoTopbar}
             alt="ROSALOGIC — Business Systems & Technology"
             width="1000"
             height="120"
