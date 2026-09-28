@@ -17,7 +17,6 @@ import './industries-page.css';
 
 const industryAreas = [
   {
-    number: '01',
     name: 'Manufacturing',
     image: manufacturingPhoto,
     alt: 'Manufacturing production environment',
@@ -25,7 +24,6 @@ const industryAreas = [
     copy: 'Production does not happen in one system. We help connect the information and workflows surrounding production, maintenance, inventory, and quality so teams can work with a clearer operational picture.',
   },
   {
-    number: '02',
     name: 'Agriculture',
     image: agriculturePhoto,
     alt: 'Agricultural operations landscape',
@@ -33,7 +31,6 @@ const industryAreas = [
     copy: 'From equipment and inventory to the data that informs daily decisions, agricultural operations depend on information that remains useful beyond the office. We build around that reality.',
   },
   {
-    number: '03',
     name: 'Logistics',
     image: logisticsPhoto,
     alt: 'Logistics and transportation environment',
@@ -41,7 +38,6 @@ const industryAreas = [
     copy: 'Moving work demands coordination between people, vehicles, schedules, and customers. We create systems that make dispatch and transportation information easier to see and act on.',
   },
   {
-    number: '04',
     name: 'Construction',
     image: constructionPhoto,
     alt: 'Construction site and field operations',
@@ -49,7 +45,6 @@ const industryAreas = [
     copy: 'Project information has to travel between the office and the field. We focus on the systems that support equipment, field operations, and the work of keeping projects coordinated.',
   },
   {
-    number: '05',
     name: 'Professional Services',
     image: professionalServicesPhoto,
     alt: 'Professional services working environment',
@@ -87,7 +82,7 @@ export function IndustriesPage() {
       <section className="industries-hero" aria-labelledby="industries-page-title">
         <div className="container-wide industries-hero-grid">
           <div className="industries-hero-copy">
-            <p className="eyebrow intro-eyebrow">Industries / 01—05</p>
+            <p className="eyebrow intro-eyebrow">Industries</p>
             <h1 id="industries-page-title" className="display-heading industries-page-title" tabIndex={-1}>
               Different industries.<br /><em>Same foundation.</em>
             </h1>
@@ -104,10 +99,10 @@ export function IndustriesPage() {
       </section>
 
       <section className="industries-list" aria-label="Industries and example operational systems">
-        {industryAreas.map(({ number, name, image, alt, systems, copy }) => (
+        {industryAreas.map(({ name, image, alt, systems, copy }) => (
           <article className="industry-editorial-row" key={name}>
             <div className="industry-editorial-copy">
-              <p className="industry-editorial-kicker"><span>{number}</span><span>/</span><span>{name}</span></p>
+              <p className="industry-editorial-kicker">{name}</p>
               <h2>{name === 'Manufacturing' ? <>Production, maintenance<br />and inventory.</> :
                 name === 'Agriculture' ? <>Operations, assets<br />and field data.</> :
                   name === 'Logistics' ? <>Fleet, dispatch, customers<br />and data.</> :
