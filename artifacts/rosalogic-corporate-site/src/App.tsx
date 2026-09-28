@@ -25,6 +25,7 @@ import constructionPhoto from './assets/industry-construction.jpg';
 import professionalServicesPhoto from './assets/industry-professional-services.jpg';
 import { AboutPage, ContactPage, IndustriesPage } from './pages/InnerPages';
 import { SolutionsPage } from './pages/SolutionsPage';
+import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage, ThankYouPage } from './pages/SupportingPages';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -54,6 +55,26 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
   '/contact': {
     title: 'Contact ROSALOGIC | Business Systems & Technology',
     description: 'Tell ROSALOGIC what your operation needs from software, data, and technology.',
+  },
+  '/privacy': {
+    title: 'Privacy Policy | ROSALOGIC',
+    description: 'Learn how ROSALOGIC handles website information and inquiries.',
+  },
+  '/terms': {
+    title: 'Terms of Use | ROSALOGIC',
+    description: 'Read the terms for using the ROSALOGIC website.',
+  },
+  '/accessibility': {
+    title: 'Accessibility Statement | ROSALOGIC',
+    description: 'Learn about ROSALOGIC’s website accessibility goals and how to report a barrier.',
+  },
+  '/404': {
+    title: 'Page Not Found | ROSALOGIC',
+    description: 'The requested ROSALOGIC page could not be found.',
+  },
+  '/thank-you': {
+    title: 'Contact Confirmation | ROSALOGIC',
+    description: 'Information about contacting ROSALOGIC and message confirmations.',
   },
 };
 
@@ -353,6 +374,9 @@ function Footer() {
         <div className="footer-group">
           <h2>Information</h2>
           <Link href="/contact" data-testid="link-footer-contact">Contact page <span aria-hidden="true">↗</span></Link>
+          <Link href="/privacy" data-testid="link-footer-privacy">Privacy Policy</Link>
+          <Link href="/terms" data-testid="link-footer-terms">Terms of Use</Link>
+          <Link href="/accessibility" data-testid="link-footer-accessibility">Accessibility Statement</Link>
         </div>
         <div className="footer-group footer-contact">
           <h2>Contact details</h2>
@@ -376,19 +400,6 @@ function HomePage() {
       <AboutSection />
       <ContactSection />
     </>
-  );
-}
-
-function NotFound() {
-  return (
-    <section className="not-found-section container-wide" aria-labelledby="not-found-title">
-      <p className="eyebrow intro-eyebrow">Page not found</p>
-      <h1 id="not-found-title" className="display-heading" tabIndex={-1}>This page doesn&apos;t exist.</h1>
-      <p>The page may have moved. Return to the homepage to explore ROSALOGIC.</p>
-      <Link className="button-solid" href="/" data-testid="link-not-found-home">
-        Back to home <ArrowRight size={15} aria-hidden="true" />
-      </Link>
-    </section>
   );
 }
 
@@ -434,6 +445,10 @@ function SiteLayout() {
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', metadata.description);
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', window.location.href);
     document.querySelector('meta[name="twitter:url"]')?.setAttribute('content', window.location.href);
+    document.querySelector('meta[name="robots"]')?.setAttribute(
+      'content',
+      location === '/404' || location === '/thank-you' || !pageMetadata[location] ? 'noindex, follow' : 'index, follow',
+    );
   }, [location]);
 
   return (
@@ -449,7 +464,12 @@ function SiteLayout() {
           <Route path="/industries" component={IndustriesPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
-          <Route component={NotFound} />
+          <Route path="/privacy" component={PrivacyPage} />
+          <Route path="/terms" component={TermsPage} />
+          <Route path="/accessibility" component={AccessibilityPage} />
+          <Route path="/404" component={NotFoundPage} />
+          <Route path="/thank-you" component={ThankYouPage} />
+          <Route component={NotFoundPage} />
         </Switch>
       </main>
       <Footer />
