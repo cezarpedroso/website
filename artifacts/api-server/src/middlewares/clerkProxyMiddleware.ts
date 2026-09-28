@@ -12,7 +12,7 @@ export function getClerkProxyHost(req: { headers: IncomingHttpHeaders }): string
 }
 
 export function clerkProxyMiddleware(): RequestHandler {
-  if (process.env.NODE_ENV !== "production" || !process.env.CLERK_SECRET_KEY) {
+  if (process.env.VERCEL || process.env.NODE_ENV !== "production" || !process.env.CLERK_SECRET_KEY) {
     return (_req, _res, next) => next();
   }
   const secretKey = process.env.CLERK_SECRET_KEY;
