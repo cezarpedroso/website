@@ -1,0 +1,261 @@
+Update the existing ROSALOGIC Solutions page ONLY by refining/removing services that are too broad for the company's current stage.
+
+IMPORTANT:
+DO NOT redesign the page.
+DO NOT change the layout.
+DO NOT change the typography.
+DO NOT change spacing, colors, grid, section order, animations, imagery, navigation, or visual components.
+DO NOT introduce new design patterns.
+Preserve the current design exactly as it is.
+
+The goal is purely to make the CONTENT more realistic for a small, technically serious software engineering company that is initially operated by one founder.
+
+ROSALOGIC's core offering should be:
+
+1. BUSINESS SOFTWARE
+2. INTEGRATION & DATA
+3. TECHNOLOGY & SUPPORT
+
+The company builds custom business and operational software, connects existing systems, and provides the technical infrastructure and ongoing maintenance required for the systems it builds.
+
+--------------------------------------------------
+1. BUSINESS SOFTWARE
+--------------------------------------------------
+
+KEEP this section and its current visual structure.
+
+Focus the content on:
+
+- Operations & workflow systems
+- Customer & relationship systems / CRM
+- Asset & maintenance systems / EAM / CMMS
+- Purpose-built business applications
+- Internal business platforms
+- Customer and management portals
+- Operational dashboards
+- Scheduling
+- Work orders
+- Inventory
+- Procurement
+- Approvals
+- Field operations
+- Service management
+- Quoting and proposals
+
+This is ROSALOGIC's primary service.
+
+Do NOT imply that ROSALOGIC sells generic SaaS products or provides every type of enterprise software.
+
+--------------------------------------------------
+2. DATA & INTEGRATION
+--------------------------------------------------
+
+KEEP this section and its current visual structure.
+
+Focus it on practical capabilities that naturally support custom business software:
+
+- REST APIs
+- Third-party API integration
+- Webhooks
+- Database integration
+- System synchronization
+- Data imports/exports
+- Operational reporting
+- Management dashboards
+- KPIs
+- Automated reports
+- Data synchronization
+- Workflow automation
+- Document generation
+- Notifications
+- Approval workflows
+
+REMOVE or avoid positioning ROSALOGIC as a dedicated data engineering / analytics consultancy.
+
+Specifically remove or de-emphasize:
+- ETL / ELT as a standalone service
+- Advanced data engineering
+- Large-scale data platforms
+- Anything implying that ROSALOGIC specializes in enterprise data engineering
+
+Business intelligence can remain, but position it as operational reporting and dashboards supporting the systems we build.
+
+--------------------------------------------------
+3. TECHNOLOGY & SUPPORT
+--------------------------------------------------
+
+Rename the existing "Infrastructure & Security" section to:
+
+TECHNOLOGY & SUPPORT
+
+Keep the same visual layout and section structure.
+
+Position this as the technology required to deploy, maintain, and support ROSALOGIC systems.
+
+Keep:
+
+- AWS / Azure
+- On-premise deployment
+- Databases
+- Containers
+- CI/CD
+- Deployment automation
+- Environment management
+- Monitoring
+- Logging
+- Backups
+- Application security
+- Identity & access
+- Secrets management
+- Secure architecture
+- Security hardening
+
+Change the positioning so ROSALOGIC is NOT presented as a standalone cybersecurity company, managed security provider, or general IT infrastructure company.
+
+The message should be:
+
+"We provide the infrastructure, deployment, security, and maintenance required to keep the systems we build reliable."
+
+Avoid implying that we independently manage a client's entire corporate IT environment.
+
+Remove/de-emphasize:
+
+- Network security as a standalone service
+- Security monitoring as a standalone service
+- General IT infrastructure management
+- Enterprise cybersecurity consulting
+- Corporate networking services
+- Full managed IT services
+
+--------------------------------------------------
+4. THE "SYSTEM IS MORE THAN THE SOFTWARE" SECTION
+--------------------------------------------------
+
+KEEP THIS SECTION.
+
+It is important to the ROSALOGIC positioning.
+
+Keep the conceptual layers:
+
+People
+Processes
+Software
+Data
+Integrations
+Infrastructure
+
+However, make it clear that ROSALOGIC works across these layers when necessary to deliver a business system.
+
+Do NOT imply that ROSALOGIC provides independent consulting services for every layer.
+
+The message should be:
+
+"Software is only one part of a business system. We understand the surrounding processes, data, integrations, and technology required to make the system work."
+
+--------------------------------------------------
+5. CONNECTED SYSTEMS SECTION
+--------------------------------------------------
+
+KEEP the section and visual design.
+
+Simplify the messaging so it supports the core positioning.
+
+ROSALOGIC does not sell "digital transformation" as a broad consulting service.
+
+Instead communicate that:
+
+A new application may require integrations.
+A reporting problem may be caused by disconnected systems.
+An automation opportunity may require changes to an existing workflow.
+Infrastructure needs to support the software reliably.
+
+ROSALOGIC approaches these pieces together when the project requires it.
+
+--------------------------------------------------
+6. INDUSTRIES
+--------------------------------------------------
+
+KEEP the existing industries section and design.
+
+Keep:
+
+Manufacturing
+Agriculture
+Logistics & Transportation
+Professional Services
+
+The industries should be presented as areas ROSALOGIC is equipped to serve, NOT as claims of deep specialization or decades of industry expertise.
+
+Avoid language implying extensive existing client experience unless that information already exists elsewhere on the site.
+
+--------------------------------------------------
+7. WAYS OF ENGAGEMENT
+--------------------------------------------------
+
+KEEP the existing structure.
+
+Use:
+
+BUILD
+Design and development of a new business or operational system.
+
+IMPROVE
+Modernize, extend, or replace an existing system.
+
+CONNECT
+Integrate existing applications and data.
+
+SUPPORT
+Maintain, monitor, secure, and improve systems over time.
+
+These should feel like ways a client can work with ROSALOGIC, not four separate departments.
+
+--------------------------------------------------
+8. OVERALL POSITIONING
+--------------------------------------------------
+
+Throughout the page, make ROSALOGIC sound like:
+
+A small, technically serious software engineering company that designs, builds, integrates, deploys, and supports business systems.
+
+ROSALOGIC should NOT sound like:
+
+- A large IT consultancy
+- A managed service provider
+- A cybersecurity firm
+- A data engineering consultancy
+- A cloud consulting company
+- An enterprise digital transformation consultancy
+- An industrial automation company
+
+The company can have these technical capabilities internally, but they should not be presented as major standalone services at launch.
+
+The central commercial proposition is:
+
+"We build and support business systems around the way your operation actually works."
+
+--------------------------------------------------
+MOST IMPORTANT DESIGN INSTRUCTION
+--------------------------------------------------
+
+Do not modify the current visual design whatsoever.
+
+This is a CONTENT REFINEMENT task only.
+
+Preserve:
+- exact page structure
+- section order
+- grid
+- typography
+- colors
+- spacing
+- imagery
+- horizontal rules
+- navigation
+- animations
+- responsive behavior
+- existing component styles
+
+Only modify the wording, service lists, labels, and positioning necessary to make the offering realistic and focused for ROSALOGIC at launch.
+
+After making the changes, review the entire page for any remaining language that implies ROSALOGIC is a large consultancy or offers services beyond the current three core areas.
