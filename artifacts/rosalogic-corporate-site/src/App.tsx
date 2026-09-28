@@ -40,8 +40,8 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
     description: 'ROSALOGIC designs, builds, and operates software systems for organizations with complex operations.',
   },
   '/solutions': {
-    title: 'Software & Technology Solutions | ROSALOGIC',
-    description: 'Explore ROSALOGIC custom business software, system integration, operational reporting, deployment, and ongoing support for the systems it builds.',
+    title: 'Custom Business Software | ROSALOGIC',
+    description: 'ROSALOGIC designs and builds custom business software for operational businesses, with integration, deployment, and support for the systems it builds.',
   },
   '/industries': {
     title: 'Industries We Serve | ROSALOGIC',

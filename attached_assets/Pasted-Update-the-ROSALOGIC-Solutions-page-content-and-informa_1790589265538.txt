@@ -1,0 +1,593 @@
+Update the ROSALOGIC Solutions page content and information hierarchy.
+
+IMPORTANT:
+- DO NOT redesign the page.
+- DO NOT change the existing visual language, layout system, typography, spacing system, colors, navigation, section styling, borders, or component patterns.
+- Preserve the current professional, structured, editorial/corporate aesthetic exactly.
+- Do not introduce cards, gradients, excessive animations, new decorative elements, or scattered design patterns.
+- This is primarily a CONTENT + POSITIONING revision.
+- Keep the existing section structure wherever possible.
+- Make the page feel like a serious small software engineering company, not a large consulting corporation pretending to offer every technology service.
+
+## ROSALOGIC POSITIONING
+
+ROSALOGIC is a software engineering company that designs and builds custom business systems for operational businesses.
+
+The primary offering is CUSTOM BUSINESS SOFTWARE.
+
+Integration, data, infrastructure, security, deployment, and support are supporting capabilities that exist around the software systems we build.
+
+The company should NOT appear to be:
+- a general IT provider
+- a cybersecurity consultancy
+- an industrial automation company
+- a generic digital agency
+- a data engineering consultancy
+- a giant enterprise consulting firm
+
+The positioning should communicate:
+
+"Software built around the way your business works."
+
+A useful description of the company:
+
+"ROSALOGIC designs and builds custom business software for organizations whose operations have outgrown spreadsheets, disconnected tools, or off-the-shelf software that doesn't quite fit."
+
+The target customer is primarily small and mid-sized operational businesses that are too complex for generic software but do not have a large internal engineering team.
+
+Examples include:
+- manufacturing
+- agriculture
+- logistics and transportation
+- professional services
+- other operational SMBs
+
+Do not imply that ROSALOGIC only serves these industries.
+
+---
+
+# PAGE STRUCTURE
+
+Keep the existing overall structure, but revise the content to follow this hierarchy:
+
+1. Hero / positioning
+2. The system
+3. Business software — PRIMARY OFFERING
+4. Integration & data — SUPPORTING CAPABILITY
+5. Technology & support — SUPPORTING CAPABILITY
+6. Connected systems
+7. Industries
+8. How we work
+9. Ways of engagement
+10. CTA
+
+The hierarchy should make it immediately obvious that BUSINESS SOFTWARE is the core business.
+
+---
+
+# HERO
+
+Eyebrow:
+
+SOLUTIONS
+
+Headline:
+
+Built around
+your operation.
+
+Supporting text:
+
+ROSALOGIC designs and builds custom business software around the way your operation works. We develop applications for workflows, customers, assets, and internal processes—and connect them to the systems your business already uses.
+
+Small supporting statement:
+
+Business software first. Integration and support when needed.
+
+Keep the existing hero image and visual treatment.
+
+---
+
+# THE SYSTEM
+
+Eyebrow:
+
+THE SYSTEM
+
+Headline:
+
+The system is more than
+the software.
+
+Body:
+
+Software is only one part of a business system. The surrounding processes, data, integrations, and technology have to work together for the system to be useful.
+
+ROSALOGIC understands those layers and works across them when a project requires it—whether that means building an application, connecting existing tools, or improving the technology that supports the software.
+
+Keep the six existing concepts:
+
+People
+Processes
+Software
+Data
+Integrations
+Infrastructure
+
+Keep these concise.
+
+People:
+The people who use, manage, and maintain the system.
+
+Processes:
+The workflows and rules that keep the operation moving.
+
+Software:
+The applications that turn work into action.
+
+Data:
+The information that creates visibility and supports decisions.
+
+Integrations:
+The connections between the systems and services the business already uses.
+
+Infrastructure:
+The technology environment that keeps the system running reliably.
+
+---
+
+# BUSINESS SOFTWARE
+
+This is the MOST IMPORTANT section of the page.
+
+Eyebrow:
+
+BUSINESS SOFTWARE
+
+Headline:
+
+Software shaped around
+the way work actually happens.
+
+Intro:
+
+Off-the-shelf software is useful when your processes fit the product. When they don't, teams often compensate with spreadsheets, manual workarounds, disconnected tools, and repetitive data entry.
+
+ROSALOGIC designs and builds custom business applications around your workflows, users, assets, and decisions—not around a generic software template.
+
+Use four service categories:
+
+## 01 — Operations & Workflow
+
+Custom software for the processes that keep an operation moving.
+
+Include:
+- Workflow management
+- Work orders
+- Approvals
+- Scheduling
+- Inventory
+- Procurement
+- Internal portals
+- Field operations
+
+## 02 — Customer & Relationship Systems
+
+Applications for managing customer relationships and the work surrounding them.
+
+Include:
+- CRM
+- Customer portals
+- Sales workflows
+- Service management
+- Account management
+- Quoting & proposals
+
+## 03 — Asset & Maintenance Systems
+
+Systems for organizations managing physical assets, equipment, and maintenance.
+
+Include:
+- EAM / CMMS
+- Asset registers
+- Preventive maintenance
+- Inspections
+- Work orders
+- Parts & inventory
+- Equipment history
+
+## 04 — Purpose-Built Applications
+
+When existing tools don't adequately support the work, we build a business application around the operation.
+
+Include:
+- Internal business platforms
+- Management portals
+- Operational dashboards
+- Custom internal tools
+- Specialized workflows
+
+Do NOT make this sound like ROSALOGIC already has proprietary products for every category.
+
+These are examples of systems we can design and build.
+
+---
+
+# INTEGRATION & DATA
+
+Eyebrow:
+
+INTEGRATION & DATA
+
+Headline:
+
+Make the systems
+work together.
+
+Intro:
+
+The software we build often needs to work with tools a business already uses. Accounting, CRM, inventory, ERP, spreadsheets, customer systems, and external services can all contain pieces of the organization's information.
+
+ROSALOGIC connects these systems when the project requires it, so information can move where it needs to go and become useful to the people running the operation.
+
+## System Integration
+
+Connect existing tools to the business software we build.
+
+- REST APIs
+- Third-party API integration
+- Webhooks
+- Database integration
+- System synchronization
+- Data imports / exports
+
+## Operational Reporting
+
+Make operational information easier to understand and use.
+
+- Operational reports
+- Management dashboards
+- KPIs
+- Automated reports
+- Data visualization
+
+## Workflow Automation
+
+Automate predictable steps inside the systems we build and connect.
+
+- Data synchronization
+- Notifications
+- Document generation
+- Scheduled workflows
+- Approval workflows
+- Automated imports/exports
+
+IMPORTANT:
+Do not present ROSALOGIC as a specialized enterprise data engineering or BI consultancy. These capabilities support the software projects.
+
+---
+
+# TECHNOLOGY & SUPPORT
+
+Eyebrow:
+
+TECHNOLOGY & SUPPORT
+
+Headline:
+
+The foundation
+behind the system.
+
+Intro:
+
+The software we build needs a reliable environment around it. ROSALOGIC can provide the deployment, infrastructure, security, and ongoing maintenance needed to keep business systems working over time.
+
+We work with the client's existing environment when it is the right fit.
+
+## Hosting & Environments
+
+- AWS / Azure
+- On-premise deployment
+- Databases
+- Containers
+- Application hosting
+- Environment configuration
+
+## Deployment & Support
+
+- CI/CD
+- Deployment automation
+- Environment management
+- Application monitoring
+- Logging
+- Backups
+- Maintenance
+- Updates
+
+## Security & Access
+
+- Application security
+- Identity & access
+- Secrets management
+- Secure architecture
+- Security hardening
+
+IMPORTANT:
+Do NOT position cybersecurity as a standalone ROSALOGIC service.
+Security should be presented as part of building and operating reliable software.
+
+Do NOT position general IT support as a service.
+ROSALOGIC supports the systems it builds.
+
+---
+
+# CONNECTED SYSTEMS
+
+Eyebrow:
+
+CONNECTED SYSTEMS
+
+Headline:
+
+One system.
+Multiple layers.
+
+Body:
+
+A new application may need integrations. Reporting gaps can start with disconnected systems. Automation may require changes to the underlying workflow.
+
+ROSALOGIC brings these pieces together when the project requires them, so the software works reliably in practice.
+
+Keep the existing system visualization showing:
+
+Business
+Operations
+Users
+
+Software Systems
+Data + Integrations
+Infrastructure
+Security
+
+The visual should communicate that software is the center of the offering, while the other layers support it.
+
+Do not make this section look like a generic technology diagram.
+
+---
+
+# INDUSTRIES
+
+Eyebrow:
+
+INDUSTRIES
+
+Headline:
+
+Software for
+real operations.
+
+Intro:
+
+Our strongest fit is with organizations where day-to-day operations involve people, equipment, workflows, customers, and information that need to work together.
+
+Include:
+
+## Manufacturing
+
+Software for production, maintenance, inventory, quality, and operational workflows.
+
+Examples:
+Production · Maintenance · Inventory
+
+## Agriculture
+
+Tools for coordinating field work, equipment, inventory, and operational information.
+
+Examples:
+Operations · Field services · Asset management
+
+## Logistics & Transportation
+
+Systems for dispatch, fleet work, scheduling, and customer workflows.
+
+Examples:
+Fleet · Dispatch · Customer systems
+
+## Professional Services
+
+Business tools for projects, client relationships, documents, and service delivery.
+
+Examples:
+CRM · Projects · Documents
+
+Add a subtle final statement:
+
+We also work with other organizations whose operational challenges fit our capabilities.
+
+Do NOT list a huge number of industries. Keep these four as focus areas rather than claiming exclusive specialization.
+
+---
+
+# HOW WE WORK
+
+Eyebrow:
+
+HOW WE WORK
+
+Headline:
+
+Start with the problem.
+Build the right system.
+
+Intro:
+
+You do not need to arrive with a technical specification. We can help define the work from the operational challenge.
+
+Keep the existing six-step structure:
+
+01 — Understand
+Learn how the operation works and where friction exists.
+
+02 — Define
+Clarify requirements, constraints, integrations, and priorities.
+
+03 — Architect
+Shape the technical and operational solution.
+
+04 — Build
+Develop, test, and integrate the system.
+
+05 — Deploy
+Put the system into its production environment.
+
+06 — Support
+Maintain, monitor, secure, and improve the systems we build.
+
+Do not use "Operate" because ROSALOGIC is not offering managed operations as a broad service.
+
+---
+
+# WAYS OF ENGAGEMENT
+
+Eyebrow:
+
+WAYS OF ENGAGEMENT
+
+Headline:
+
+Engage us where
+the problem is.
+
+Keep four categories:
+
+## Build
+
+Design and development of a new business or operational system.
+
+## Improve
+
+Extend, modernize, or replace an existing system.
+
+## Connect
+
+Integrate existing applications and data with the systems the business relies on.
+
+## Support
+
+Maintain, monitor, secure, and improve systems over time.
+
+IMPORTANT:
+Do not make these appear like four completely separate consulting businesses. They are four ways a client may engage ROSALOGIC around business software.
+
+---
+
+# FINAL CTA
+
+Eyebrow:
+
+LET'S TALK
+
+Headline:
+
+Where could your
+operation work better?
+
+Body:
+
+Tell us what is slowing your operation down. We can help define a practical software project, determine what should be built or connected, and plan how the system will be supported after it goes live.
+
+CTA:
+
+Start a conversation
+
+Secondary text if appropriate:
+
+You don't need a technical specification to get started.
+
+---
+
+# BRAND / VOICE
+
+Maintain the existing ROSALOGIC voice:
+
+- professional
+- precise
+- restrained
+- technical without being overly technical
+- confident but not boastful
+- engineering-oriented
+- practical
+- long-term focused
+
+Avoid:
+- "revolutionary"
+- "cutting-edge"
+- "next-generation"
+- "digital transformation"
+- "unlock your potential"
+- "leverage technology"
+- "seamless"
+- "world-class"
+- startup-style hype
+- excessive buzzwords
+
+The company should sound like an engineering firm that happens to build software.
+
+The language should emphasize:
+- systems
+- operations
+- reliability
+- maintainability
+- architecture
+- practical software
+- business workflows
+- long-term support
+
+---
+
+# MOST IMPORTANT CONTENT RULE
+
+Do not make ROSALOGIC appear larger than it is.
+
+It is currently a small software engineering company.
+
+The website should communicate capability and professionalism without implying a large staff, massive enterprise delivery organization, or specialized departments that don't exist.
+
+The message should essentially be:
+
+"We are small enough to understand your operation directly, technically capable enough to build the system properly, and focused enough to support it after it goes live."
+
+Do not literally use that sentence unless it fits naturally.
+
+---
+
+# VISUAL RULE
+
+Again, DO NOT redesign the page.
+
+Preserve:
+- current typography
+- current colors
+- current blue/gold accent
+- current white/light background
+- current grid
+- current section spacing
+- current image treatment
+- current horizontal rules
+- current numbered service presentation
+- current editorial layout
+- current navigation
+- current responsive behavior
+
+Only adjust spacing if the new content requires it.
+
+The final page should feel like the SAME ROSALOGIC website, but with a much clearer commercial hierarchy:
+
+CUSTOM BUSINESS SOFTWARE
+↓
+INTEGRATION & DATA
+↓
+TECHNOLOGY & SUPPORT
+
+Business software is the product.
+Everything else exists to make that product work in the real world.
